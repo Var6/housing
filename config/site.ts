@@ -1,62 +1,49 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Citizen Housing ",
+  description: "Make your dream home a reality.",
   navItems: [
     {
       label: "Home",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Our Properties",
+      href: "/Properties",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
+      label: "Finance",
+      href: "/Finance",
     },
     {
       label: "About",
       href: "/about",
     },
+    {
+      label: "Contact Us",
+      href: "/Contact",
+    },
   ],
   navMenuItems: [
-    {
-      label: "Profile",
-      href: "/profile",
+    {  label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Our Properties",
+      href: "/Properties",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Service",
+      href: "/Service",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "About",
+      href: "/about",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Contact Us",
+      href: "/Contact",
     },
   ],
   links: {
