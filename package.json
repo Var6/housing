@@ -24,7 +24,7 @@
     "@react-aria/visually-hidden": "3.8.22",
     "animejs": "^4.0.2",
     "clsx": "^2.1.1",
-    "framer-motion": "11.13.1",
+    "framer-motion": "^11.13.1",
     "gatsby": "^5.14.3",
     "intl-messageformat": "10.7.16",
     "lucide-react": "^0.511.0",
@@ -33,6 +33,7 @@
     "next-themes": "0.4.6",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-intersection-observer": "^9.16.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {

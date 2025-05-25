@@ -60,7 +60,7 @@ export const housingTestimonials = [
 ];
 
   //Owner Card Data
-  export const cardItems = [
+export const cardItems = [
    {
     ownerName: "Ankit Sharma",
     location: "Gola Road, Patna",
@@ -107,7 +107,7 @@ export const housingTestimonials = [
     ownerImage: "/images/suresh.png",
   },
   {
-    ownerName: "Anjali Mishra",
+    ownerName: "Dr. Sanjay Mishra",
     location: "Patliputra Colony, Patna",
     feature: "Corner Plot",
     details: "Corner plot 1300 sq.ft with water and electricity connections ready.",
@@ -117,3 +117,8 @@ export const housingTestimonials = [
   },
   // Add more cards as needed
 ];
+  // moving offer banner
+  export const offerImages: string[] = [
+    '/assets/offer1.jpg', 
+    '/assets/offer2.jpg',
+  ];
