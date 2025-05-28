@@ -13,6 +13,13 @@ const config = {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
+       colors: {
+        green: {
+          50: '#f0fdf4',
+          700: '#15803d',
+          800: '#166534',
+        },
+      },
        animation: {
         scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },

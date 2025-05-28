@@ -122,3 +122,153 @@ export const cardItems = [
     '/assets/offer1.jpg', 
     '/assets/offer2.jpg',
   ];
+
+  // steps for process
+  export const steps = [
+    {
+      title: 'Initial Inquiry',
+      description: 'Reach out with your interest.',
+      image: 'https://via.placeholder.com/150?text=Initial+Inquiry',
+    },
+    {
+      title: 'Financial Planning',
+      description: 'Assess your budget and financing options.',
+      image: 'https://via.placeholder.com/150?text=Financial+Planning',
+    },
+    {
+      title: 'Site Visit',
+      description: 'We arrange a guided site visit.',
+      image: 'https://via.placeholder.com/150?text=Site+Visit',
+    },
+    {
+      title: 'Legal Verification',
+      description: 'We help verify legal documents.',
+      image: 'https://via.placeholder.com/150?text=Legal+Verification',
+    },
+    {
+      title: 'Agreement Drafting',
+      description: 'Paperwork and agreements handled.',
+      image: 'https://via.placeholder.com/150?text=Agreement+Drafting',
+    },
+    {
+      title: 'Ownership Transfer',
+      description: 'Legal ownership is transferred.',
+      image: 'https://via.placeholder.com/150?text=Ownership+Transfer',
+    },
+    {
+      title: 'Final Settlement',
+      description: 'Complete the financial transactions.',
+      image: 'https://via.placeholder.com/150?text=Final+Settlement',
+    },
+    {
+      title: 'Handover',
+      description: 'Receive the keys to your new property.',
+      image: 'https://via.placeholder.com/150?text=Handover',
+    },
+  ];
+  // faqs data
+  export const faqs = [
+  {
+    question: "What is Citizen Housing?",
+    answer:
+      "Citizen Housing is a platform that helps you buy or invest in residential land and homes directly from property owners—no middlemen involved. We ensure transparency, verified listings, and a seamless buying experience.",
+  },
+  {
+    question: "How do I know the properties listed are genuine?",
+    answer:
+      "Every property listed on Citizen Housing goes through a multi-level verification process involving document checks, ownership validation, and field inspections when necessary. Your trust is our priority.",
+  },
+  {
+    question: "Can I list my land or house on Citizen Housing?",
+    answer:
+      "Yes! If you own a property and want to sell it directly to buyers, you can list it with us. Our team will guide you through the process of uploading images, verifying documents, and setting a fair price.",
+  },
+  {
+    question: "What locations are currently covered?",
+    answer:
+      "We are actively serving Patna, Bihar, and expanding rapidly across other towns and cities. Check our map on the homepage for the latest updates on available plots.",
+  },
+  {
+    question: "Is financing available through Citizen Housing?",
+    answer:
+      "We collaborate with lending partners to provide flexible home and land financing. You can apply through our site, and we’ll connect you with pre-approved options based on your eligibility.",
+  },
+];
+// Properties data
+export const properties = [
+  {
+    id: 1,
+    title: 'Modern Villa',
+    thumbnail: '/properties/villa.webp',
+    location: 'Boring Road, Patna',
+    size: '2500 sqft',
+    landmark: 'Near SBI Bank, Boring Road',
+    address: '123 Boring Road, Patna, Bihar 800001',
+    owner: 'Mr. Ramesh Kumar',
+    details: 'Spacious villa with modern amenities and nearby shopping centres.',
+    sides: {
+      east: 'Main Road',
+      west: 'Empty Plot',
+      north: 'Residential House',
+      south: 'Park',
+    },
+    images: [
+      '/properties/villa1.jpg',
+      '/properties/villa2.jpg',
+      '/properties/villa3.jpg',
+    ],
+    documents: [
+      '/documents/villa-doc1.jpg',
+      '/documents/villa-doc2.jpg',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Lake View House',
+    location: 'Ganga River Side',
+    thumbnail: '/properties/lakeview.webp',
+    size: '3000 sqft',
+    landmark: 'Behind Gandhi Ghat Park',
+    address: '56 River View Road, Patna, Bihar 800002',
+    owner: 'Mrs. Sunita Singh',
+    details: 'Beautiful home with lake views and natural light.',
+    sides: {
+      east: 'Lake',
+      west: 'Road',
+      north: 'Garden',
+      south: 'Temple',
+    },
+    images: [
+      '/properties/lakeview1.jpg',
+      '/properties/lakeview2.jpg',
+      '/properties/lakeview3.jpg',
+    ],
+    documents: [
+      '/documents/lakeview-doc1.jpg',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Cozy Cottage',
+    location: 'Phulwari Sharif',
+    size: '1200 sqft',
+    thumbnail: '/properties/cottage.avif',
+    landmark: 'Near AIIMS Patna',
+    address: '9 Green Lane, Phulwari Sharif, Patna',
+    owner: 'Dr. Ajay Verma',
+    details: 'Ideal for small families. Close to medical facilities.',
+    sides: {
+      east: 'Hospital',
+      west: 'School',
+      north: 'Open Land',
+      south: 'Shop',
+    },
+    images: [
+      '/properties/cottage1.jpg',
+      '/properties/cottage2.jpg',
+    ],
+    documents: [
+      '/documents/cottage-doc1.jpg',
+    ],
+  },
+];

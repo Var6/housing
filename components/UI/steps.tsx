@@ -1,19 +1,17 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { steps } from '@/data'; // Adjust the import path as necessary
+gsap.registerPlugin(ScrollTrigger);
 
-const steps = [
-  { title: 'Initial Inquiry', description: 'Reach out with your interest.' },
-  { title: 'Site Visit', description: 'We arrange a guided site visit.' },
-  { title: 'Verification', description: 'We help verify legal documents.' },
-  { title: 'Agreement', description: 'Paperwork and agreements handled.' },
-  { title: 'Ownership Transfer', description: 'Legal ownership is transferred.' },
-];
 
-export default function VerticalProcess() {
+
+export default function VerticalProcess3D() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const dotRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -25,62 +23,99 @@ export default function VerticalProcess() {
     damping: 30,
   });
 
-  const [dotStates, setDotStates] = useState<boolean[]>(steps.map(() => false));
-
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
+    if (!containerRef.current) return;
 
-      const containerTop = containerRef.current.getBoundingClientRect().top;
-      const containerHeight = containerRef.current.offsetHeight;
-      const scrollY = window.scrollY + window.innerHeight / 2;
+    const ctx = gsap.context(() => {
+      cardRefs.current.forEach((card) => {
+        if (!card) return;
 
-      const newDotStates = dotRefs.current.map((dot) => {
-        if (!dot) return false;
-        const dotTop = dot.getBoundingClientRect().top + window.scrollY;
-        return scrollY >= dotTop;
+        gsap.fromTo(
+          card,
+          {
+            opacity: 0,
+            rotateY: -60,
+            y: 50,
+          },
+          {
+            opacity: 1,
+            rotateY: 0,
+            y: 0,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 80%',
+              end: 'bottom 60%',
+              toggleActions: 'play none none reverse',
+            },
+            duration: 1,
+            ease: 'power3.out',
+          }
+        );
       });
+    }, containerRef);
 
-      setDotStates(newDotStates);
-    };
-
-    handleScroll(); // on mount
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="w-full bg-white py-20 px-4">
-      <h2 className="text-3xl font-bold text-center text-green-700 mb-16">Our Process</h2>
+    <div className="w-full bg-white dark:bg-gray-900 py-24 px-4 transition-colors duration-300">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center text-green-800 dark:text-green-400 mb-20 underline decoration-green-600 dark:decoration-green-300 decoration-4">
+        Our Comprehensive Process
+      </h2>
 
-      <div ref={containerRef} className="relative max-w-4xl mx-auto">
-        {/* Static line behind */}
-        <div className="absolute left-[1.75rem] md:left-[2.5rem] top-0 bottom-0 w-[2px] bg-gray-200 z-0" />
-
-        {/* Animated progress line */}
+      <div ref={containerRef} className="relative max-w-6xl mx-auto">
+        {/* Vertical timeline line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-700 z-0" />
         <motion.div
           style={{ height: '100%', scaleY }}
-          className="absolute left-[1.75rem] md:left-[2.5rem] top-0 w-[2px] bg-gradient-to-b from-green-400 to-green-700 z-10 origin-top"
+          className="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 bg-gradient-to-b from-green-400 to-green-700 z-10 origin-top"
         />
 
-        {/* Step list */}
-        <div className="flex flex-col space-y-20 pl-12 md:pl-20 relative z-20">
-          {steps.map((step, idx) => (
-            <div key={idx} className="relative flex items-start">
-              {/* Dot */}
-              <span
-                ref={(el) => (dotRefs.current[idx] = el)}
-                className={`absolute -left-[1.1rem] md:-left-[1.25rem] top-1 w-4 h-4 rounded-full border-4 transition-all duration-300 z-20
-                  ${dotStates[idx] ? 'bg-green-600 border-white shadow-lg' : 'bg-white border-gray-400'}
-                `}
-              />
-              {/* Step Content */}
-              <div className="bg-white p-4 md:p-6 rounded-xl shadow-md border w-full">
-                <h3 className="text-lg md:text-xl font-semibold text-green-800">{step.title}</h3>
-                <p className="text-gray-600 mt-2 text-sm md:text-base">{step.description}</p>
+        <div className="relative z-20 flex flex-col space-y-24">
+          {steps.map((step, idx) => {
+            const isLeft = idx % 2 === 0;
+
+            return (
+              <div
+                key={idx}
+                ref={(el) => {
+                  cardRefs.current[idx] = el;
+                }}
+                className={`relative flex flex-col md:flex-row ${
+                  isLeft ? 'md:justify-start' : 'md:justify-end'
+                } items-center`}
+              >
+                {/* Connector badge */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -top-6 z-20">
+                  <div className="w-12 h-12 rounded-full bg-green-600 dark:bg-green-500 text-white flex items-center justify-center font-bold shadow-lg text-lg">
+                    {idx + 1}
+                  </div>
+                </div>
+
+                <div
+                  className={`bg-white dark:bg-gray-800 border border-green-800 dark:border-green-500 shadow-lg rounded-2xl p-6 md:p-8 w-full md:w-[48%] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+                    isLeft ? 'md:mr-auto' : 'md:ml-auto'
+                  }`}
+                >
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-20 h-20 md:w-24 md:h-24 object-contain rounded-lg shadow"
+                    />
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-semibold text-green-800 dark:text-green-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm md:text-base">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
