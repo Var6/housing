@@ -213,13 +213,13 @@ export const properties = [
       south: 'Park',
     },
     images: [
-      '/properties/villa1.jpg',
-      '/properties/villa2.jpg',
-      '/properties/villa3.jpg',
+      '/properties/MordernVilla/villa1.jpg',
+      '/properties/MordernVilla/villa2.jpg',
+      '/properties/MordernVilla/villa3.avif',
     ],
     documents: [
-      '/documents/villa-doc1.jpg',
-      '/documents/villa-doc2.jpg',
+      '/properties/MordernVilla/Documents/doc1.jpg',
+      '/properties/MordernVilla/Documents/doc2.png',
     ],
   },
   {
