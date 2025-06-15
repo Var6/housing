@@ -145,26 +145,7 @@ export const cardItems = [
       description: 'We help verify legal documents.',
       image: 'https://via.placeholder.com/150?text=Legal+Verification',
     },
-    {
-      title: 'Agreement Drafting',
-      description: 'Paperwork and agreements handled.',
-      image: 'https://via.placeholder.com/150?text=Agreement+Drafting',
-    },
-    {
-      title: 'Ownership Transfer',
-      description: 'Legal ownership is transferred.',
-      image: 'https://via.placeholder.com/150?text=Ownership+Transfer',
-    },
-    {
-      title: 'Final Settlement',
-      description: 'Complete the financial transactions.',
-      image: 'https://via.placeholder.com/150?text=Final+Settlement',
-    },
-    {
-      title: 'Handover',
-      description: 'Receive the keys to your new property.',
-      image: 'https://via.placeholder.com/150?text=Handover',
-    },
+ 
   ];
   // faqs data
   export const faqs = [

@@ -58,7 +58,7 @@ export default function VerticalProcess3D() {
   }, []);
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 py-24 px-4 transition-colors duration-300">
+    <div className="w-full border-2 border-black bg-white dark:bg-gray-900 py-4 px-4 transition-colors duration-300">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center text-green-800 dark:text-green-400 mb-20 underline decoration-green-600 dark:decoration-green-300 decoration-4">
         Our Comprehensive Process
       </h2>
