@@ -2,7 +2,7 @@
 
 import { Shield, Users, Award, Headphones, Clock, ThumbsUp } from 'lucide-react';
 
-export default function WhychooseUs() {
+export default function WhyChooseUs() {
   const features = [
     {
       icon: Shield,
