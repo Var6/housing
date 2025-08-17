@@ -1,104 +1,163 @@
 'use client';
 
-import { ArrowRight, Play } from 'lucide-react';
-import Link from 'next/link';
+import { useState } from 'react';
+import { Search, MapPin, Home, Users, Award, ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [location, setLocation] = useState('');
+  const [propertyType, setPropertyType] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle search logic here
+    console.log({ searchQuery, location, propertyType });
+  };
+
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgo8cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9wYXR0ZXJuPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz4KPHN2Zz4=')] opacity-20"></div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        <div className="text-center">
-          {/* Main Heading */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-heading leading-tight">
-              Find Your Perfect
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-accent-400">
-                Home in Bihar
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Discover premium properties across Bihar with verified listings, 
-              transparent pricing, and trusted sellers on Bihar's #1 property platform.
-            </p>
-          </div>
-
-          {/* Features Badge */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-2 border border-white border-opacity-20">
-              <span className="text-white font-medium">✓ 10,000+ Properties</span>
-            </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-2 border border-white border-opacity-20">
-              <span className="text-white font-medium">✓ Verified Listings</span>
-            </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-full px-6 py-2 border border-white border-opacity-20">
-              <span className="text-white font-medium">✓ All 38 Districts</span>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link
-              href="/properties"
-              className="group bg-secondary-500 hover:bg-secondary-600 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center space-x-2 min-w-[200px] justify-center"
-            >
-              <span>Explore Properties</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            
-            <Link
-              href="/sell"
-              className="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-2 min-w-[200px] justify-center"
-            >
-              <span>List Your Property</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
-          {/* Video/Demo Section */}
-          <div className="flex justify-center">
-            <button className="group flex items-center space-x-3 text-white hover:text-secondary-400 transition-colors duration-300">
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-full p-4 group-hover:bg-opacity-30 transition-all duration-300">
-                <Play className="w-6 h-6 ml-1" />
-              </div>
-              <span className="text-lg font-medium">Watch How It Works</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 animate-bounce">
-        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20">
-          <div className="text-white text-sm font-medium">New Listing</div>
-          <div className="text-secondary-400 font-bold">₹45 Lakh</div>
-        </div>
-      </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
       
-      <div className="absolute top-32 right-10 animate-bounce" style={{ animationDelay: '1s' }}>
-        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20">
-          <div className="text-white text-sm font-medium">Sold Today</div>
-          <div className="text-accent-400 font-bold">Patna Villa</div>
-        </div>
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
       </div>
 
-      <div className="absolute bottom-32 left-20 animate-bounce" style={{ animationDelay: '2s' }}>
-        <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 border border-white border-opacity-20">
-          <div className="text-white text-sm font-medium">Hot Location</div>
-          <div className="text-secondary-400 font-bold">Boring Road</div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-white space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                Find Your
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                  Dream Home
+                </span>
+                Today
+              </h1>
+              <p className="text-xl text-blue-100 max-w-lg">
+                Discover quality housing solutions across India with Citizen Grih Nirman. Your trusted partner in finding the perfect home for you and your family.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-600/20 rounded-lg mb-2 mx-auto">
+                  <Home className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="text-2xl font-bold text-white">500+</div>
+                <div className="text-sm text-blue-200">Properties</div>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-600/20 rounded-lg mb-2 mx-auto">
+                  <Users className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="text-2xl font-bold text-white">1000+</div>
+                <div className="text-sm text-blue-200">Happy Families</div>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-600/20 rounded-lg mb-2 mx-auto">
+                  <Award className="h-6 w-6 text-blue-400" />
+                </div>
+                <div className="text-2xl font-bold text-white">5+</div>
+                <div className="text-sm text-blue-200">Years Experience</div>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                <span>Explore Properties</span>
+                <ArrowRight className="h-5 w-5" />
+              </button>
+              <button className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-lg font-semibold hover:bg-blue-400 hover:text-blue-900 transition-all duration-300">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Right Content - Search Form */}
+          <div className="lg:justify-self-end w-full max-w-md">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Find Your Home</h3>
+                <p className="text-gray-600">Search from thousands of properties</p>
+              </div>
+
+              <form onSubmit={handleSearch} className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">What are you looking for?</label>
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search properties..."
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Location</label>
+                  <div className="relative">
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <input
+                      type="text"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Enter city or area"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">Property Type</label>
+                  <select
+                    value={propertyType}
+                    onChange={(e) => setPropertyType(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  >
+                    <option value="">All Types</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="villa">Villa</option>
+                    <option value="plot">Plot</option>
+                    <option value="commercial">Commercial</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                >
+                  <Search className="h-5 w-5" />
+                  <span>Search Properties</span>
+                </button>
+              </form>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-600 text-center">
+                  Popular searches: <span className="text-blue-600 cursor-pointer hover:underline">Mumbai</span>, <span className="text-blue-600 cursor-pointer hover:underline">Delhi</span>, <span className="text-blue-600 cursor-pointer hover:underline">Bangalore</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-blue-300 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-blue-300 rounded-full mt-2 animate-pulse"></div>
+          </div>
         </div>
       </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg className="w-full h-20 fill-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-        </svg>
-      </div>
-    </div>
+    </section>
   );
 }
