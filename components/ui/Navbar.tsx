@@ -28,14 +28,14 @@ export default function Navbar() {
               <span>Home</span>
             </Link>
             <Link
-              href="/properties"
+              href="/Properties"
               className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Building2 className="h-4 w-4" />
               <span>Properties</span>
             </Link>
             <Link
-              href="/contact"
+              href="/Contact"
               className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Phone className="h-4 w-4" />
