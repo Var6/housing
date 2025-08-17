@@ -60,7 +60,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/properties" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/Properties" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   <Building2 className="h-4 w-4" />
                   <span>All Properties</span>
                 </Link>
