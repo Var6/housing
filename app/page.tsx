@@ -3,14 +3,14 @@ import FeaturedProperties from "@/components/FeaturedProp";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/Servicesec";
 import TestimonialsSection from "@/components/Testimonial";
-import WhyChooseUs from "@/components/Whychooseus";
+import WhychooseUs from "@/components/Whychooseus";
 
 export default function Home() {
   return (
     <div>
       <HeroSection/>
       <FeaturedProperties/>
-      <WhyChooseUs/>
+      <WhychooseUs/>
       <ServicesSection/>
       <TestimonialsSection/>
       <CTASection/>
