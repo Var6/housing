@@ -28,7 +28,7 @@ export default function Navbar() {
               <span>Home</span>
             </Link>
             <Link
-              href="/Properties"
+              href="/properties"
               className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Building2 className="h-4 w-4" />

@@ -128,7 +128,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Support & Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/Contact" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   Contact Support
                 </Link>
               </li>
@@ -138,7 +138,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/PrivacyPolicy" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   <Shield className="h-4 w-4" />
                   <span>Privacy Policy</span>
                 </Link>
