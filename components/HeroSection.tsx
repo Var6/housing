@@ -34,7 +34,7 @@ export default function HeroSection() {
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Find Your
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                  Dream Home
+                  Dream Plot
                 </span>
                 Today
               </h1>
