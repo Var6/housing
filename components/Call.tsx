@@ -86,20 +86,20 @@ export default function CTASection() {
             <div className="flex flex-col items-center">
               <Phone className="h-8 w-8 text-blue-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Call Us</h4>
-              <p className="text-blue-100">+91 98765-43210</p>
-              <p className="text-blue-100">Mon-Sat, 9 AM - 7 PM</p>
+              <p className="text-blue-100">+91 90310 07097</p>
+              <p className="text-blue-100">Wed-Mon, 10 AM - 6 PM</p>
             </div>
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-blue-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Email Us</h4>
-              <p className="text-blue-100">info@citizengrih.com</p>
+              <p className="text-blue-100">sales@citizenimf.com</p>
               <p className="text-blue-100">We reply within 24 hours</p>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-blue-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Visit Us</h4>
-              <p className="text-blue-100">123 Housing Street</p>
-              <p className="text-blue-100">Real Estate City, India</p>
+              <p className="text-blue-100">Citizen Savings & Credit Cooperative Socity</p>
+              <p className="text-blue-100">Near Sichai Bhavan, Patna</p>
             </div>
           </div>
         </div>

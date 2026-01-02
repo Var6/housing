@@ -36,15 +36,15 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span>123 Housing Street, Real Estate City</span>
+                <span>Citizen Savings & Credit Cooperative Socity<br/> Near Sichai Bhavan, Patna</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span>+91 98765-43210</span>
+                <span>+91 90310 07097</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span>info@citizenhomes.com</span>
+                <span>sales@citizenimf.com</span>
               </div>
             </div>
           </div>
