@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Check, Home, Trees, Waves, Dumbbell, Users, GraduationCap, Car, Building2, Utensils, ShoppingBag, Mountain, Bed, Bath, Maximize, IndianRupee, Filter, Search, X } from 'lucide-react';
-
+import LeadPopup from '@/components/UX/LeadPopup';
 type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 interface Amenity {
@@ -34,25 +34,28 @@ interface Property {
   investmentHighlights?: string[];
 }
 
+
+
 export default function PropertiesPage() {
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [locationFilter, setLocationFilter] = useState<string>('all');
-
+    const [leadOpen, setLeadOpen] = useState(false);
+    const [leadProperty, setLeadProperty] = useState<string | undefined>();
   const properties: Property[] = [
     {
       id: 1,
       name: "Centurion Farm House",
-      location: "Anisabad, Patna",
-      city: "Patna",
-      state: "Bihar",
+      location: "Jewar Airport, Delhi",
+      city: "Noida",
+      state: "Delhi",
       type: "Premium Farmhouse",
       price: "On Request",
       priceRange: "Premium Segment",
       area: "Contact for Details",
       bedrooms: "Multiple Configurations",
       bathrooms: "Modern Fittings",
-      description: "Centurion Farm House in Patna offers an exceptional opportunity for those seeking premium farmhouse living in Bihar. Located in the peaceful area of Anisabad, this property combines modern luxury with natural surroundings. The farmhouse is designed for families who value space, privacy, and quality construction. With its strategic location in Patna, residents enjoy easy access to city amenities while living in a tranquil environment.",
+      description: "Centurion Farm House in Noida offers an exceptional opportunity for those seeking premium farmhouse living in Delhi. Located in the peaceful area of Yamuna Highway, this property combines modern luxury with natural surroundings. The farmhouse is designed for families who value space, privacy, and quality construction. With its strategic location in Jewar, residents enjoy easy access to city amenities while living in a tranquil environment.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
       images: [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
@@ -83,10 +86,10 @@ export default function PropertiesPage() {
         "Well-connected road network"
       ],
       nearbyPlaces: [
-        "Schools and Colleges within 5 km",
+        "Yamuna Highway - 2 minutes",
         "Hospitals and Healthcare Centers nearby",
         "Shopping Centers accessible",
-        "Patna City Center - 15 minutes"
+        "Jewar Airport - 5 minutes drive",
       ]
     },
     {
@@ -236,13 +239,20 @@ export default function PropertiesPage() {
           ))}
         </div>
 
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-          View Details
-        </button>
-      </div>
+<button
+  onClick={() => {
+    setLeadProperty(property.name);
+    setLeadOpen(true);
+  }}
+  className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+>
+  Enquire Now
+</button>
+       
+        </div>
     </div>
   );
-
+ 
   const PropertyModal: React.FC<{ property: Property; onClose: () => void }> = ({ property, onClose }) => (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
       <div className="min-h-screen px-4 py-8">
@@ -260,7 +270,13 @@ export default function PropertiesPage() {
               onClick={onClose}
               className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-slate-100 transition">
               <X className="w-6 h-6 text-slate-700" />
+            
             </button>
+              <LeadPopup
+        open={leadOpen}
+        onClose={() => setLeadOpen(false)}
+        propertyName={leadProperty}
+        />
           </div>
 
           <div className="p-8">
