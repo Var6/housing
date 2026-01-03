@@ -64,7 +64,7 @@ export default function Navbar() {
       color: 'blue',
       items: [
         { name: 'All Properties', href: '/properties', icon: <Building className="h-4 w-4" />, desc: 'Browse all available properties' },
-        { name: 'Featured Listings', href: '/properties/featured', icon: <Star className="h-4 w-4" />, desc: 'Premium and highlighted properties' },
+        { name: 'Farm House', href: '/properties/farmhouse', icon: <Star className="h-4 w-4" />, desc: 'Premium and highlighted properties' },
         { name: 'Advanced Search', href: '/search', icon: <Search className="h-4 w-4" />, desc: 'Find properties with detailed filters' },
         { name: 'Property Comparison', href: '/properties/compare', icon: <TrendingUp className="h-4 w-4" />, desc: 'Compare multiple properties' },
         { name: 'Saved Properties', href: '/properties/saved', icon: <Heart className="h-4 w-4" />, desc: 'Your bookmarked properties' },
