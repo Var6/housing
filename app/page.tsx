@@ -14,8 +14,8 @@ export default function Home() {
     <HeroCarousel
       interval={6000}
       slides={[
-        <HeroSection key="hero main" />,
         <SlidePartners key="partners" />,
+        <HeroSection key="hero main" />,
       ]}/>
 
       <FeaturedProperties/>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MapPin, Bed, Bath, Square, Heart, Eye, ArrowRight, Star } from 'lucide-react';
+import Link from 'next/link';
 
 interface Property {
   id: number;
@@ -17,6 +18,7 @@ interface Property {
   featured: boolean;
   rating: number;
   reviews: number;
+  page: string;
 }
 
 export default function FeaturedProperties() {
@@ -26,14 +28,15 @@ export default function FeaturedProperties() {
   const properties: Property[] = [
     {
       id: 1,
-      title: "Luxury Villa in Banjara Hills",
-      location: "Banjara Hills, Hyderabad",
-      price: "₹2.5 Crore",
-      originalPrice: "₹2.8 Crore",
-      type: "villa",
-      bedrooms: 4,
-      bathrooms: 3,
-      area: "2400 sq ft",
+      title: "Centurion Luxury Farmhouse ",
+      location: "Near Jewar Airport, Greater Noida",
+      price: "Contact for Price",
+      originalPrice: "",
+      type: "Farmhouse",
+      page:"properties/farmhouse",
+      bedrooms: 1,
+      bathrooms: 1,
+      area: "1000* sq ft",
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
       featured: true,
       rating: 4.8,
@@ -41,13 +44,14 @@ export default function FeaturedProperties() {
     },
     {
       id: 2,
-      title: "Modern Apartment in Koramangala",
-      location: "Koramangala, Bangalore",
-      price: "₹95 Lakh",
-      type: "apartment",
+      title: "Lotus Farmhouse ",
+      location: "Noida ",
+      price: "Contact for Price",
+      type: "Farmhouse",
       bedrooms: 3,
       bathrooms: 2,
-      area: "1850 sq ft",
+      page:"properties/farmhouse",
+      area: "1500 sq ft",
       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400",
       featured: true,
       rating: 4.6,
@@ -62,6 +66,7 @@ export default function FeaturedProperties() {
       bedrooms: 3,
       bathrooms: 3,
       area: "2200 sq ft",
+      page:"properties/farmhouse",
       image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400",
       featured: true,
       rating: 4.7,
@@ -77,6 +82,7 @@ export default function FeaturedProperties() {
       bedrooms: 2,
       bathrooms: 2,
       area: "1200 sq ft",
+      page:"properties/farmhouse",
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400",
       featured: true,
       rating: 4.9,
@@ -91,6 +97,7 @@ export default function FeaturedProperties() {
       bedrooms: 0,
       bathrooms: 0,
       area: "1000 sq yd",
+      page:"properties/farmhouse",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400",
       featured: false,
       rating: 4.5,
@@ -104,6 +111,7 @@ export default function FeaturedProperties() {
       type: "house",
       bedrooms: 4,
       bathrooms: 4,
+      page:"properties/farmhouse",
       area: "2800 sq ft",
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400",
       featured: true,
@@ -253,10 +261,12 @@ export default function FeaturedProperties() {
                       <div className="text-sm text-gray-500 line-through">{property.originalPrice}</div>
                     )}
                   </div>
+                  <Link href={`/${property.page}`}>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-1 group">
                     <span>View Details</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>
