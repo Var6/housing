@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <div>    
     <HeroCarousel
-      interval={6000}
+      interval={9000000}
       slides={[
         <SlidePartners key="partners" />,
-        <HeroSection key="hero main" />,
+       // <HeroSection key="hero main" />,
       ]}/>
 
       <FeaturedProperties/>
