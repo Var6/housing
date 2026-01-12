@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { Building2, MapPin, Home, Maximize, IndianRupee, Calendar, Layers, FileText, Phone, Mail, Check, ArrowLeft, Share2, Heart, Download, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { projects } from '@/data/project';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { sendEmail } from '@/lib/email';
+
+
 
 // Types
 type Unit = {
@@ -11,7 +15,7 @@ type Unit = {
   price: string;
 };
 
-type Project = {
+type Project = {  
   id: string;
   name: string;
   developer: string;
@@ -24,36 +28,113 @@ type Project = {
   structure: string;
   reraId?: string;
 };
-
-// Sample project data - in real app, this would come from your data file
-const project: Project = {
-  id: 'piramal-mahalaxmi',
-  name: 'Piramal Mahalaxmi',
-  developer: 'Piramal Realty',
-  location: 'Jacob Circle',
-  city: 'Mumbai',
-  state: 'Maharashtra',
-  region: 'CST to Mulund',
-  units: [
-    { bhk: '2 BHK', sqft: 762, price: '5.60 Cr' },
-    { bhk: '3 BHK', sqft: 1066, price: '7.99 Cr' },
-    { bhk: '4 BHK', sqft: 1850, price: '16.50 Cr' }
-  ],
-  possession: 'December 2025',
-  structure: 'G + 73',
-  reraId: 'P51900015854'
+type EnquiryModalProps = {
+  unit: Unit;
+  project: Project;
+  formData: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    unit: string;
+  };
+  setFormData: React.Dispatch<React.SetStateAction<any>>;
+  loading: boolean;
+  onSubmit: () => void;
+  onClose: () => void;
 };
 
-// Sample images - in real app, these would come from your data
-const projectImages = [
-  'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-  'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
-];
+
+const EnquiryModal: React.FC<EnquiryModalProps> = ({
+  unit,
+  project,
+  formData,
+  setFormData,
+  loading,
+  onSubmit,
+  onClose,
+}) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev: typeof formData) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  return (
+    <div className="fixed inset-0 z-[60] bg-black/40 flex items-center justify-center">
+      <div className="bg-white rounded-2xl p-8 w-full max-w-md relative pointer-events-auto">
+
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          ✕
+        </button>
+
+        <h3 className="text-2xl font-bold mb-2 text-black">Enquire Now</h3>
+
+        <div className="mb-4 p-3 bg-orange-50 rounded-lg text-sm text-black">
+          <p className="font-semibold">{project.name}</p>
+          <p>
+            {unit.bhk} • {unit.sqft} sq.ft • ₹{unit.price}
+          </p>
+        </div>
+
+        <div className="space-y-4 text-black">
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name *"
+            className="w-full px-4 py-3 border rounded-lg"
+          />
+
+          <input
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone Number *"
+            className="w-full px-4 py-3 border rounded-lg"
+          />
+
+          <input
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email (optional)"
+            className="w-full px-4 py-3 border rounded-lg"
+          />
+
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Message"
+            className="w-full px-4 py-3 border rounded-lg"
+            rows={3}
+          />
+
+          <button
+            onClick={onSubmit}
+            disabled={loading}
+            className="w-full bg-orange-600 text-white py-3 rounded-lg font-medium disabled:opacity-60"
+          >
+            {loading ? 'Sending…' : 'Submit Enquiry'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Sample project data - in real app, this would come from your data file
 
 export default function PropertySlugPage({ params }: { params: Promise<{ slug: string }> }) {
+  
     const { slug } = React.use(params);
     const project = projects.find(p => p.id === slug);
     if (!project) {
@@ -63,41 +144,76 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
   const [showGallery, setShowGallery] = useState(false);
   const [selectedUnit, setSelectedUnit] = useState<Unit | null>(null);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    phone: '',
-    message: ''
+  email: '',
+  phone: '',
+  message: '',
+  unit: ''
   });
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % projectImages.length);
-  };
+  setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+};
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + projectImages.length) % projectImages.length);
-  };
+const prevImage = () => {
+  setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+};
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+
+const handleSubmit = async () => {
+  if (!formData.name || !formData.phone) {
+    alert('Name and phone are required');
+    return;
+  }
+
+  setLoading(true);
+
+  try {
+    await sendEmail({
+      name: formData.name,
+      mobile: formData.phone,
+      email: formData.email,
+      city: project.city,
+      message: `
+Project: ${project.name}
+Developer: ${project.developer}
+Location: ${project.location}, ${project.city}, ${project.state}
+Unit: ${selectedUnit ? `${selectedUnit.bhk} | ${selectedUnit.sqft} sq.ft | ₹${selectedUnit.price}` : 'General Enquiry'}
+
+User Message:
+${formData.message || 'No additional message'}
+      `,
+      type: 'Property Enquiry',
+      source: 'Property Details Page - Enquire Popup',
     });
-  };
 
-  const handleSubmit = () => {
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    alert('Thank you! Your enquiry has been sent successfully. We will contact you shortly.');
     setSelectedUnit(null);
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      unit: ''
+    });
+  } catch (error) {
+    console.error('Failed to send enquiry:', error);
+    alert('Failed to send enquiry. Please try again or call us directly.');
+  } finally {
+    setLoading(false);
+  }
+};
 
-  const minPrice = project.units.reduce((min, unit) => {
-    const price = parseFloat(unit.price.replace(/[^0-9.]/g, ''));
-    return price < min ? price : min;
-  }, Infinity);
 
-  const ImageGallery = () => (
+    const minPrice = project.units.reduce((min, unit) => {
+      const price = parseFloat(unit.price.replace(/[^0-9.]/g, ''));
+      return price < min ? price : min;
+    }, Infinity);
+  
+  
+    const ImageGallery = () => (
     <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center">
       <button 
         onClick={() => setShowGallery(false)}
@@ -122,82 +238,16 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
 
       <div className="max-w-5xl w-full px-4">
         <img 
-          src={projectImages[currentImageIndex]} 
-          alt={`${project.name} - ${currentImageIndex + 1}`}
-          className="w-full h-auto rounded-lg"
-        />
-        <div className="text-white text-center mt-4">
-          {currentImageIndex + 1} / {projectImages.length}
-        </div>
-      </div>
+  src={project.images[currentImageIndex]} 
+  alt={`${project.name} - ${currentImageIndex + 1}`}
+  className="w-full h-auto rounded-lg"
+/>
+<div className="text-white text-center mt-4">
+  {currentImageIndex + 1} / {project.images.length}
+</div>
+    </div>
     </div>
   );
-
-  const EnquiryModal = ({ unit }: { unit: Unit | null }) => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
-      <div className="min-h-screen px-4 py-8 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8">
-          <button 
-            onClick={() => setSelectedUnit(null)}
-            className="float-right text-gray-400 hover:text-gray-600"
-          >
-            <X className="w-6 h-6" />
-          </button>
-          
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Enquire Now</h3>
-          {unit && (
-            <div className="bg-gradient-to-r from-orange-50 to-green-50 p-4 rounded-lg mb-6">
-              <p className="font-semibold text-gray-900">{project.name}</p>
-              <p className="text-gray-600">{unit.bhk} - {unit.sqft} sq.ft</p>
-              <p className="text-green-600 font-bold">₹{unit.price}</p>
-            </div>
-          )}
-          
-          <div className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message (Optional)"
-              value={formData.message}
-              onChange={handleInputChange}
-              rows={3}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition"
-            >
-              Submit Enquiry
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sticky Header */}
@@ -222,10 +272,10 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
               <button className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
                 <Share2 className="w-5 h-5" />
               </button>
-              <button className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition">
+              {/* <button className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition">
                 <Download className="w-4 h-4" />
                 Brochure
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -239,15 +289,15 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
               className="col-span-2 row-span-2 relative overflow-hidden rounded-lg cursor-pointer group"
               onClick={() => setShowGallery(true)}
             >
-              <img 
-                src={projectImages[0]} 
-                alt={project.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+             <img 
+  src={project.images[0]} 
+  alt={project.name}
+  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             
-            {projectImages.slice(1, 5).map((img, idx) => (
+           {project.images.slice(1, 5).map((img, idx) => (
               <div 
                 key={idx}
                 className="relative overflow-hidden rounded-lg cursor-pointer group"
@@ -263,7 +313,7 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
                 />
                 {idx === 3 && (
                   <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-                    <span className="text-white font-semibold text-lg">+{projectImages.length - 4} Photos</span>
+                    <span className="text-white font-semibold text-lg">+{project.images.length - 4} Photos</span>
                   </div>
                 )}
               </div>
@@ -351,7 +401,14 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
                       </div>
                     </div>
                     <button
-                      onClick={() => setSelectedUnit(unit)}
+                     onClick={() => {
+  setSelectedUnit(unit);
+  setFormData(prev => ({
+    ...prev,
+    message: `Interested in ${unit.bhk} (${unit.sqft} sq.ft) priced at ₹${unit.price}`
+  }));
+}}
+
                       className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition"
                     >
                       Enquire About This Unit
@@ -442,7 +499,7 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
                   onClick={() => setSelectedUnit(project.units[0])}
                   className="w-full bg-white text-orange-600 py-3 rounded-lg font-bold hover:bg-gray-100 transition"
                 >
-                  Schedule Site Visit
+                 Let us call you back
                 </button>
               </div>
 
@@ -473,9 +530,11 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-md p-6 border-2 border-green-200">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">EMI Calculator</h3>
                 <p className="text-gray-600 text-sm mb-4">Calculate your monthly EMI and plan your finances</p>
+                <Link href="https://citizencooperative.in/housing-loan/">
                 <button className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition">
                   Calculate EMI
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -486,7 +545,18 @@ export default function PropertySlugPage({ params }: { params: Promise<{ slug: s
       {showGallery && <ImageGallery />}
 
       {/* Enquiry Modal */}
-      {selectedUnit && <EnquiryModal unit={selectedUnit} />}
+     {selectedUnit && (
+  <EnquiryModal
+    unit={selectedUnit}
+    project={project}
+    formData={formData}
+    setFormData={setFormData}
+    loading={loading}
+    onSubmit={handleSubmit}
+    onClose={() => setSelectedUnit(null)}
+  />
+)}
+
     </div>
   );
 }

@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://citizenhousing.com"), // Replace with your actual domain
+  metadataBase: new URL("https://citizenhousing.in"), // Replace with your actual domain
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "CitizenHousing - Find Your Perfect Home",
     description: "Discover your dream property with CitizenHousing - India's trusted platform for buying, selling, and renting homes.",
-    url: "https://citizenhousing.com", // Replace with your actual domain
+    url: "https://citizenhousing.in", // Replace with your actual domain
     siteName: "CitizenHousing",
     images: [
       {
@@ -77,23 +77,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: [
-      { url: "/logo.png", sizes: "16x16", type: "image/png" },
-      { url: "/logo.jpg", sizes: "32x32", type: "image/jpg" },
-    ],
-    apple: [
-      { url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/logo/safari-pinned-tab.svg",
-        color: "#2563eb", // Your brand blue color
-      },
-    ],
-  },
-  manifest: "/logo/site.webmanifest",
+icons: {
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+  ],
+  apple: [
+    { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  ],
+},
 };
 
 export default function RootLayout({
@@ -122,8 +115,8 @@ export default function RootLayout({
               "@type": "RealEstateAgent",
               "name": "CitizenHousing",
               "description": "India's trusted platform for buying, selling, and renting homes",
-              "url": "https://citizenhousing.com", // Replace with your actual domain
-              "logo": "https://citizenhousing.com/logo/citizenhousing-logo.png", // Replace with your actual logo URL
+              "url": "https://citizenhousing.in", // Replace with your actual domain
+              "logo": "https://citizenhousing.in/logo/citizenhousing-logo2.png", // Replace with your actual logo URL
               "sameAs": [
                 "https://www.facebook.com/citizenhousing", // Add your social media links
                 "https://www.twitter.com/citizenhousing",
@@ -132,16 +125,16 @@ export default function RootLayout({
               ],
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Housing Street",
-                "addressLocality": "New Delhi",
+                "streetAddress": "Santi Devi Nivas Near Sichai Bhawan",
+                "addressLocality": "Anishabad, Patna",
                 "addressCountry": "IN",
-                "postalCode": "110001"
+                "postalCode": "800002"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-11-XXXXXXXX", // Add your phone number
+                "telephone": "+91-7352569099", // Add your phone number
                 "contactType": "customer service",
-                "email": "support@citizenhousing.com"
+                "email": "itsupport@citizencooperative.in"
               }
             })
           }}

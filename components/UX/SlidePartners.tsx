@@ -76,7 +76,7 @@ export default function FarmhouseHero() {
               <Link href="/properties/farmhouse">
               <button className="border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-green-900 transition-all duration-300 flex items-center justify-center space-x-2">
                 <MapPin className="h-5 w-5" />
-                <span>View Locations</span>
+                <span>View Farmhouse</span>
               </button>
               </Link>
             </div>
