@@ -31,6 +31,7 @@ import {
   LogOut,
   Package
 } from 'lucide-react';
+import Image from 'next/image';
 
 // Types
 interface City {
@@ -68,31 +69,18 @@ const mockStates: State[] = [
       { _id: 'MH-VIR', name: 'Virar', propertyCount: 2 },
       { _id: 'MH-MIR', name: 'Mira Road', propertyCount: 1 }
     ]
+  },
+  {
+    _id: 'UP',
+    name: 'Uttar Pradesh',
+    cities: [
+      { _id: 'UP-GN', name: 'Greater Noida', propertyCount: 32 },
+      { _id: 'UP-KIS', name: 'Kishorpur', propertyCount: 22 },
+     
+    ]
   }
 ];
 
-// Avatar Component
-const Avatar = ({ src, name, size = 'sm' }: { src?: string | null; name?: string | null; size?: 'sm' | 'md' }) => {
-  const sizeClasses = {
-    sm: 'w-8 h-8 text-sm',
-    md: 'w-10 h-10 text-base'
-  };
-
-  const getInitials = (name: string | null | undefined): string => {
-    if (!name) return 'U';
-    return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-  };
-
-  if (src) {
-    return <img src={src} alt={name || 'User'} className={`${sizeClasses[size]} rounded-full object-cover ring-2 ring-green-100`} />;
-  }
-
-  return (
-    <div className={`${sizeClasses[size]} rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white flex items-center justify-center font-semibold ring-2 ring-green-100`}>
-      {getInitials(name)}
-    </div>
-  );
-};
 
 // Location Ribbon Component
 const LocationRibbon = () => {
@@ -149,7 +137,7 @@ const LocationRibbon = () => {
   const getActiveStateData = () => states.find(s => s._id === activeState);
 
   return (
-    <div className="relative w-full bg-gradient-to-r from-green-600 via-green-500 to-indigo-600 shadow-lg">
+    <div className="relative w-full bg-gradient-to-r from-green-800 via-green-500 to-green-300 shadow-lg">
       <div className="overflow-x-auto py-2 px-4">
         <div className="flex flex-nowrap gap-2 md:gap-4 w-max">
           {states.map((state) => {
@@ -301,17 +289,14 @@ export default function Navbar() {
           ? 'bg-white/90 backdrop-blur-xl shadow-2xl' 
           : 'bg-white shadow-lg'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-left h-16">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-center mr-5">
               <a href="/" className="flex items-center space-x-3 group">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                  <div className="relative bg-gradient-to-r from-green-500 to-green-600 p-2 rounded-2xl">
-                    <Building2 className="h-6 w-6 text-white" />
-                  </div>
-                </div>
+                <div className="relative">     
+                  <Image src="/logo2.png" alt="CitizenHousing Logo" width={40} height={40} />
+                  </div>           
                 <div>
                   <h1 className="text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
                     CitizenHousing
@@ -327,7 +312,7 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200"
+                  className="flex items-center space-x-2 px-2 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200"
                 >
                   {item.icon}
                   <span>{item.name}</span>

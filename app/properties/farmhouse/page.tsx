@@ -66,7 +66,7 @@ export default function PropertiesPage() {
         "Spacious Layout with Modern Design",
         "Premium Quality Construction",
         "Peaceful & Serene Location",
-        "Well-Connected to Patna City",
+        "Well-Connected to Delhi City",
         "Ample Parking Space",
         "Green Surroundings",
         "Security Features",
@@ -79,7 +79,7 @@ export default function PropertiesPage() {
         { icon: Building2, name: "Quality Build" }
       ],
       highlights: [
-        "Prime location in Anisabad, Patna",
+        "Prime location in New Delhi, near Jewar Airport",
         "Ideal for families seeking peaceful living",
         "Modern amenities in natural setting",
         "Easy access to schools and hospitals",
