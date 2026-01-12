@@ -56,49 +56,17 @@ interface Session {
 // Mock data - replace with your API calls
 const mockStates: State[] = [
   {
-    _id: '1',
-    name: 'Bihar',
-    cities: [
-      { _id: '1-1', name: 'Patna', propertyCount: 245 },
-      { _id: '1-2', name: 'Gaya', propertyCount: 132 },
-      { _id: '1-3', name: 'Bhagalpur', propertyCount: 98 },
-      { _id: '1-4', name: 'Muzaffarpur', propertyCount: 167 }
-    ]
-  },
-  {
-    _id: '2',
+    _id: 'MH',
     name: 'Maharashtra',
     cities: [
-      { _id: '2-1', name: 'Mumbai', propertyCount: 1250 },
-      { _id: '2-2', name: 'Pune', propertyCount: 890 },
-      { _id: '2-3', name: 'Nagpur', propertyCount: 456 }
-    ]
-  },
-  {
-    _id: '3',
-    name: 'Karnataka',
-    cities: [
-      { _id: '3-1', name: 'Bangalore', propertyCount: 1520 },
-      { _id: '3-2', name: 'Mysore', propertyCount: 234 },
-      { _id: '3-3', name: 'Mangalore', propertyCount: 178 }
-    ]
-  },
-  {
-    _id: '4',
-    name: 'Delhi',
-    cities: [
-      { _id: '4-1', name: 'New Delhi', propertyCount: 980 },
-      { _id: '4-2', name: 'Dwarka', propertyCount: 456 },
-      { _id: '4-3', name: 'Rohini', propertyCount: 567 }
-    ]
-  },
-  {
-    _id: '5',
-    name: 'Uttar Pradesh',
-    cities: [
-      { _id: '5-1', name: 'Lucknow', propertyCount: 678 },
-      { _id: '5-2', name: 'Noida', propertyCount: 890 },
-      { _id: '5-3', name: 'Varanasi', propertyCount: 234 }
+      { _id: 'MH-MUM', name: 'Mumbai', propertyCount: 32 },
+      { _id: 'MH-THA', name: 'Thane', propertyCount: 22 },
+      { _id: 'MH-KAL', name: 'Kalyan', propertyCount: 8 },
+      { _id: 'MH-NMV', name: 'Navi Mumbai', propertyCount: 6 },
+      { _id: 'MH-PAN', name: 'Panvel', propertyCount: 3 },
+      { _id: 'MH-PAL', name: 'Palghar', propertyCount: 3 },
+      { _id: 'MH-VIR', name: 'Virar', propertyCount: 2 },
+      { _id: 'MH-MIR', name: 'Mira Road', propertyCount: 1 }
     ]
   }
 ];
