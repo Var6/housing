@@ -37,7 +37,7 @@ const mockStates: State[] = [
     _id: 'UP',
     name: 'Uttar Pradesh',
     cities: [
-      { _id: 'UP-GN', name: 'Greater Noida', propertyCount: 2 },
+      { _id: 'UP-GN', name: 'Greater Noida', propertyCount: 4 },
     
     ]
   }

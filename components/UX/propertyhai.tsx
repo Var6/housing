@@ -21,6 +21,7 @@ type Project = {
   images: string[];
   state: string;
   region: string;
+  type?:string;
   units: Unit[];
   possession: string;
   structure: string;
@@ -140,13 +141,16 @@ export default function Propertyhai() {
                 <Home className="w-4 h-4 text-slate-600" />
                 <span className="text-xs text-slate-600">Configurations</span>
               </div>
-              <p className="font-bold text-slate-900">
-                {project.city !== 'Greater Noida' ? (
-                  `${project.units[0].bhk} - ${project.units[project.units.length - 1].bhk}`
-                ) : (
-                  'Independent Farmhouse'
-                )}
-              </p>
+             <p className="font-bold text-slate-900">
+  {project.type === 'Farmhouse' ? (
+    'Independent Unit'
+  ) : project.units && project.units.length > 0 ? (
+    `${project.units[0].bhk} - ${project.units[project.units.length - 1].bhk}`
+  ) : (
+    'Configuration Available Soon'
+  )}
+</p>
+
             </div>
           </div>
 
@@ -160,7 +164,7 @@ export default function Propertyhai() {
               <span>{project.structure}</span>
             </div>
           </div>
-          {project.city!='Greater Noida'?(
+          {project.type!='Farmhouse'?(
               <Link 
             href={`/properties/${project.id}`}
             className="w-full px-5 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"

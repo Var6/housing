@@ -18,6 +18,7 @@ export type Project = {
   structure: string
   reraId?: string
   images: string[]
+  type?: string
 }
 
 export const projects: Project[] = [
@@ -58,6 +59,7 @@ export const projects: Project[] = [
   ],
   possession: "Ready to Move",
   structure: "Independent Farmhouse Villas",
+  type: "Farmhouse",
   reraId: undefined,
   images: [
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
@@ -73,6 +75,7 @@ export const projects: Project[] = [
   city: "Greater Noida",
   state: "Uttar Pradesh",
   region: "Noida Extension",
+  type: "Farmhouse",
   units: [
     { bhk: "Independent Farmhouse", sqft: 2800, price: "On Request" },
   ],
@@ -397,6 +400,47 @@ export const projects: Project[] = [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
       'https://images.unsplash.com/photo-1600607687644-acd4262e0995?w=1200&q=80'
     ]
+  },
+  {
+  id: 'cyberthum-sector-140a',
+  name: 'Cyberthum',
+  developer: 'Bhutani Group',
+  location: 'Sector 140A',
+  city: 'Greater Noida',
+  state: 'Uttar Pradesh',
+  region: 'Noida Expressway',
+  units: [],
+  possession: 'Under Construction',
+  structure: '2B + Stilt + 6 ',
+  reraId: '',
+  images: [
+      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80',
+      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80'
+    ],
+  },
+  {
+  id: 'grandthum-techzone-4',
+  name: 'Grandthum',
+  developer: 'Bhutani Group',
+  location: 'Techzone 4',
+  city: 'Greater Noida',
+  state: 'Uttar Pradesh',
+  region: 'Noida Extension',
+  units: [
+   
+  ],
+  possession: 'Under Construction',
+  structure: '2B + Stilt + 8',
+  reraId: '',
+  images: [
+    '/grandthum/G1.jpg',
+    '/grandthum/g2.jpg',
+    '/grandthum/g3.jpg',
+    '/grandthum/g4.jpg',
+  ],
   },
   {
     id: 'adani-codename-triumph-kanjurmarg',
