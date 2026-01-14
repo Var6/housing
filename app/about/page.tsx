@@ -55,40 +55,40 @@ export default function AboutUsPage() {
     }
   ];
 
-  const team = [
-    {
-      name: "Roshan Kumar",
-      position: "Founder & CEO",
-      image: "/Testominial/Roshan.jpeg",
-      bio: "15+ years in real estate, passionate about helping families find their perfect homes.",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Preeti Sharma",
-      position: "Head of Operations",
-      image: "/Testominial/Pree.jpeg",
-      bio: "Expert in streamlining operations and ensuring customer satisfaction across all touchpoints.",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Abhisekh Patel",
-      position: "Technology Head",
-      image: "/Testominial/Abhisekh.png",
-      bio: "Leading our digital transformation to create seamless property search experiences.",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Sanjeev Anand",
-      position: "Customer Relations",
-      image:  "/Testominial/SanjeevAnand.jpeg",
-      bio: "Dedicated to ensuring every customer has an exceptional experience with our services.",
-      linkedin: "#",
-      twitter: "#"
-    }
-  ];
+  // const team = [
+  //   {
+  //     name: "Roshan Kumar",
+  //     position: "Founder & CEO",
+  //     image: "/Testominial/Roshan.jpeg",
+  //     bio: "15+ years in real estate, passionate about helping families find their perfect homes.",
+  //     linkedin: "#",
+  //     twitter: "#"
+  //   },
+  //   {
+  //     name: "Preeti Sharma",
+  //     position: "Head of Operations",
+  //     image: "/Testominial/Pree.jpeg",
+  //     bio: "Expert in streamlining operations and ensuring customer satisfaction across all touchpoints.",
+  //     linkedin: "#",
+  //     twitter: "#"
+  //   },
+  //   {
+  //     name: "Abhisekh Patel",
+  //     position: "Technology Head",
+  //     image: "/Testominial/Abhisekh.png",
+  //     bio: "Leading our digital transformation to create seamless property search experiences.",
+  //     linkedin: "#",
+  //     twitter: "#"
+  //   },
+  //   {
+  //     name: "Sanjeev Anand",
+  //     position: "Customer Relations",
+  //     image:  "/Testominial/SanjeevAnand.jpeg",
+  //     bio: "Dedicated to ensuring every customer has an exceptional experience with our services.",
+  //     linkedin: "#",
+  //     twitter: "#"
+  //   }
+  // ];
 
   const milestones = [
     {
@@ -109,12 +109,12 @@ export default function AboutUsPage() {
     {
       year: "2022",
       title: "500+ Happy Customers",
-      description: "Helped over 500 families find their dream homes across major cities"
+      description: "Helped over 10+ families find their dream homes across major cities"
     },
     {
       year: "2023",
       title: "Multi-City Expansion",
-      description: "Expanded operations to 25+ cities with verified property networks"
+      description: "Expanded operations to 15+ cities with verified property networks"
     },
     {
       year: "2024",
@@ -302,7 +302,7 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-8 text-center hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-2 group">
                 <div className="relative mb-6">
@@ -336,7 +336,7 @@ export default function AboutUsPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -405,11 +405,11 @@ export default function AboutUsPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <div className="flex items-center space-x-3">
               <Phone className="h-6 w-6 text-blue-600" />
-              <span className="text-lg text-gray-700">+91 98765-43210</span>
+              <span className="text-lg text-gray-700">+91 9031007097</span>
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="h-6 w-6 text-blue-600" />
-              <span className="text-lg text-gray-700">info@citizengrih.com</span>
+              <span className="text-lg text-gray-700">info@citizencooperative.in</span>
             </div>
           </div>
 

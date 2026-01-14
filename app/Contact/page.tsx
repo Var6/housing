@@ -61,7 +61,7 @@ const ContactUsPage = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
-      details: ["1st Floor, Shanti Devi Nivas, Near Patna Junction", "Patna, Bihar, India"],
+      details: ["1st Floor, Shanti Devi Nivas, Near Sichai Bhavan", "Patna, Bihar, India"],
       description: "Visit us during business hours"
     },
     {
