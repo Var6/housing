@@ -20,61 +20,61 @@ export default function TestimonialsSection() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      location: "Mumbai, Maharashtra",
+      name: "Roshan Kumar",
+      location: "Patna, Bihar",
       rating: 5,
       comment: "Citizen Grih Nirman made our home buying journey incredibly smooth. Their team was professional, responsive, and helped us find our dream apartment in Powai within our budget. The legal verification process was thorough and transparent.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+      avatar: "/Testominial/Roshan.jpeg",
       propertyType: "3BHK Apartment",
       date: "January 2025"
     },
     {
       id: 2,
-      name: "Priya Sharma",
+      name: "Preeti Sharma",
       location: "Bangalore, Karnataka",
       rating: 5,
       comment: "Outstanding service! The team helped us sell our old property and buy a new villa in just 3 weeks. Their market knowledge and negotiation skills saved us both time and money. Highly recommend their services.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100",
+      avatar: "/Testominial/Pree.jpeg",
       propertyType: "4BHK Villa",
       date: "December 2024"
     },
     {
       id: 3,
-      name: "Amit Patel",
+      name: "Abhisekh Patel",
       location: "Ahmedabad, Gujarat",
       rating: 5,
       comment: "The best real estate experience we've had! From property search to final registration, everything was handled professionally. The EMI calculator and loan assistance were particularly helpful for our financial planning.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100",
+      avatar: "/Testominial/Abhisekh.png",
       propertyType: "2BHK Flat",
       date: "November 2024"
     },
     {
       id: 4,
-      name: "Sneha Reddy",
+      name: "Alka Jha",
       location: "Hyderabad, Telangana",
       rating: 5,
       comment: "Excellent service and support throughout the process. The team went above and beyond to ensure we got the best deal. Their 24/7 support was invaluable, especially during the documentation phase.",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100",
+      avatar: "/Testominial/AlkaJHA.jpeg",
       propertyType: "Independent House",
       date: "October 2024"
     },
     {
       id: 5,
-      name: "Vikram Singh",
+      name: "Rishabh Ranjan",
       location: "Delhi, NCR",
       rating: 4,
       comment: "Great platform for property search! Found multiple options in our preferred location. The property verification process gave us confidence in our purchase. Customer service was responsive and helpful.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100",
+      avatar: "/Testominial/Rishabh.jpg",
       propertyType: "3BHK Builder Floor",
       date: "September 2024"
     },
     {
       id: 6,
-      name: "Kavya Nair",
+      name: "Sanjeev Anand",
       location: "Kochi, Kerala",
       rating: 5,
       comment: "Impressed with their professionalism and transparency. They helped us navigate through the complex documentation process and ensured everything was legally sound. Would definitely recommend to others.",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100",
+      avatar: "/Testominial/SanjeevAnand.jpeg",
       propertyType: "2BHK Apartment",
       date: "August 2024"
     }
@@ -205,7 +205,7 @@ export default function TestimonialsSection() {
               <div className="text-blue-100">Customer Satisfaction</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">1000+</div>
+              <div className="text-4xl font-bold mb-2">10+</div>
               <div className="text-blue-100">Happy Families</div>
             </div>
             <div>
@@ -228,10 +228,12 @@ export default function TestimonialsSection() {
             Start your property journey today and experience the same exceptional service that our customers rave about.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+            <button onClick={()=>window.location.href = '/properties'}
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
               Start Property Search
             </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <button  onClick={() => window.location.href = 'tel:+919031007097'}
+            className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
               Get Free Consultation
             </button>
           </div>

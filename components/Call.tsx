@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight, Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CTASection() {
   return (
@@ -38,10 +39,12 @@ export default function CTASection() {
               <p className="text-blue-100 mb-6">
                 Explore our extensive collection of verified properties across major cities in India.
               </p>
+              <Link href="/properties">
               <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
                 <span>View All Properties</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
+              </Link>
             </div>
           </div>
 
@@ -55,6 +58,7 @@ export default function CTASection() {
               <p className="text-blue-100 mb-6">
                 Get expert advice from our real estate professionals and make informed decisions.
               </p>
+              
               <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
                 <span>Book Consultation</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -72,7 +76,9 @@ export default function CTASection() {
               <p className="text-blue-100 mb-6">
                 Have questions? Our support team is available 24/7 to assist you with any queries.
               </p>
-              <button className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
+              
+              <button  onClick={() => window.location.href = 'tel:+919031007097'}
+              className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
                 <span>Get In Touch</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -98,7 +104,7 @@ export default function CTASection() {
             <div className="flex flex-col items-center">
               <MapPin className="h-8 w-8 text-blue-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Visit Us</h4>
-              <p className="text-blue-100">Citizen Savings & Credit Cooperative Socity</p>
+              <p className="text-blue-100">1st floor Santi Devi Nivas</p>
               <p className="text-blue-100">Near Sichai Bhavan, Patna</p>
             </div>
           </div>

@@ -60,9 +60,9 @@ export default function ServicesSection() {
   ];
 
   const stats = [
-    { number: "500+", label: "Properties Listed", icon: Home },
-    { number: "1000+", label: "Happy Customers", icon: Users },
-    { number: "50+", label: "Cities Covered", icon: MapPin },
+    { number: "20+", label: "Properties Listed", icon: Home },
+    { number: "10+", label: "Happy Customers", icon: Users },
+    { number: "15+", label: "Cities Covered", icon: MapPin },
     { number: "100%", label: "Verified Properties", icon: Shield }
   ];
 
@@ -152,10 +152,12 @@ export default function ServicesSection() {
               Let our experts help you find the perfect property or assist you with any real estate needs you may have.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+              <button onClick={()=>window.location.href='/properties'}
+              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
                 Browse Properties
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+              <button   onClick={() => window.open('tel:+91XXXXXXXXXX')}
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
                 Contact Us Today
               </button>
             </div>

@@ -54,9 +54,7 @@ export const projects: Project[] = [
   state: "Uttar Pradesh",
   region: "Yamuna Expressway",
   units: [
-    { bhk: "3 BHK", sqft: 2500, price: "On Request" },
-    { bhk: "4 BHK", sqft: 3500, price: "On Request" },
-    { bhk: "5 BHK", sqft: 4500, price: "On Request" }
+    { bhk: "Independent Farmhouse", sqft: 4500, price: "On Request" }
   ],
   possession: "Ready to Move",
   structure: "Independent Farmhouse Villas",
@@ -71,14 +69,12 @@ export const projects: Project[] = [
   id: "lotus-farms-techzone",
   name: "Lotus Farms House",
   developer: "Lotus Group",
-  location: "Techzone, Greater Noida",
+  location: "Techzone",
   city: "Greater Noida",
   state: "Uttar Pradesh",
   region: "Noida Extension",
   units: [
-    { bhk: "3 BHK", sqft: 2800, price: "On Request" },
-    { bhk: "4 BHK", sqft: 3800, price: "On Request" },
-    { bhk: "5 BHK", sqft: 5000, price: "On Request" }
+    { bhk: "Independent Farmhouse", sqft: 2800, price: "On Request" },
   ],
   possession: "Ready to Move",
   structure: "Luxury Gated Farmhouse Community",

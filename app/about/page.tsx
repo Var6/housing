@@ -22,10 +22,10 @@ import {
 
 export default function AboutUsPage() {
   const stats = [
-    { number: "5+", label: "Years of Excellence", icon: Award },
-    { number: "1000+", label: "Happy Families", icon: Users },
-    { number: "500+", label: "Properties Listed", icon: Building2 },
-    { number: "50+", label: "Cities Covered", icon: MapPin },
+    { number: "3+", label: "Years of Excellence", icon: Award },
+    { number: "10+", label: "Happy Families", icon: Users },
+    { number: "20+", label: "Properties Listed", icon: Building2 },
+    { number: "15+", label: "Cities Covered", icon: MapPin },
   ];
 
   const values = [
@@ -57,33 +57,33 @@ export default function AboutUsPage() {
 
   const team = [
     {
-      name: "Rajesh Gupta",
+      name: "Roshan Kumar",
       position: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300",
+      image: "/Testominial/Roshan.jpeg",
       bio: "15+ years in real estate, passionate about helping families find their perfect homes.",
       linkedin: "#",
       twitter: "#"
     },
     {
-      name: "Priya Sharma",
+      name: "Preeti Sharma",
       position: "Head of Operations",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300",
+      image: "/Testominial/Pree.jpeg",
       bio: "Expert in streamlining operations and ensuring customer satisfaction across all touchpoints.",
       linkedin: "#",
       twitter: "#"
     },
     {
-      name: "Amit Kumar",
+      name: "Abhisekh Patel",
       position: "Technology Head",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300",
+      image: "/Testominial/Abhisekh.png",
       bio: "Leading our digital transformation to create seamless property search experiences.",
       linkedin: "#",
       twitter: "#"
     },
     {
-      name: "Sneha Patel",
+      name: "Sanjeev Anand",
       position: "Customer Relations",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300",
+      image:  "/Testominial/SanjeevAnand.jpeg",
       bio: "Dedicated to ensuring every customer has an exceptional experience with our services.",
       linkedin: "#",
       twitter: "#"

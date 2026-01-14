@@ -49,26 +49,26 @@ const ContactUsPage = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 765-4321"],
-      description: "Mon-Fri 9AM-6PM, Sat 10AM-4PM"
+      details: ["+91 9031007097", "+91 (0612) 2255447"],
+      description: "Wed - Mon 10 AM-6PM, "
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@citizenhousing.com", "support@citizenhousing.com"],
+      details: ["info@citizencooperative.in", "sales@citizenimf.com"],
       description: "We'll respond within 24 hours"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Office",
-      details: ["123 Housing Street", "New Delhi, India 110001"],
+      details: ["1st Floor, Shanti Devi Nivas, Near Patna Junction", "Patna, Bihar, India"],
       description: "Visit us during business hours"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
-      details: ["Monday - Friday: 9AM - 6PM", "Saturday: 10AM - 4PM"],
-      description: "Sunday: Closed"
+      details: ["Wednesday - Monday: 10AM - 6PM"],
+      description: "Tuesday: Closed"
     }
   ];
 
@@ -341,7 +341,7 @@ const ContactUsPage = () => {
             href="tel:+15551234567"
             className="inline-block bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            +1 (555) 123-4567
+            +91 9031007097
           </a>
         </div>
       </div>

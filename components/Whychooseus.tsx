@@ -75,10 +75,12 @@ export default function WhyChooseUs() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+              <button onClick={()=>window.location.href='/about'}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
                 Learn More About Us
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <button onClick={()=>window.location.href='Contact'}
+              className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
                 Contact Our Team
               </button>
             </div>
@@ -112,7 +114,7 @@ export default function WhyChooseUs() {
               <div className="relative bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
                 <div className="relative z-10">
-                  <div className="text-3xl font-bold mb-2">1000+</div>
+                  <div className="text-3xl font-bold mb-2">10+</div>
                   <div className="text-blue-100 mb-4">Happy Families</div>
                   <div className="text-sm text-blue-100">
                     "Citizen Grih Nirman helped us find our dream home in just 2 weeks. Highly recommended!"

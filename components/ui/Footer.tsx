@@ -18,6 +18,7 @@ import {
   Award,
   Users
 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -27,8 +28,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Building2 className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">CitizenHomes</span>
+             <Image src="/logo2.png" alt="Citizen Housing Logo" width={40} height={40} />
+              <span className="text-xl font-bold">Citizen Housing</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner in finding the perfect home. We connect citizens with quality housing solutions across the country.
@@ -36,7 +37,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span>Citizen Savings & Credit Cooperative Socity<br/> Near Sichai Bhavan, Patna</span>
+                <span>1st floor Santi Devi Nivas<br/> Near Sichai Bhavan, Patna</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Phone className="h-4 w-4 text-blue-400" />

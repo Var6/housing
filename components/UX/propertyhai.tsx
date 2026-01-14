@@ -131,7 +131,9 @@ export default function Propertyhai() {
                 <IndianRupee className="w-4 h-4 text-slate-600" />
                 <span className="text-xs text-slate-600">Starting Price</span>
               </div>
-              <p className="font-bold text-slate-900">{priceLabel}</p>
+              <p className="font-bold text-slate-900">
+                 {project.city !== 'Greater Noida' ? (`${priceLabel}`):('Contact for Price')}
+                </p>
             </div>
             <div className="bg-slate-50 p-3 rounded-lg">
               <div className="flex items-center gap-2 mb-1">
@@ -139,7 +141,11 @@ export default function Propertyhai() {
                 <span className="text-xs text-slate-600">Configurations</span>
               </div>
               <p className="font-bold text-slate-900">
-                {project.units[0].bhk} - {project.units[project.units.length - 1].bhk}
+                {project.city !== 'Greater Noida' ? (
+                  `${project.units[0].bhk} - ${project.units[project.units.length - 1].bhk}`
+                ) : (
+                  'Independent Farmhouse'
+                )}
               </p>
             </div>
           </div>

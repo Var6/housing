@@ -55,7 +55,7 @@ export default function PropertiesPage() {
       area: "Contact for Details",
       bedrooms: "Multiple Configurations",
       bathrooms: "Modern Fittings",
-      description: "Centurion Farm House in Noida offers an exceptional opportunity for those seeking premium farmhouse living in Delhi. Located in the peaceful area of Yamuna Highway, this property combines modern luxury with natural surroundings. The farmhouse is designed for families who value space, privacy, and quality construction. With its strategic location in Jewar, residents enjoy easy access to city amenities while living in a tranquil environment.",
+      description: "Centurion Farm House in Noida offers an exceptional opportunity for those seeking premium farmhouse living in Delhi. Located in the peaceful area of Yamuna Expressway, this property combines modern luxury with natural surroundings. The farmhouse is designed for families who value space, privacy, and quality construction. With its strategic location in Jewar, residents enjoy easy access to city amenities while living in a tranquil environment.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
       images: [
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
