@@ -36,35 +36,35 @@ export default function ServicesSection() {
       features: ["EMI calculation", "Loan comparison", "Financial planning"],
       color: "bg-purple-600"
     },
-    {
-      icon: FileText,
-      title: "Legal Services",
-      description: "Complete legal assistance including property verification, title checks, and documentation.",
-      features: ["Title verification", "Legal documentation", "Registration support"],
-      color: "bg-orange-600"
-    },
-    {
-      icon: CreditCard,
-      title: "Home Loans",
-      description: "Get the best home loan deals from top banks and financial institutions with competitive rates.",
-      features: ["Loan assistance", "Best rates", "Quick approval"],
-      color: "bg-red-600"
-    },
-    {
-      icon: Users,
-      title: "Consultation",
-      description: "Expert consultation from experienced real estate professionals to guide you through your journey.",
-      features: ["Expert advice", "Market insights", "Personalized guidance"],
-      color: "bg-indigo-600"
-    }
+    // {
+    //   icon: FileText,
+    //   title: "Legal Services",
+    //   description: "Complete legal assistance including property verification, title checks, and documentation.",
+    //   features: ["Title verification", "Legal documentation", "Registration support"],
+    //   color: "bg-orange-600"
+    // },
+    // {
+    //   icon: CreditCard,
+    //   title: "Home Loans",
+    //   description: "Get the best home loan deals from top banks and financial institutions with competitive rates.",
+    //   features: ["Loan assistance", "Best rates", "Quick approval"],
+    //   color: "bg-red-600"
+    // },
+    // {
+    //   icon: Users,
+    //   title: "Consultation",
+    //   description: "Expert consultation from experienced real estate professionals to guide you through your journey.",
+    //   features: ["Expert advice", "Market insights", "Personalized guidance"],
+    //   color: "bg-indigo-600"
+    // }
   ];
 
-  const stats = [
-    { number: "20+", label: "Properties Listed", icon: Home },
-    { number: "10+", label: "Happy Customers", icon: Users },
-    { number: "15+", label: "Cities Covered", icon: MapPin },
-    { number: "100%", label: "Verified Properties", icon: Shield }
-  ];
+  // const stats = [
+  //   { number: "20+", label: "Properties Listed", icon: Home },
+  //   { number: "10+", label: "Happy Customers", icon: Users },
+  //   { number: "15+", label: "Cities Covered", icon: MapPin },
+  //   { number: "100%", label: "Verified Properties", icon: Shield }
+  // ];
 
   return (
     <section className="py-20 bg-gray-50">
@@ -111,17 +111,17 @@ export default function ServicesSection() {
                 </ul>
 
                 {/* CTA */}
-                <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 group">
+                {/* <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 group">
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
         </div>
 
         {/* Stats Section */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        {/* <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Trusted by Thousands
@@ -142,10 +142,10 @@ export default function ServicesSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
@@ -156,13 +156,13 @@ export default function ServicesSection() {
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
                 Browse Properties
               </button>
-              <button   onClick={() => window.open('tel:+91XXXXXXXXXX')}
+              <button   onClick={() => window.open('tel:+919031007097')}
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
                 Contact Us Today
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

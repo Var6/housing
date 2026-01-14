@@ -29,10 +29,13 @@ import {
   Bell,
   User,
   LogOut,
-  Package
+  Package,
+  Mail,
+  PhoneCall
 } from 'lucide-react';
 import Image from 'next/image';
 import LocationRibbon from './ribbion'; // Import the separate component
+import Link from 'next/link';
 
 // Types
 interface Session {
@@ -53,8 +56,8 @@ export default function Navbar() {
 
   const navigationItems = [
     { name: 'Home', href: '/', icon: <Home className="h-4 w-4" /> },
+    { name: 'About', href: '/about', icon: <Users className="h-4 w-4" /> },
     { name: 'Properties', href: '/properties', icon: <Building className="h-4 w-4" /> },
-        { name: 'About', href: '/about', icon: <Users className="h-4 w-4" /> },
     { name: 'Contact', href: '/Contact', icon: <Phone className="h-4 w-4" /> }
   ];
 
@@ -92,7 +95,7 @@ export default function Navbar() {
           : 'bg-white shadow-lg'
       }`}>
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-left h-16">
+          <div className="flex justify-center h-16">
             {/* Logo */}
             <div className="flex items-center mr-5">
               <a href="/" className="flex items-center space-x-3 group">
@@ -109,17 +112,30 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex flex-1 items-center space-x-2">
               {navigationItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 px-2 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200"
+                  className="flex items-center space-x-2 px-2 py-2 rounded-lg text-lg font-medium text-orange-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200"
                 >
                   {item.icon}
                   <span>{item.name}</span>
                 </a>
               ))}
+               <div className="ml-auto flex items-center space-x-4 text-sm font-medium text-orange-700">
+                  <Link href="mailto:sales@citizenimf.com">
+                  <span>
+                    <Mail className="inline-block h-4 w-4 mr-1 text-orange-700" /> 
+                    sales@citizenimf.com</span>
+                  </Link>
+                  <Link href="tel:+919876543210">
+                  <span>
+                    <PhoneCall className="inline-block h-4 w-4 mr-1 text-orange-700" />
+                    +91 9031007097
+                  </span>
+                    </Link>
+                </div>
             </div>
 
             {/* Mobile menu button */}

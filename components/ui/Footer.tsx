@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <MapPin className="h-4 w-4 text-blue-400" />
-                <span>1st floor Santi Devi Nivas<br/> Near Sichai Bhavan, Patna</span>
+                <span>1st floor Shanti Devi Nivas <br/> Near Sichai Bhavan, Patna</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Phone className="h-4 w-4 text-blue-400" />
@@ -73,7 +73,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/calculator" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link  href="https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   <Calculator className="h-4 w-4" />
                   <span>EMI Calculator</span>
                 </Link>

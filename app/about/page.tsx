@@ -35,6 +35,12 @@ export default function AboutUsPage() {
       description: "We believe in complete transparency in all our dealings. Every property is thoroughly verified and all information is authentic.",
       color: "bg-blue-600"
     },
+     {
+      icon: Handshake,
+      title: "Integrity",
+      description: "We maintain the highest standards of integrity in all our business practices and client relationships.",
+      color: "bg-purple-600"
+    },
     {
       icon: Heart,
       title: "Customer First",
@@ -47,12 +53,7 @@ export default function AboutUsPage() {
       description: "We continuously innovate our processes and technology to provide the best real estate experience to our customers.",
       color: "bg-green-600"
     },
-    {
-      icon: Handshake,
-      title: "Integrity",
-      description: "We maintain the highest standards of integrity in all our business practices and client relationships.",
-      color: "bg-purple-600"
-    }
+   
   ];
 
   // const team = [
@@ -138,7 +139,7 @@ export default function AboutUsPage() {
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Citizen Grih Nirman
+                Citizen Housing
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed">
@@ -186,14 +187,14 @@ export default function AboutUsPage() {
                 </p>
               </div>
               
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              {/* <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
                   Join Our Journey
                 </button>
                 <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
                   View Properties
                 </button>
-              </div>
+              </div> */}
             </div>
 
             <div className="relative">
@@ -276,7 +277,6 @@ export default function AboutUsPage() {
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                  
                   {/* Content */}
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -294,7 +294,7 @@ export default function AboutUsPage() {
 
       {/* Team */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -302,7 +302,7 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-8 text-center hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-2 group">
                 <div className="relative mb-6">
@@ -336,8 +336,8 @@ export default function AboutUsPage() {
                 </div>
               </div>
             ))}
-          </div> */}
-        </div>
+          </div>
+        </div> */}
       </section>
 
       {/* Why Choose Us */}
@@ -413,14 +413,14 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-lg">
               Start Property Search
             </button>
             <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg">
               Schedule Consultation
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

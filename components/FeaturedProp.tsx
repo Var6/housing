@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { MapPin, Bed, Bath, Square, Heart, Eye, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
-
+import { Project } from '@/data/project';
 interface Property {
   id: number;
   title: string;
@@ -278,7 +278,7 @@ export default function FeaturedProperties() {
       bathrooms: 3,
       area: "1127 sq ft",
       page: "properties/details",
-      image: "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=400",
+      image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
       featured: true,
       rating: 4.9,
       reviews: 51
