@@ -11,14 +11,15 @@ interface Property {
   price: string;
   originalPrice?: string;
   type: string;
-  bedrooms: number;
-  bathrooms: number;
+  bedrooms?: number;
+  bathrooms?: number;
   area: string;
   image: string;
   featured: boolean;
   rating: number;
   reviews: number;
   page: string;
+  association?: string
 }
 
 export default function FeaturedProperties() {
@@ -32,7 +33,7 @@ export default function FeaturedProperties() {
       location: "Near Jewar Airport, Greater Noida",
       price: "Contact for Price",
       originalPrice: "",
-      type: "Farmhouse",
+      type: "villa",
       page:"properties/farmhouse",
       bedrooms: 1,
       bathrooms: 1,
@@ -40,6 +41,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
       featured: true,
       rating: 4.8,
+      association: "",
       reviews: 24
     },
     {
@@ -47,7 +49,7 @@ export default function FeaturedProperties() {
       title: "Lotus Farmhouse ",
       location: "Noida ",
       price: "Contact for Price",
-      type: "Farmhouse",
+      type: "villa",
       bedrooms: 3,
       bathrooms: 2,
       page:"properties/farmhouse",
@@ -57,7 +59,37 @@ export default function FeaturedProperties() {
       rating: 4.6,
       reviews: 18
     },
-      {
+  {
+  id: 93,
+  title: 'Cyberthum',
+  location: 'Sector 140A',
+    price: "Contact for Price",
+  originalPrice: '',
+  type: "commercial",
+  page:"properties/cyberthum-sector-140a",
+      area: "1000* sq ft",
+  image: '/cyberthum/G3.jpg',
+    featured: true,
+      rating: 4.8,
+      reviews: 24
+},
+  {
+  id: 94,
+  title: 'Grandthum',
+  location: 'Techzone 4',
+  price: "Contact for Price",
+  originalPrice: '',
+  type: "Farmhouse",
+      page:"properties/grandthum-techzone-4",
+      bedrooms: 1,
+      bathrooms: 1,
+      area: "1000* sq ft",
+  image:'/grandthum/G1.jpg',
+  featured: true,
+      rating: 4.6,
+      reviews: 18
+  },
+  {
       id: 1,
       title: "Piramal Mahalaxmi",
       location: "Jacob Circle, Mumbai",
@@ -71,6 +103,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400",
       featured: true,
       rating: 4.9,
+      association: "Prudent Properties",
       reviews: 45
     },
     {
@@ -86,6 +119,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400",
       featured: true,
       rating: 4.8,
+      association: "Prudent Properties",
       reviews: 38
     },
     {
@@ -101,6 +135,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400",
       featured: true,
       rating: 4.9,
+      association: "Prudent Properties",
       reviews: 52
     },
     {
@@ -116,6 +151,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400",
       featured: true,
       rating: 4.9,
+      association: "Prudent Properties",
       reviews: 67
     },
     {
@@ -131,6 +167,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400",
       featured: true,
       rating: 4.7,
+      association: "Prudent Properties",
       reviews: 34
     },
     {
@@ -141,6 +178,7 @@ export default function FeaturedProperties() {
       type: "apartment",
       bedrooms: 4,
       bathrooms: 3,
+      association: "Prudent Properties",
       area: "2156 sq ft",
       page: "properties/rustomjee-crown-prabhadevi",
       image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
@@ -161,6 +199,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400",
       featured: true,
       rating: 4.8,
+      association: "Prudent Properties",
       reviews: 29
     },
     {
@@ -176,6 +215,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400",
       featured: true,
       rating: 4.7,
+      association: "Prudent Properties",
       reviews: 41
     },
     {
@@ -191,6 +231,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400",
       featured: false,
       rating: 4.6,
+      association: "Prudent Properties",
       reviews: 25
     },
     {
@@ -206,6 +247,7 @@ export default function FeaturedProperties() {
       image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400",
       featured: true,
       rating: 4.8,
+      association: "Prudent Properties",
       reviews: 33
     },
     {
@@ -220,6 +262,7 @@ export default function FeaturedProperties() {
       page: "properties/adani-codename-triumph-kanjurmarg",
       image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400",
       featured: false,
+      association: "Prudent Properties",
       rating: 4.7,
       reviews: 28
     },
@@ -231,6 +274,7 @@ export default function FeaturedProperties() {
       type: "apartment",
       bedrooms: 2,
       bathrooms: 2,
+      association: "Prudent Properties",
       area: "655 sq ft",
       page: "properties/godrej-nurture-bhandup",
       image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
@@ -244,7 +288,7 @@ export default function FeaturedProperties() {
   const filters = [
     { key: 'all', label: 'All Properties' },
     { key: 'apartment', label: 'Apartments' },
-    { key: 'house', label: 'Houses' },
+    { key: 'commercial', label: 'Commercial' },
     { key: 'villa', label: 'Villas' },
     { key: 'plot', label: 'Plots' }
   ];
@@ -357,7 +401,7 @@ export default function FeaturedProperties() {
                 </div>
 
                 {/* Features */}
-                {property.type !== 'plot' && (
+                {property.type !== 'plot' && property.type !== 'commercial' ? (
                   <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
                     <div className="flex items-center">
                       <Bed className="h-4 w-4 mr-1" />
@@ -372,7 +416,7 @@ export default function FeaturedProperties() {
                       <span>{property.area}</span>
                     </div>
                   </div>
-                )}
+                ):(<></>)}
 
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between">
@@ -388,7 +432,16 @@ export default function FeaturedProperties() {
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                   </Link>
+                  
                 </div>
+                {
+                  property.association ?(
+                    <div className='text-red-600 pt-4 text-center'>In Association with {property.association}</div>
+
+                  ):(
+                    <></>
+                  )
+                }
               </div>
             </div>
           ))}

@@ -44,6 +44,28 @@ type EnquiryModalProps = {
   onClose: () => void;
 };
 
+const handleShare = () => {
+  const shareData = {
+    title: "Citizen Savings & Credit Cooperative Society",
+    text: "Check out Citizen Savings & Credit Cooperative Society",
+    url: window.location.href,
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch((error) => {
+      console.error("Error sharing:", error);
+    });
+  } else {
+    navigator.clipboard
+      .writeText(shareData.url)
+      .then(() => {
+        alert("Link copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Clipboard error:", err);
+      });
+  }
+};
 
 const EnquiryModal: React.FC<EnquiryModalProps> = ({
   unit,
@@ -269,7 +291,8 @@ ${formData.message || 'No additional message'}
               >
                 <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
-              <button className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
+              <button onClick={handleShare}
+              className="p-2 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
                 <Share2 className="w-5 h-5" />
               </button>
               {/* <button className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition">
@@ -341,8 +364,14 @@ ${formData.message || 'No additional message'}
                 <div className="text-right">
                   <p className="text-sm text-gray-500 mb-1">Starting from</p>
                   <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">
-                    ₹{minPrice.toFixed(2)} Cr
-                  </p>
+                    {
+                      project.price === false ? (
+                        <span className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-green-600 bg-clip-text text-transparent">Contact for Price</span>
+                      ) : (
+                        `₹${minPrice.toFixed(2)} Cr`
+                      )
+                    }
+                   </p>
                 </div>
               </div>
 
@@ -509,7 +538,7 @@ ${formData.message || 'No additional message'}
                 <div className="space-y-3">
                   <div className="flex justify-between py-2 border-b border-gray-100">
                     <span className="text-gray-600">Project Type</span>
-                    <span className="font-semibold text-gray-900">Residential</span>
+                    <span className="font-semibold text-gray-900">{! project.type ?(`Residential` ):(`${project.type}`) }</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
                     <span className="text-gray-600">Total Units</span>

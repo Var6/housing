@@ -19,6 +19,8 @@ export type Project = {
   reraId?: string
   images: string[]
   type?: string
+  price?:boolean
+  association?:string
 }
 
 export const projects: Project[] = [
@@ -30,6 +32,7 @@ export const projects: Project[] = [
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
+    association:"Prudent Properties",
     units: [
       { bhk: '2 BHK', sqft: 762, price: '5.60 Cr' },
       { bhk: '3 BHK', sqft: 1066, price: '7.99 Cr' },
@@ -53,6 +56,7 @@ export const projects: Project[] = [
   location: "Jewar Airport, Yamuna Expressway",
   city: "Greater Noida",
   state: "Uttar Pradesh",
+   price: false,
   region: "Yamuna Expressway",
   units: [
     { bhk: "Independent Farmhouse", sqft: 4500, price: "On Request" }
@@ -75,6 +79,7 @@ export const projects: Project[] = [
   city: "Greater Noida",
   state: "Uttar Pradesh",
   region: "Noida Extension",
+   price: false,
   type: "Farmhouse",
   units: [
     { bhk: "Independent Farmhouse", sqft: 2800, price: "On Request" },
@@ -96,6 +101,7 @@ export const projects: Project[] = [
     location: 'Sewri',
     city: 'Mumbai',
     state: 'Maharashtra',
+     association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
       { bhk: '3 BHK', sqft: 1258, price: '6.52 Cr' },
@@ -119,6 +125,7 @@ export const projects: Project[] = [
     developer: 'Birla Estates',
     location: 'Worli',
     city: 'Mumbai',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
@@ -142,6 +149,7 @@ export const projects: Project[] = [
     developer: 'Godrej Properties',
     location: 'Wadala',
     city: 'Mumbai',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
@@ -168,6 +176,7 @@ export const projects: Project[] = [
     location: 'Bhandup',
     city: 'Mumbai',
     state: 'Maharashtra',
+     association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
       { bhk: '2 BHK', sqft: 655, price: '1.65 Cr' },
@@ -190,6 +199,7 @@ export const projects: Project[] = [
     name: 'Exquisite',
     developer: 'Godrej Properties',
     location: 'Waghbil',
+     association:"Prudent Properties",
     city: 'Thane',
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
@@ -212,6 +222,7 @@ export const projects: Project[] = [
   {
     id: 'mahindra-happinest-kalyan',
     name: 'Happinest Kalyan',
+     association:"Prudent Properties",
     developer: 'Mahindra Lifespaces',
     location: 'Kalyan',
     city: 'Kalyan',
@@ -237,6 +248,7 @@ export const projects: Project[] = [
     name: 'Godrej Bayview',
     developer: 'Godrej Properties',
     location: 'Vashi',
+     association:"Prudent Properties",
     city: 'Navi Mumbai',
     state: 'Maharashtra',
     region: 'Vashi to Panvel',
@@ -262,6 +274,7 @@ export const projects: Project[] = [
     name: 'Piramal Aranya',
     developer: 'Piramal Realty',
     location: 'Rani Baug, Byculla',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -285,6 +298,7 @@ export const projects: Project[] = [
     name: 'L&T Island',
     developer: 'L&T Realty',
     location: 'Mahim',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -313,6 +327,7 @@ export const projects: Project[] = [
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
+     association:"Prudent Properties",
     units: [
       { bhk: '4 BHK', sqft: 2156, price: '18.90 Cr' },
       { bhk: '4 BHK', sqft: 2599, price: '21 Cr' },
@@ -335,6 +350,7 @@ export const projects: Project[] = [
     developer: 'Rustomjee',
     location: 'Matunga',
     city: 'Mumbai',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
@@ -358,6 +374,7 @@ export const projects: Project[] = [
     name: 'L&T 77 Cross-Roads',
     developer: 'L&T Realty',
     location: 'Ghatkopar',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -381,6 +398,7 @@ export const projects: Project[] = [
     id: 'adani-the-views-ghatkopar',
     name: 'The Views',
     developer: 'Adani Realty',
+     association:"Prudent Properties",
     location: 'Ghatkopar',
     city: 'Mumbai',
     state: 'Maharashtra',
@@ -406,19 +424,21 @@ export const projects: Project[] = [
   name: 'Cyberthum',
   developer: 'Bhutani Group',
   location: 'Sector 140A',
+ 
   city: 'Greater Noida',
   state: 'Uttar Pradesh',
   region: 'Noida Expressway',
   units: [],
+  type: 'Commercial',
   possession: 'Under Construction',
+  price: false,
   structure: '2B + Stilt + 6 ',
   reraId: '',
   images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80',
-      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80'
+    '/cyberthum/g2.jpg',
+    '/cyberthum/g4.jpg',
+    '/cyberthum/G1.jpg',
+    '/cyberthum/g3.jpg',
     ],
   },
   {
@@ -426,7 +446,10 @@ export const projects: Project[] = [
   name: 'Grandthum',
   developer: 'Bhutani Group',
   location: 'Techzone 4',
+
   city: 'Greater Noida',
+  type:"Residential",
+   price: false,
   state: 'Uttar Pradesh',
   region: 'Noida Extension',
   units: [
@@ -449,6 +472,7 @@ export const projects: Project[] = [
     location: 'Kanjurmarg',
     city: 'Mumbai',
     state: 'Maharashtra',
+     association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
       { bhk: '2 BHK', sqft: 738, price: '2.09 Cr' },
@@ -472,6 +496,7 @@ export const projects: Project[] = [
     name: 'Piramal Revanta',
     developer: 'Piramal Realty',
     location: 'Mulund',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -497,6 +522,7 @@ export const projects: Project[] = [
     location: 'Mulund',
     city: 'Mumbai',
     state: 'Maharashtra',
+     association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
       { bhk: '3 BHK', sqft: 1020, price: '2.89 Cr' },
@@ -520,6 +546,7 @@ export const projects: Project[] = [
     name: 'Prestige City - Seista',
     developer: 'Prestige Group',
     location: 'Mulund',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -545,6 +572,7 @@ export const projects: Project[] = [
     developer: 'Prestige Group',
     location: 'Mulund',
     city: 'Mumbai',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
@@ -570,6 +598,7 @@ export const projects: Project[] = [
     developer: 'Oberoi Realty',
     location: 'LBS Road, Mulund',
     city: 'Mumbai',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
@@ -592,6 +621,7 @@ export const projects: Project[] = [
     name: 'Eternia',
     developer: 'Oberoi Realty',
     location: 'LBS Road, Mulund',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -615,6 +645,7 @@ export const projects: Project[] = [
     name: 'Rejuve 360',
     developer: 'L&T Realty',
     location: 'LBS Road, Mulund',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -639,6 +670,7 @@ export const projects: Project[] = [
     name: 'Kalpataru Summit',
     developer: 'Kalpataru',
     location: 'LBS Marg, Mulund',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -663,6 +695,7 @@ export const projects: Project[] = [
     name: 'Clermont',
     developer: 'Puravankara',
     location: 'Chembur',
+     association:"Prudent Properties",
     city: 'Mumbai',
     state: 'Maharashtra',
     region: 'CST to Mulund',
@@ -686,6 +719,7 @@ export const projects: Project[] = [
     name: 'Godrej Ascend',
     developer: 'Godrej Properties',
     location: 'Kolshet Road, Thane',
+     association:"Prudent Properties",
     city: 'Thane',
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
@@ -711,6 +745,7 @@ export const projects: Project[] = [
     developer: 'Godrej Properties',
     location: 'Kolshet Road, Thane',
     city: 'Thane',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
@@ -734,6 +769,7 @@ export const projects: Project[] = [
     developer: 'Raymond Realty',
     location: 'Pokhran Road, Thane',
     city: 'Thane',
+     association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [

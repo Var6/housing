@@ -19,6 +19,7 @@ type Project = {
   location: string;
   city: string;
   images: string[];
+  association?:string;
   state: string;
   region: string;
   type?:string;
@@ -181,6 +182,10 @@ export default function Propertyhai() {
           </Link>
           )
           }
+          {project.association ?(
+
+            <div className="text-red-600 pt-3 text-center">In Association with {project.association} </div>
+          ):(<></>)}
         </div>
       </div>
     );

@@ -67,12 +67,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/search" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                  <Search className="h-4 w-4" />
-                  <span>Advanced Search</span>
-                </Link>
-              </li>
-              <li>
                 <Link  href="https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   <Calculator className="h-4 w-4" />
                   <span>EMI Calculator</span>
@@ -112,16 +106,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/finance" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
                   Home Loan Support
                 </Link>
               </li>
-              <li>
-                <Link href="/services/inspection" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                  Property Inspection
-                </Link>
-              </li>
-            </ul>
+              </ul>
           </div>
 
           {/* Support & Legal */}
