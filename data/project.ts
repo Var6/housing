@@ -34,41 +34,40 @@ export const projects: Project[] = [
     region: 'CST to Mulund',
     association:"Prudent Properties",
     units: [
-      { bhk: '2 BHK', sqft: 762, price: '5.60 Cr' },
-      { bhk: '3 BHK', sqft: 1066, price: '7.99 Cr' },
-      { bhk: '4 BHK', sqft: 1850, price: '16.50 Cr' }
+      { bhk: '2 BHK',sqft:762,price:'5.60Cr' },
+      { bhk: '3 BHK',sqft:106,price:'7.99Cr' },
+      { bhk: '4 BHK',sqft:185,price:'416.50Cr' }
     ],
-    possession: 'December 2025',
-    structure: 'G + 73',
+    possession: 'December2025',
+    structure: 'G+73',
     reraId: 'P51900015854',
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
+      '/PIRAMAL MAHALAXMI/1.jpg',
+      '/PIRAMAL MAHALAXMI/2.jpg',
+      '/PIRAMAL MAHALAXMI/3.jpg',
+      '/PIRAMAL MAHALAXMI/4.jpg',
     ]
   },
   {
   id: "centurion-farm-house-jewar",
   name: "Centurion Farm House",
   developer: "Centurion Group",
-  location: "Jewar Airport, Yamuna Expressway",
+  location: "Jewar Airport,YamunaExpressway",
   city: "Greater Noida",
   state: "Uttar Pradesh",
    price: false,
   region: "Yamuna Expressway",
   units: [
-    { bhk: "Independent Farmhouse", sqft: 4500, price: "On Request" }
+    { bhk: "Independent Farmhouse",sqft:4500,price:"OnRequest" }
   ],
   possession: "Ready to Move",
   structure: "Independent Farmhouse Villas",
   type: "Farmhouse",
   reraId: undefined,
   images: [
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+    'centurionfarmhousejewar/4.JPG',
+    'centurionfarmhousejewar/5.JPG',
+    'centurionfarmhousejewar/6.JPG',
   ]
 },
 {
@@ -82,16 +81,15 @@ export const projects: Project[] = [
    price: false,
   type: "Farmhouse",
   units: [
-    { bhk: "Independent Farmhouse", sqft: 2800, price: "On Request" },
+    { bhk: "Independent Farmhouse",sqft:280,price:"OnRequest" },
   ],
   possession: "Ready to Move",
   structure: "Luxury Gated Farmhouse Community",
   reraId: undefined,
   images: [
-    "/layout.png",
-    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
-    "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80"
+    'lotus-farms-techzone/5.JPG',
+    'lotus-farms-techzone/6.JPG',
+    'lotus-farms-techzone/7.JPG',
   ]
 },
   {
@@ -104,19 +102,18 @@ export const projects: Project[] = [
      association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 1258, price: '6.52 Cr' },
-      { bhk: '4 BHK', sqft: 1980, price: '11.21 Cr' },
-      { bhk: '4.5 BHK', sqft: 2250, price: '12.22 Cr' }
+      { bhk: '3 BHK',sqft:125,price:'6.52Cr' },
+      { bhk: '4 BHK',sqft:198,price:'11.21Cr' },
+      { bhk: '4.5 BHK',sqft:225,price:'12.22Cr' }
     ],
     possession: 'December 2028',
-    structure: 'Stilt + 54',
+    structure: 'Stilt + 541414',
     reraId: 'P51900054969',
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
-      'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80'
+      'lt-gateway-sewri/6.jpg',
+      'lt-gateway-sewri/7.jpg',
+      'lt-gateway-sewri/8.jpg',
+      'lt-gateway-sewri/9.jpg',
     ]
   },
   {
@@ -129,18 +126,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 1151, price: '14.65 Cr' },
-      { bhk: '6 BHK', sqft: 3776, price: '48.50 Cr' }
+      { bhk: '3 BHK',sqft:115,price:'14.65Cr' },
+      { bhk: '6 BHK',sqft:377,price:'48.50Cr' }
     ],
     possession: 'March 2028',
     structure: 'G + 65',
     reraId: 'P51900031916',
     images: [
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80'
+      '/birla-niyaara-worli12.jpg',
+      '/birla-niyaara-worli13.jpg',
+      '/birla-niyaara-worli17.jpg',
+      '/birla-niyaara-worli18.jpg',
+      '/birla-niyaara-worli19.jpg',
+      '/birla-niyaara-worli20.jpg',
     ]
   },
   {
@@ -153,20 +151,20 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 689, price: '2.99 Cr' },
-      { bhk: '2 BHK', sqft: 739, price: '3.10 Cr' },
-      { bhk: '3 BHK', sqft: 1050, price: '4.25 Cr' },
-      { bhk: '3 BHK', sqft: 1232, price: '4.98 Cr' }
+      { bhk: '2 BHK',sqft:68958,price:'2.99Cr' },
+      { bhk: '2 BHK',sqft:73925,price:'3.10Cr' },
+      { bhk: '3 BHK',sqft:10521,price:'4.25Cr' },
+      { bhk: '3 BHK',sqft:123212,price:'4.98Cr' },
     ],
     possession: 'June 2026',
     structure: 'G + 44',
     reraId: 'P51900034851',
     images: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80'
+      '/jodreg-horizon-wadala40.jpg',
+      '/jodreg-horizon-wadala41.jpg',
+      '/jodreg-horizon-wadala42.jpg',
+      '/jodreg-horizon-wadala43.jpg',
+      '/jodreg-horizon-wadala44.jpg',
     ]
   },
   {
@@ -179,19 +177,19 @@ export const projects: Project[] = [
      association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 655, price: '1.65 Cr' },
-      { bhk: '2 BHK', sqft: 704, price: '1.91 Cr' },
-      { bhk: '3 BHK', sqft: 901, price: '2.48 Cr' }
+      { bhk: '2 BHK',sqft:655,price:'1.65Cr'},
+      { bhk: '2 BHK',sqft:704,price:'1.91Cr'},
+      { bhk: '3 BHK',sqft:901,price:'2.48Cr'}
     ],
     possession: 'March 2031',
-    structure: 'G + 40',
+    structure:'G + 40',
     reraId: 'P51800077080',
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80',
-      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80'
+      '/godrej-nurture-bhanudup67.jpg',
+      '/godrej-nurture-bhanudup68.jpg',
+      '/godrej-nurture-bhanudup69.jpg',
+      '/godrej-nurture-bhanudup70.jpg',
+      '/godrej-nurture-bhanudup71.jpg',
     ]
   },
   {
@@ -204,19 +202,18 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
-      { bhk: '2 BHK', sqft: 655, price: '1.75 Cr' },
-      { bhk: '2 BHK', sqft: 724, price: '1.90 Cr' },
-      { bhk: '3 BHK', sqft: 922, price: '2.45 Cr' }
+      { bhk: '2 BHK',sqft:655,price:'1.75Cr'},
+      { bhk: '2 BHK',sqft:724,price:'1.90Cr'},
+      { bhk: '3 BHK',sqft:922,price:'2.45Cr'},
     ],
     possession: 'March 2025',
     structure: '4 Podium + 38',
     reraId: 'P51700024496',
     images: [
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80'
+      '/equisite-thane2555.jpg',
+      '/equisite-thane4566.jpg',
+      '/equisite-thane6547.jpg',
+      '/equisite-thane8967.jpg',
     ]
   },
   {
@@ -229,18 +226,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
-      { bhk: '2 BHK', sqft: 536, price: '57 Lacs' },
-      { bhk: '2 BHK', sqft: 600, price: '67 Lacs' }
+      { bhk: '2 BHK',sqft:536,price:'57Lacs'},
+      { bhk: '2 BHK',sqft:600,price:'67Lacs'}
     ],
     possession: 'Ready Possession',
     structure: 'G + 14',
     reraId: 'P51700022981',
     images: [
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573471509-aa76c5be96b3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-acd4262e0995?w=1200&q=80'
+      '/mahindrahappinest-kalyan0967.jpg',
+      '/mahindrahappinest-kalyan2525.jpg',
+      '/mahindrahappinest-kalyan4747.jpg',
+      '/mahindrahappinest-kalyan5679.jpg',
+      '/mahindrahappinest-kalyan9087.jpg',
+      '/mahindrahappinest-kalyan74747.jpg',
     ]
   },
   {
@@ -253,18 +251,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'Vashi to Panvel',
     units: [
-      { bhk: '2 BHK', sqft: 870, price: '3.35 Cr' },
-      { bhk: '3 BHK', sqft: 1260, price: '4.95 Cr' }
+      { bhk:'2 BHK',sqft:870,price:'3.3547Cr'},
+      { bhk:'3 BHK',sqft:126,price:'4.9574Cr'},
     ],
     possession: 'December 2027',
     structure: 'G + 26',
     reraId: 'P51700031726',
     images: [
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752734-bd17126a3223?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80'
+      '/godrej-bayview-vashi456.jpg',
+      '/godrej-bayview-vashi4567.jpg',
+      '/godrej-bayview-vashi5657.jpg',
+      '/godrej-bayview-vashi9877.jpg',
+      '/godrej-bayview-vashi58558.jpg',
+      '/godrej-bayview-vashi85888.jpg',
     ]
   },
   // Add these missing properties after the last project in your data file
@@ -279,18 +278,17 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 1050, price: '6.10 Cr' },
-      { bhk: '4 BHK', sqft: 2844, price: '14.69 Cr' }
+      { bhk:'3 BHK',sqft:105,price:'6.10Cr'},
+      { bhk:'4 BHK',sqft:284,price:'14.69Cr'}
     ],
     possession: 'Ready Possession',
     structure: 'G + 52',
     reraId: 'P51900018039',
     images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80'
+      '/piramal-aranya-byculla3456.jpg',
+      '/piramal-aranya-byculla34567.jpg',
+      '/piramal-aranya-byculla121212.jpg',
+      '/piramal-aranya-byculla8988.jpg',
     ]
   },
   {
@@ -303,20 +301,20 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 681, price: '2.81 Cr' },
-      { bhk: '2 BHK', sqft: 767, price: '3.24 Cr' },
-      { bhk: '3 BHK', sqft: 1042, price: '4.21 Cr' },
-      { bhk: '3 BHK', sqft: 1365, price: '5.67 Cr' }
+      { bhk:'2 BHK',sqft:68,price:'2.81Cr'},
+      { bhk:'2 BHK',sqft:767,price:'3.24Cr'},
+      { bhk:'3 BHK',sqft:104,price:'4.21Cr'},
+      { bhk:'3 BHK',sqft:136,price:'5.67Cr'},
     ],
     possession: 'June 2028',
     structure: 'G + 5P + 34',
     reraId: 'P51900046369',
     images: [
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80',
-      'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80'
+      'lt-island-mahim21.jpg',
+      'lt-island-mahim22.jpg',
+      'lt-island-mahim23.jpg',
+      'lt-island-mahim24.jpg',
+      'lt-island-mahim25.jpg',
     ]
   },
   {
@@ -329,19 +327,19 @@ export const projects: Project[] = [
     region: 'CST to Mulund',
      association:"Prudent Properties",
     units: [
-      { bhk: '4 BHK', sqft: 2156, price: '18.90 Cr' },
-      { bhk: '4 BHK', sqft: 2599, price: '21 Cr' },
-      { bhk: '5 BHK', sqft: 3088, price: '29.50 Cr' }
+      { bhk: '4 BHK',sqft:215,price:'18.90Cr'},
+      { bhk: '4 BHK',sqft:259,price:'21Cr'},
+      { bhk: '5 BHK',sqft:308,price:'29.50Cr'}
     ],
     possession: 'Ready Possession',
     structure: '5P + 63',
     reraId: 'P519000006367',
     images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80'
+      'rustomjee-crown-prabhadevi27.jpg',
+      'rustomjee-crown-prabhadevi28.jpg',
+      'rustomjee-crown-prabhadevi29.jpg',
+      'rustomjee-crown-prabhadevi30.jpg',
+      'rustomjee-crown-prabhadevi31.jpg',
     ]
   },
   {
@@ -354,19 +352,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 824, price: '4.15 Cr' },
-      { bhk: '3 BHK', sqft: 1221, price: '6.11 Cr' },
-      { bhk: '4 BHK', sqft: 1644, price: '8.32 Cr' }
+      { bhk:'2 BHK',sqft:824,price:'4.15Cr'},
+      { bhk:'3 BHK',sqft:122,price:'6.11Cr'},
+      { bhk:'4 BHK',sqft:164,price:'8.32Cr'}
     ],
     possession: 'June 2029',
     structure: 'G + 37',
     reraId: 'P51900066547',
     images: [
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80'
+      '/rustomjee-180bayview-matunga35.jpg',
+      '/rustomjee-crown-prabhadevi36.jpg',
+      '/rustomjee-crown-prabhadevi37.jpg',
+      '/rustomjee-crown-prabhadevi38.jpg',
+      'rustomjee-crown-prabhadevi/39.jpg',
     ]
   },
   {
@@ -379,19 +377,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '1 BHK', sqft: 413, price: '1.17 Cr' },
-      { bhk: '2 BHK', sqft: 574, price: '1.66 Cr' },
-      { bhk: '2 BHK', sqft: 637, price: '1.94 Cr' }
+      { bhk:'1 BHK',sqft:413,price:'1.17Cr'},
+      { bhk:'2 BHK',sqft:574,price:'1.66Cr'},
+      { bhk:'2 BHK',sqft:637,price:'1.94Cr'}
     ],
     possession: 'December 2026',
     structure: 'G + 26',
     reraId: 'P51800003446',
     images: [
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80',
-      'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80'
+      '/lt-77-crossroads-ghatkopar48.jpg',
+      '/lt-77-crossroads-ghatkopar49.jpg',
+      '/lt-77-crossroads-ghatkopar50.jpg',
+      '/lt-77-crossroads-ghatkopar51.jpg',
+      '/lt-77-crossroads-ghatkopar52.jpg',
     ]
   },
   {
@@ -404,19 +402,18 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 834, price: '2.88 Cr' },
-      { bhk: '2 BHK', sqft: 953, price: '3.60 Cr' },
-      { bhk: '4 BHK', sqft: 1587, price: '5.80 Cr' }
+     { bhk: '2 BHK', sqft: 834, price: '2.88 Cr' },
+      { bhk: '2 BHK',sqft:953,price:'3.60Cr'},
+      { bhk: '4 BHK',sqft:158,price:'5.80Cr'}
     ],
     possession: 'December 2025',
     structure: '2B + Stilt + 21',
     reraId: 'P51900031165',
     images: [
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573471509-aa76c5be96b3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-acd4262e0995?w=1200&q=80'
+      '/adani-the-views-ghatkopar56.jpg',
+      '/adani-the-views-ghatkopar57.jpg',
+      '/adani-the-views-ghatkopar58.jpg',
+      '/adani-the-views-ghatkopar59.jpg',
     ]
   },
   {
@@ -432,13 +429,14 @@ export const projects: Project[] = [
   type: 'Commercial',
   possession: 'Under Construction',
   price: false,
-  structure: '2B + Stilt + 6 ',
+  structure: '2B + Stilt + 6',
   reraId: '',
   images: [
-    '/cyberthum/g2.jpg',
-    '/cyberthum/g4.jpg',
-    '/cyberthum/G1.jpg',
-    '/cyberthum/g3.jpg',
+    '/cyberthum-sector-140a1254.jpg',
+    '/cyberthum-sector-140a4144.jpg',
+    '/cyberthum-sector-140a6969.jpg',
+    '/cyberthum-sector-140a7858.jpg',
+    '/cyberthum-sector-140a45747.jpg',
     ],
   },
   {
@@ -459,10 +457,12 @@ export const projects: Project[] = [
   structure: '2B + Stilt + 8',
   reraId: '',
   images: [
-    '/grandthum/G1.jpg',
-    '/grandthum/g2.jpg',
-    '/grandthum/g3.jpg',
-    '/grandthum/g4.jpg',
+    '/grandthum-techzone-2525.jpg',
+    '/grandthum-techzone-4732.jpg',
+    '/grandthum-techzone-5858.jpg',
+    '/grandthum-techzone-6974.jpg',
+    '/grandthum-techzone-6985.jpg',
+    '/grandthum-techzone-7887.jpg'
   ],
   },
   {
@@ -475,20 +475,20 @@ export const projects: Project[] = [
      association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 738, price: '2.09 Cr' },
-      { bhk: '2 BHK', sqft: 826, price: '2.48 Cr' },
-      { bhk: '3 BHK', sqft: 1175, price: '3.42 Cr' },
-      { bhk: '3 BHK', sqft: 1347, price: '4.20 Cr' }
+      { bhk: '2BHK',sqft:738,price:'2.09Cr'},
+      { bhk: '2BHK',sqft:826,price:'2.48Cr'},
+      { bhk: '3BHK',sqft:117,price:'3.42Cr'},
+      { bhk: '3BHK',sqft:134,price:'4.20Cr'}
     ],
     possession: 'December 2028',
     structure: 'G + 3P + 34',
     reraId: 'P51800055166',
     images: [
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752734-bd17126a3223?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80'
+      'adani-codename-triumph-kanjurmarg62.jpg',
+      'adani-codename-triumph-kanjurmarg63.jpg',
+      'adani-codename-triumph-kanjurmarg64.jpg',
+      'adani-codename-triumph-kanjurmarg65.jpg',
+      'adani-codename-triumph-kanjurmarg66.jpg',
     ]
   },
   {
@@ -501,18 +501,18 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 854, price: '2.77 Cr' },
-      { bhk: '3 BHK', sqft: 1192, price: '3.72 Cr' }
+      { bhk: '2BHK',sqft:854,price:'2.77Cr'},
+      { bhk: '3BHK',sqft:119,price:'3.72Cr'}
     ],
     possession: 'November 2028',
     structure: 'G + 47',
     reraId: 'P51800018099',
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80'
+      'piramal-revanta-mulund74.jpg',
+      'piramal-revanta-mulund75.jpg',
+      'piramal-revanta-mulund76.jpg',
+      'piramal-revanta-mulund77.jpg',
+      'piramal-revanta-mulund78.jpg',
     ]
   },
   {
@@ -525,20 +525,20 @@ export const projects: Project[] = [
      association:"Prudent Properties",
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 1020, price: '2.89 Cr' },
-      { bhk: '3 BHK', sqft: 1330, price: '3.79 Cr' },
-      { bhk: '4 BHK', sqft: 1750, price: '5.09 Cr' },
-      { bhk: '4 BHK', sqft: 2130, price: '6.09 Cr' }
+      { bhk: '3BHK',sqft:102,price:'2.89Cr' },
+      { bhk: '3BHK',sqft:133,price:'3.79Cr' },
+      { bhk: '4BHK',sqft:175,price:'5.09Cr'},
+      { bhk: '4BHK',sqft:213,price:'6.09Cr'}
     ],
     possession: 'December 2029',
     structure: 'G + 54',
     reraId: 'P51800077457',
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80',
-      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80'
+      'prestige-city-mulund-forest-hills77.jpg',
+      'prestige-city-mulund-forest-hills78.jpg',
+      'prestige-city-mulund-forest-hills79.jpg',
+      'prestige-city-mulund-forest-hills80.jpg',
+      'prestige-city-mulund-forest-hills81.jpg',
     ]
   },
   {
@@ -551,19 +551,19 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 1024, price: '2.75 Cr' },
-      { bhk: '3 BHK', sqft: 1367, price: '3.80 Cr' },
-      { bhk: '3 BHK', sqft: 1480, price: '4.40 Cr' }
+      { bhk: '2 BHK',sqft:102,price:'2.75Cr'},
+      { bhk: '3 BHK',sqft:136,price:'3.80Cr'},
+      { bhk: '3 BHK',sqft:148,price:'4.40Cr'}
     ],
     possession: 'June 2025',
     structure: 'G + 54',
     reraId: 'P51800005285',
     images: [
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80'
+      'prestige-city-mulund-seista82.jpg',
+      'prestige-city-mulund-seista83.jpg',
+      'prestige-city-mulund-seista84.jpg',
+      'prestige-city-mulund-seista85.jpg',
+      'prestige-city-mulund-seista86.jpg',
     ]
   },
   {
@@ -576,20 +576,21 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 842, price: '2.23 Cr' },
-      { bhk: '3 BHK', sqft: 910, price: '2.35 Cr' },
-      { bhk: '4 BHK Duplex', sqft: 1450, price: '4.66 Cr' },
-      { bhk: '4 BHK Duplex', sqft: 1722, price: '5.29 Cr' }
+      { bhk: '2BHK',sqft:842,price:'2.23Cr'},
+      { bhk: '3BHK',sqft:910,price:'2.35Cr'},
+      { bhk: '4BHK Duplex',sqft:1450,price:'4.66Cr'},
+      { bhk: '4BHK Duplex',sqft:1722,price:'5.29Cr'}
     ],
     possession: 'June 2026',
     structure: 'G + 54',
     reraId: 'P51800045339',
     images: [
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573471509-aa76c5be96b3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-acd4262e0995?w=1200&q=80'
+      'prestige-city-mulund-bellanza89.jpg',
+      'prestige-city-mulund-bellanza90.jpg',
+      'prestige-city-mulund-bellanza91.jpg',
+      'prestige-city-mulund-bellanza92.jpg',
+      'prestige-city-mulund-bellanza93.jpg',
+      'prestige-city-mulund-bellanza94.jpg',
     ]
   },
   {
@@ -602,18 +603,20 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 1127, price: '4.60 Cr' },
-      { bhk: '4 BHK', sqft: 2130, price: '7.10 Cr' }
+      { bhk: '3BHK',sqft:112, price:'4.60Cr'},
+      { bhk: '4BHK',sqft:213,price:'7.10Cr'}
     ],
     possession: 'Ready Possession',
     structure: 'Stilt + 62',
     reraId: 'P51800002656',
     images: [
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752734-bd17126a3223?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80',
+      'oberoi-enigma-mulund96.jpg',
+      'oberoi-enigma-mulund97.jpg',
+      'oberoi-enigma-mulund98.jpg',
+      'oberoi-enigma-mulund99.jpg',
+      'oberoi-enigma-mulund100.jpg',
+      'oberoi-enigma-mulund101.jpg',
+      'oberoi-enigma-mulund102.jpg',
     ]
   },
   {
@@ -626,18 +629,18 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '3 BHK', sqft: 932, price: '3.40 Cr' },
-      { bhk: '3 BHK', sqft: 1049, price: '3.95 Cr' }
+      { bhk: '3 BHK', sqft:932, price:'3.40Cr'},
+      { bhk: '3 BHK', sqft:104, price:'3.95Cr '},
     ],
     possession: 'Ready Possession',
     structure: 'Stilt + 60',
     reraId: 'P51800006141',
     images: [
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80'
+      'oberoi-eternia-mulund105.jpg',
+      'oberoi-eternia-mulund106.jpg',
+      'oberoi-eternia-mulund107.jpg',
+      'oberoi-eternia-mulund108.jpg',
+      'oberoi-eternia-mulund109.jpg',
     ]
   },
   {
@@ -650,19 +653,20 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 750, price: '2.41 Cr' },
-      { bhk: '2.5 BHK', sqft: 912, price: '2.91 Cr' },
-      { bhk: '3.5 BHK', sqft: 1312, price: '4.25 Cr' }
+      { bhk: '2 BHK',sqft:750,price:'2.41Cr'},
+      { bhk: '2.5 BHK',sqft:912,price:'2.91Cr'},
+      { bhk: '3.5 BHK',sqft:131,price:'4.25Cr'}
     ],
     possession: 'June 2027',
     structure: 'G + 57',
     reraId: 'P51800023075',
     images: [
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80',
-      'https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80',
-      'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80'
+      'lt-rejuve-360-mulund112.jpg',
+      'lt-rejuve-360-mulund113.jpg',
+      'lt-rejuve-360-mulund114.jpg',
+      'lt-rejuve-360-mulund115.jpg',
+      'lt-rejuve-360-mulund116.jpg',
+      'lt-rejuve-360-mulund117.jpg',
     ]
   },
   {
@@ -675,19 +679,22 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: 'Office', sqft: 454, price: '1.76 Cr' },
-      { bhk: 'Office', sqft: 771, price: '2.87 Cr' },
-      { bhk: 'Office', sqft: 973, price: '3.58 Cr' }
+      { bhk: 'Office',sqft:454,price:'1.76Cr'},
+      { bhk: 'Office',sqft:771,price:'2.87Cr'},
+      { bhk: 'Office',sqft:973,price:'3.58Cr'}
     ],
     possession: 'July 2026',
     structure: 'G + 33',
     reraId: 'P51800033272',
     images: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80',
-      'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1200&q=80',
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80'
+      'kalpataru-summit-mulund6.jpg',
+      'kalpataru-summit-mulund787.jpg',
+      'kalpataru-summit-mulund4454.jpg',
+      'kalpataru-summit-mulund4555.jpg',
+      'kalpataru-summit-mulund4747.jpg',
+      'kalpataru-summit-mulund41444.jpg',
+      'kalpataru-summit-mulund74747.jpg',
+      'kalpataru-summit-mulund74858.jpg',
     ]
   },
   {
@@ -700,91 +707,820 @@ export const projects: Project[] = [
     state: 'Maharashtra',
     region: 'CST to Mulund',
     units: [
-      { bhk: '2 BHK', sqft: 533, price: '2.45 Cr' },
-      { bhk: '3 BHK', sqft: 975, price: '4.45 Cr' }
+      { bhk: '2 BHK',sqft:533,price:'2.45Cr'},
+      { bhk: '3 BHK',sqft:975,price:'4.45Cr'}
     ],
     possession: 'June 2027',
     structure: 'G + 17',
     reraId: 'P51800028427',
     images: [
-      'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80',
-      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80'
+      'puravankara-clermont-chembur568.jpg',
+      'puravankara-clermont-chembur858.jpg',
+      'puravankara-clermont-chembur3233.jpg',
+      'puravankara-clermont-chembur4747.jpg',
+      'puravankara-clermont-chembur525585.jpg',
+      'puravankara-clermont-chembur788778.jpg',
     ]
   },
   {
     id: 'godrej-ascend-thane',
     name: 'Godrej Ascend',
     developer: 'Godrej Properties',
-    location: 'Kolshet Road, Thane',
+    location: 'Kolshet Road,Thane',
      association:"Prudent Properties",
     city: 'Thane',
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
-      { bhk: '2 BHK', sqft: 734, price: '1.87 Cr' },
-      { bhk: '3 BHK', sqft: 855, price: '1.99 Cr' },
-      { bhk: '3 BHK', sqft: 971, price: '2.69 Cr' }
+      { bhk: '2 BHK',sqft:734,price:'1.8 Cr'},
+      { bhk: '3 BHK',sqft:855,price:'1.99Cr'},
+      { bhk: '3 BHK',sqft:971,price:'2.69Cr'}
     ],
     possession: 'December 2028',
     structure: 'G + 44',
     reraId: 'P51700053668',
     images: [
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80'
+      'godrej-ascend-thane414.jpg',
+      'godrej-ascend-thane1414.jpg',
+      'godrej-ascend-thane2525.jpg',
+      'godrej-ascend-thane8588.jpg',
+      'godrej-ascend-thane25252.jpg',
+      'godrej-ascend-thane78787.jpg',
+      'godrej-ascend-thane87878.jpg',
     ]
   },
   {
     id: 'godrej-forest-ville-thane',
     name: 'Forest Ville',
     developer: 'Godrej Properties',
-    location: 'Kolshet Road, Thane',
+    location: 'Kolshet Road,Thane',
     city: 'Thane',
      association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
-      { bhk: '3 BHK', sqft: 1090, price: '1.87 Cr' },
-      { bhk: '3 BHK + Studio', sqft: 1367, price: '2.49 Cr' }
+      { bhk: '3 BHK',sqft:109, price:'1.87Cr' },
+      { bhk: '3 BHK + Studio',sqft:136,price:'2.49 Cr' }
     ],
     possession: 'December 2029',
     structure: 'G + 60',
     reraId: 'P51700050312',
     images: [
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600573471509-aa76c5be96b3?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600607687644-acd4262e0995?w=1200&q=80'
+      'godrej-forest-ville-thane858.jpg',
+      'godrej-forest-ville-thane4747.jpg',
+      'godrej-forest-ville-thane7477.jpg',
+      'godrej-forest-ville-thane8588.jpg',
+      'godrej-forest-ville-thane858585.jpg',
     ]
   },
   {
     id: 'raymond-tenx-habitat-thane',
     name: 'Raymond TenX Habitat',
     developer: 'Raymond Realty',
-    location: 'Pokhran Road, Thane',
+    location: 'Pokhran Road,Thane',
     city: 'Thane',
      association:"Prudent Properties",
     state: 'Maharashtra',
     region: 'Thane to Kalyan',
     units: [
-      { bhk: '2 BHK', sqft: 595, price: '1.62 Cr' },
-      { bhk: '2 BHK', sqft: 670, price: '1.90 Cr' }
+      { bhk: '2BHK',sqft:595,price:'1.62Cr'},
+      { bhk: '2BHK', sqft:670,price:'1.90Cr'}
     ],
     possession: 'December 2025',
     structure: 'G + 42',
     reraId: 'P51700034190',
     images: [
-      'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752734-bd17126a3223?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80',
-      'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80'
+      'raymond-tenx-habitat-thane2121.jpg',
+      'raymond-tenx-habitat-thane5258.jpg',
+      'raymond-tenx-habitat-thane7877.jpg',
+      'raymond-tenx-habitat-thane8989.jpg',
+      'raymond-tenx-habitat-thane74747.jpg',
+      'raymond-tenx-habitat-thane74774.jpg',
     ]
-  }
-]
+  },
+   {
+    id: 'PIRAMAL ARANYA-RANI BAUG',
+    name: ': PIRAMAL REALTY',
+    developer: ' PIRAMAL REALTY',
+    location: ' BYCULLA, MUMBAI',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK',sqft:1050, price:'6.10Cr'},
+      { bhk: '4BHK',sqft:2844, price:'14.69Cr'}
+    ],
+    possession: ' READY POSSESION',
+    structure: 'G + 52',
+    reraId: 'P51900018039',
+    images: [
+      'primalaranya-rani bug11.jpg',
+      'primalaranya-rani bug12.jpg',
+      'primalaranya-rani bug13.jpg',
+      'primalaranya-rani bug14.jpg',
+      'primalaranya-rani bug15.jpg',
+    ]
+  },
+ {
+    id: 'THE VIEWS - GHATKOPAR',
+    name: ': THE VIEWS - GHATKOPAR',
+    developer: '  ADANI REALTY',
+    location: '  Ghatkopar,Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 834, price: '2.88Cr' },
+      { bhk: '2BHK', sqft: 953, price: '3.60Cr' },
+      { bhk: '4BHK', sqft: 1587, price: '5.80Cr' }
+    ],
+    possession: ' Dec 2025',
+    structure: '2B + Stilt + 21',
+    reraId: 'P51900031165',
+    images: [
+      'primalaranya-rani bug11.jpg',
+      'primalaranya-rani bug12.jpg',
+      'primalaranya-rani bug13.jpg',
+      'primalaranya-rani bug14.jpg',
+      'primalaranya-rani bug15.jpg',
+    ]
+  },
+   {
+    id: 'CODENAME TRIUMPH- KANJURMARG',
+    name: ': CODENAME TRIUMPH-KANJURMARG',
+    developer: ' ADANI REALTY',
+    location: '  KANJURMARG,Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 738, price: '2.09Cr' },
+      { bhk: '2BHK', sqft: 826, price: '2.48Cr' },
+      { bhk: '3BHK', sqft: 1175, price: '3.42Cr' },
+      { bhk: '3BHK', sqft: 1347, price: '4.20Cr' }
+    ],
+    possession: ' READY POSSESION',
+    structure: 'G + 52',
+    reraId: 'P51900018039',
+    images: [
+      'primalaranya-rani bug11.jpg',
+      'primalaranya-rani bug12.jpg',
+      'primalaranya-rani bug13.jpg',
+      'primalaranya-rani bug14.jpg',
+      'primalaranya-rani bug15.jpg',
+    ]
+  },
+ {
+    id: '9 PBR – PALM BEACH ROAD',
+    name: ':9 PBR – PALM BEACH ROAD',
+    developer: ' ADANI REALTY',
+    location: ' Palm Beach Road, Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2.5BHK', sqft: 1070, price: '3.60Cr' },
+      { bhk: '3BHK', sqft: 1300, price: '4.82Cr' },
+      { bhk: '3BHK', sqft: 1560, price: '6.24Cr' },
+      { bhk: '3.5BHK', sqft: 1770, price: '7.0Cr' }
+    ],
+    possession: ' READY POSSESION',
+    structure: ' 2B+G+12',
+    reraId: ' P51700032812',
+    images: [
+      '9 PBR – PALM BEACH ROAD4747.JPG',
+      '9 PBR – PALM BEACH ROAD6369.JPG',
+      '9 PBR – PALM BEACH ROAD8589.JPG',
+      '9 PBR – PALM BEACH ROAD8787.JPG',
+      '9 PBR – PALM BEACH ROAD9689.JPG',
+    ]
+  },
+  {
+   id: 'CHESTERTON - THANE',
+    name: 'CHESTERTON - THAN',
+    developer: ' House Of Hiranandani',
+    location: '  Thane, Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: 'SHOP', sqft: 3885, price: '2.11Cr' }
+    ],
+    possession:' READY POSSESION',
+    structure: 'G + 10',
+    reraId: ' P51700019400',
+    images: [
+      'CHESTERTON - THANE565.JPG',
+      'CHESTERTON - THANE747.JPG',
+      'CHESTERTON - THANE898.JPG',
+      'CHESTERTON - THANE969.JPG',
+      'CHESTERTON - THANE47474.JPG',
+    ]
+  },
+  {
+    id: 'WEST GATE - THANE',
+    name: 'WEST GATE - THANE',
+    developer: ': House Of Hiranandani.',
+    location: '  Waghbil,Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2 BHK',sqft: 483454 ,price:'1.23Cr' },
+      { bhk: '2 BHK',sqft: 677212, price:'1.72Cr' },
+      { bhk: '3 BHK',sqft: 1095235,price:'3.01Cr' },
+      { bhk: '4 BHK',sqft : 1622363, price:'5.06Cr' }
+    ],
+    possession: ' READY POSSESION',
+    structure: '  Stilt+47',
+    reraId: '  Stilt+4',
+    images: [
+      'WEST GATE - THANE2525.JPG',
+      'WEST GATE - THANE3687.JPG',
+      'WEST GATE - THANE4545.JPG',
+      'WEST GATE - THANE6565.JPG',
+      'WEST GATE - THANE74747.JPG',
+    ]
+  },
+  {
+    id: 'GODREJ NURTURE-BHANDUP',
+    name: 'GODREJ NURTURE-BHANDUP',
+    developer: ':  GODREJ PROPERTIES.',
+    location: ' : LBS Marg, Bhandup',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 655, price: '1.65Cr' },
+      { bhk: '2BHK', sqft: 704, price: '1.91Cr' },
+      { bhk: '3BHK', sqft: 901, price: '2.48Cr' }
+    ],
+    possession: ' READY POSSESION',
+    structure: '  : G+40',
+    reraId: '   P51800077080',
+    images: [
+      'GODREJ NURTURE-BHANDUP67.JPG',
+      'GODREJ NURTURE-BHANDUP68.JPG',
+      'GODREJ NURTURE-BHANDUP69.JPG',
+      'GODREJ NURTURE-BHANDUP70.JPG',
+      'GODREJ NURTURE-BHANDUP71.JPG',
+    ]
+  },
+{
+    id: 'FOREST VILLE -THANE',
+    name: 'FOREST VILLE -THANE',
+    developer: ' Godrej Properties.',
+    location: '   Kolshet Rd, Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1090, price: '1.87Cr' },
+      { bhk: '3BHK+Studio', sqft: 1367, price: '2.49Cr' }
+    ],
+    possession: ' December 2029',
+    structure: '   G+60',
+    reraId: '  P51700050312',
+    images: [
+      'FOREST VILLE -THANE1447.JPG',
+      'FOREST VILLE -THANE4747.JPG',
+      'FOREST VILLE -THANE5874.JPG',
+      'FOREST VILLE -THANE6968.JPG',
+      'FOREST VILLE -THANE85878.JPG',
+    ]
+  },
+  {
+    id: 'WEST GATE - THANE',
+    name: 'WEST GATE - THANE',
+    developer: ': House Of Hiranandani.',
+    location: '  Waghbil,Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 4834, price: '1.23Cr' },
+      { bhk: '2BHK', sqft: 6772, price: '1.72Cr' },
+      { bhk: '3BHK', sqft: 10952, price: '3.01Cr' },
+      { bhk: '4BHK', sqft: 16223, price: '5.06Cr' }
+    ],
+    possession: ' READY POSSESION',
+    structure: '  Stilt+47',
+    reraId: '  Stilt+4',
+    images: [
+      'WEST GATE - THANE2525.JPG',
+      'WEST GATE - THANE3687.JPG',
+      'WEST GATE - THANE4545.JPG',
+      'WEST GATE - THANE6565.JPG',
+      'WEST GATE - THANE74747.JPG',
+    ]
+  },
+{
+    id: 'RAYMOND TENX ERA',
+    name: 'RAYMOND REALTY',
+    developer: ': House Of Hiranandani.',
+    location: '   MAHARASHTRA',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 615, price: '1.66Cr' },
+      { bhk: '2BHK', sqft: 711, price: '1.89Cr' },
+      { bhk: '3BHK', sqft: 814, price: '2.24Cr' },
+      { bhk: '3BHK', sqft: 894, price: '2.43Cr' }
+    ],
+    possession: '  DECEMBER 2027',
+    structure: '  G + 42',
+    reraId: '  Stilt+4',
+    images: [
+      'RAYMOND TENX ERA4144.JPG',
+      'RAYMOND TENX ERA6969.JPG',
+      'RAYMOND TENX ERA25858.JPG',
+      'RAYMOND TENX ERA74747.JPG',
+    ]
+  },
+  {
+    id: 'THE ADDRESS BY GS',
+    name: 'THE ADDRESS BY GS',
+    developer: ':  RAYMOND REALTY.',
+    location: '   MAHARASHTRA',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1217, price: '3.35Cr' },
+      { bhk: '4BHK', sqft: 1548, price: '4.19Cr' }
+    ],
+    possession: ' DEC 2027',
+    structure: '   G + 40',
+    reraId: '  Stilt+4',
+    images: [
+      'THE ADDRESS BY GS5252.JPG',
+      'THE ADDRESS BY GS5858.JPG',
+      'THE ADDRESS BY GS6996.JPG',
+      'THE ADDRESS BY GS25898.JPG',
+    ]
+  },
+  {
+    id: 'PARK AVENUE-HIGH STREET',
+    name: 'THE ADDRESS BY GS',
+    developer: ':  RAYMOND REALTY.',
+    location: '   MAHARASHTRA',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1217, price: '3.35Cr' },
+      { bhk: '4BHK', sqft: 1548, price: '4.19Cr' }
+    ],
+    possession: ' DEC 2027',
+    structure: '   G + 40',
+    reraId: '  Stilt+4',
+    images: [
+      'THE ADDRESS BY GS2124.JPG',
+      'THE ADDRESS BY GS3674.JPG',
+      'THE ADDRESS BY GS5256.JPG',
+      'THE ADDRESS BY GS8587.JPG',
+      'THE ADDRESS BY GS9697.JPG',
+    ]
+  },
+  {
+    id: 'SOLITAIRE - THANE',
+    name: 'SOLITAIRE - THANE',
+    developer: '  House Of Hiranandani.',
+    location: '   : GB Road, Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 409, price: '1.05Cr' }
+    ],
+    possession: ' Ready Possession',
+    structure: '   : G + 36',
+    reraId: '   P51700000413',
+    images: [
+      'SOLITAIRE - THANE1241.jpg',
+      'SOLITAIRE - THANE5256.jpg',
+      'SOLITAIRE - THANE6589.jpg',
+      'SOLITAIRE - THANE7474.jpg',
+    ]
+  },
+  {
+    id: 'CHESTERTON-THANE',
+    name: 'SOLITAIRE - THANE',
+    developer: '  House Of Hiranandani.',
+    location: '   : : Thane, Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: 'SHOP', sqft: 389, price: '2.11Cr' }
+    ],
+    possession: ' Ready Possession',
+    structure: '   : G + 10',
+    reraId: '    P51700019400',
+    images: [
+      'CHESTERTON - THANE565.jpg',
+      'CHESTERTON - THANE747.jpg',
+      'CHESTERTON - THANE898.jpg',
+      'CHESTERTON - THANE969.jpg',
+      'CHESTERTON - THANE47474.jpg',
+    ]
+  },
+  {
+    id: 'TATASEREIN-THANE',
+    name: 'TATA SEREIN - THANE',
+    developer: '  TATA Housing.',
+    location:'Pokhran Road No.2, Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3 BHK',sqft:1140,price:'3.25 Cr' }
+    ],
+    possession: ' May 2027',
+    structure: '   : G + 27',
+    reraId: '    P51700052235',
+    images: [
+      'TATA SEREIN - THANE325.jpg',
+      'TATA SEREIN - THANE747.jpg',
+      'TATA SEREIN - THANE969.jpg',
+      'TATA SEREIN - THANE2525.jpg',
+      'TATA SEREIN - THANE4747.jpg',
+    ]
+  },
+  {
+    id: 'RUSTOMJEE UBTOWN URBANIA THANE',
+    name: 'RUSTOMJEE UBTOWN URBANIA THANE',
+    developer: ' RUSTOMJEE.',
+    location: ': Majiwada, Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk:'2 BHK',sqft:579 ,price:'1.29 Cr' },
+      { bhk:'2 BHK',sqft:682 ,price:'1.70 Cr' },
+      { bhk:'3 BHK',sqft:878 ,price:'2.15 Cr' },
+      { bhk:'3 BHK',sqft:1121,price:' 2.95 Cr' },
+    ],
+    possession: '  December 2027',
+    structure: '   :  G + 53',
+    reraId: '    P51700050803',
+    images: [
+      'RUSTOMJEE UBTOWN URBANIA THANE365.jpg',
+      'RUSTOMJEE UBTOWN URBANIA THANE4544.jpg',
+      'RUSTOMJEE UBTOWN URBANIA THANE5858.jpg',
+      'RUSTOMJEE UBTOWN URBANIA THANE6566.jpg',
+      'RUSTOMJEE UBTOWN URBANIA THANE45454.jpg',
+    ]
+  },
+  {
+    id: 'VERDANT VISTAS -THANE',
+    name: 'VERDANT VISTAS -THANE',
+    developer: ' RUSTOMJEE.',
+    location: ': Majiwada, Thane',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1157, price: '2.71Cr' },
+      { bhk: '4BHK', sqft: 1760, price: '4.38Cr' },
+      { bhk: '4BHK', sqft: 2204, price: '5.69Cr' }
+    ],
+    possession: 'December 2029',
+    structure: 'G+46',
+    reraId: 'P51700077136',
+    images: [
+      'VERDANT VISTAS -THANE121.jpg',
+      'VERDANT VISTAS -THANE212.jpg',
+      'VERDANT VISTAS -THANE656.jpg',
+      'VERDANT VISTAS -THANE858.jpg',
+    ]
+  },
+  {
+    id: 'PIRAMAL VAIKUNTH – THANE',
+    name: 'PIRAMAL VAIKUNTH – THANE',
+    developer: ' PIRAMAL REALTY.',
+    location: ':  Balkum, Thane.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1.5BHK', sqft: 455, price: '1.12Cr' },
+      { bhk: '2BHK', sqft: 530, price: '1.32Cr' },
+      { bhk: '2BHK', sqft: 555, price: '1.49Cr' }
+    ],
+    possession: 'December 2029',
+    structure: 'G+46',
+    reraId: 'P51700077136',
+    images: [
+      'PIRAMAL VAIKUNTH – THANE658.jpg',
+      'PIRAMAL VAIKUNTH – THANE747.jpg',
+      'PIRAMAL VAIKUNTH – THANE858.jpg',
+      'PIRAMAL VAIKUNTH – THANE969.jpg',
+    ]
+  },
+  {
+    id: 'KALPATARU PARK CITY',
+    name: 'KALPATARU PARK CITY',
+    developer: '  KALPATARU.',
+    location: ':   Kolshet, Thane.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 468, price: '94Lacs' },
+      { bhk: '2BHK', sqft: 531, price: '1.25Cr' },
+      { bhk: '2BHK', sqft: 665, price: '1.52Cr' }
+    ],
+    possession: 'MARCH 2027',
+    structure: '6P + 40',
+    reraId: 'P51700055574',
+    images: [
+      'KALPATARU PARK CITY656.jpg',
+      'KALPATARU PARK CITY747.jpg',
+      'KALPATARU PARK CITY858.jpg',
+      'KALPATARU PARK CITY878.jpg',
+      'KALPATARU PARK CITY969.jpg',
+    ]
+  },
+  {
+    id: 'HOH – Woodspring KALYAN',
+    name: 'HOH – Woodspring KALYAN',
+    developer: 'House Of Hiranandani',
+    location: ': Kalyan, Mumbai',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 445, price: '56.89Lacs' },
+      { bhk: '1BHK', sqft: 461, price: '61.52Lacs' },
+      { bhk: '2BHK', sqft: 642, price: '83.66Lacs' }
+    ],
+    possession: 'Dec 2027',
+    structure: 'G + 25',
+    reraId: 'P51700050785',
+    images: [
+      'HOH – Woodspring KALYAN258.jpg',
+      'HOH – Woodspring KALYAN369.jpg',
+      'HOH – Woodspring KALYAN747.jpg',
+      'HOH – Woodspring KALYAN895.jpg',
+      'HOH – Woodspring KALYAN985.jpg',
+    ]
+  },
+  {
+    id: 'GODREJ NIRVAAN - KALYAN',
+    name: 'GODREJ NIRVAAN - KALYAN',
+    developer: ' Godrej Properties',
+    location: ': Thane Extension',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 461, price: '53.99Lacs' },
+      { bhk: '2BHK', sqft: 595, price: '75.99Lacs' },
+      { bhk: '2BHK', sqft: 675, price: '85.99Lacs' }
+    ],
+    possession: 'Ready Possession',
+    structure: 'G + 25',
+    reraId: 'P51700022148',
+    images: [
+      'GODREJ NIRVAAN - KALYAN365.jpg',
+      'GODREJ NIRVAAN - KALYAN658.jpg',
+      'GODREJ NIRVAAN - KALYAN854.jpg',
+      'GODREJ NIRVAAN - KALYAN968.jpg',
+    ]
+  },
+  {
+    id: 'GODREJ RIVIERA - KALYAN',
+    name: 'GODREJ RIVIERA - KALYAN',
+    developer: ' Godrej Properties',
+    location: '  Ambivali, Kalyan',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 371, price: '44.99Lacs' },
+      { bhk: '2BHK', sqft: 503, price: '67.99Lacs' },
+      { bhk: '2BHK', sqft: 660, price: '89.99Lacs' }
+    ],
+    possession: 'December 2026',
+    structure: 'G + 22',
+    reraId: 'P51700032552',
+    images: [
+      'GODREJ RIVIERA - KALYAN471.jpg',
+      'GODREJ RIVIERA - KALYAN696.jpg',
+      'GODREJ RIVIERA - KALYAN748.jpg',
+      'GODREJ RIVIERA - KALYAN898.jpg',
+    ]
+  },
+{
+    id: 'BIRLA VANYA - KALYAN',
+    name: 'BIRLA VANYA - KALYAN',
+    developer: '  BIRLA ESTATES',
+    location: '   Shahad, Kalyan.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '2BHK', sqft: 729, price: '1.10Cr' },
+      { bhk: '3BHK', sqft: 877, price: '1.45Cr' },
+      { bhk: '4BHK', sqft: 1315, price: '2.35Cr' }
+    ],
+    possession: 'Ready Possession',
+    structure: 'G + 32',
+    reraId: 'P51700019178',
+    images: [
+      'BIRLA VANYA - KALYAN636.jpg',
+      'BIRLA VANYA - KALYAN747.jpg',
+      'BIRLA VANYA - KALYAN857.jpg',
+      'BIRLA VANYA - KALYAN895.jpg',
+    ]
+  },
+  {
+    id: 'METROPLEX - SHILPHATA',
+    name: 'METROPLEX - SHILPHATA',
+    developer: ' PROVIDENT HOUSING',
+    location: '   Shilphata, Thane.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '1BHK', sqft: 459, price: '54Lacs' },
+      { bhk: '2BHK', sqft: 643, price: '84Lacs' },
+      { bhk: '2BHK', sqft: 749, price: '1.08Cr' }
+    ],
+    possession: 'Dec 2025',
+    structure: 'G + 30',
+    reraId: 'P51700025841',
+    images: [
+      'METROPLEX - SHILPHATA421.jpg',
+      'METROPLEX - SHILPHATA475.jpg',
+      'METROPLEX - SHILPHATA858.jpg',
+      'METROPLEX - SHILPHATA969.jpg',
+    ]
+  },
+{
+    id: 'RUSTOMJEE PRIVE - BKC',
+    name: 'RUSTOMJEE PRIVE - BKC',
+    developer: ' RUSTOMJEE',
+    location: '   BKC.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1088, price: '6Cr' },
+      { bhk: '3BHK', sqft: 1350, price: '7.25Cr' }
+    ],
+    possession: 'NOVEMBER 2029',
+    structure: 'G + 19',
+    reraId: 'P51800079537',
+    images: [
+      'RUSTOMJEE PRIVE - BKC475.jpg',
+      'RUSTOMJEE PRIVE - BKC639.jpg',
+      'RUSTOMJEE PRIVE - BKC748.jpg',
+      'RUSTOMJEE PRIVE - BKC818.jpg',
+    ]
+  },
+  {
+    id: 'TEN BKC - BANDRA',
+    name: 'TEN BKC - BANDRA',
+    developer: '  ADANI REALTY',
+    location: '    KALANAGAR BANDRA.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 1050, price: '6.95Cr' },
+      { bhk: '3BHK', sqft: 1389, price: '9.10Cr' }
+    ],
+    possession: 'March 2025',
+    structure: '2B + G + 22',
+    reraId: 'P51800004889',
+    images: [
+      'TEN BKC - BANDRA457.jpg',
+      'TEN BKC - BANDRA747.jpg',
+      'TEN BKC - BANDRA888.jpg',
+      'TEN BKC - BANDRA969.jpg',
+    ]
+  },
+  {
+    id: 'RUSTOMJEE ERIKA - BANDRA',
+    name: 'RUSTOMJEE ERIKA - BANDRA',
+    developer: '  : RUSTOMJEE',
+    location: '    KALANAGAR BANDRA.',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk: '3BHK', sqft: 541, price: '3.10Cr' },
+      { bhk: '3BHK', sqft: 620, price: '3.50Cr' }
+    ],
+    possession: 'December 2025',
+    structure: 'G + 23',
+    reraId: 'P51800033014',
+    images: [
+      'RUSTOMJEE ERIKA - BANDRA124.jpg',
+      'RUSTOMJEE ERIKA - BANDRA457.jpg',
+      'RUSTOMJEE ERIKA - BANDRA696.jpg',
+      'RUSTOMJEE ERIKA - BANDRA859.jpg',
+    ]
+  },
+  {
+    id: 'RUSTOMJEE PARISHRAM – PALI HILL',
+    name: 'RUSTOMJEE PARISHRAM – PALI HILL',
+    developer: '  : RUSTOMJEE',
+    location: '    Bandra, Pali Hill..',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk:'4 BHK',sqft:2725,price:'42.80 Cr*' },
+      { bhk:'4BHK',sqft:3672,price:'54.81 Cr' },
+],
+    possession: ':    Ready Possession.',
+    structure: '    :  G + 14',
+    reraId: '   P51800005738',
+    images: [
+      'RUSTOMJEE PARISHRAM – PALI HILL585.jpg',
+      'RUSTOMJEE PARISHRAM – PALI HILL698.jpg',
+      'RUSTOMJEE PARISHRAM – PALI HILL785.jpg',
+      'RUSTOMJEE PARISHRAM – PALI HILL885.jpg',
+      'RUSTOMJEE PARISHRAM – PALI HILL968.jpg',
+    ]
+  },
+  {
+    id: 'WESTBAY – ANDHERI',
+    name: 'WESTBAY – ANDHERI',
+    developer: '  :  ADANI REALTY',
+    location: '   : ANDHERI (W)..',
+    city: 'Thane',
+     association:"Prudent Properties",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk:'3BHK',sqft:1153,price:'4.56 Cr*' },
+      { bhk:'3BHK',sqft:1552,price:'5.27 Cr' },
+],
+    possession: 'OCTOBER 2028',
+    structure: 'G + 24',
+    reraId: 'P51800047539',
+    images: [
+      ' WESTBAY – ANDHERI662.jpg',
+      ' WESTBAY – ANDHERI745.jpg',
+      'WESTBAY – ANDHERI747.jpg',
+      'WESTBAY – ANDHERI969.jpg',
+      'WESTBAY – ANDHERI',
+    ]
+  },
+    {
+    id: 'ELIXER - POWAI',
+    name: 'WESTBAY – ANDHERI',
+    developer: '  :   L&T REALTY',
+    location: '   : ANDHERI (W)..',
+    city: 'Thane',
+     association:" Powai, Mumbai",
+    state: 'Maharashtra',
+    region: 'Thane to Kalyan',
+    units: [
+      { bhk:'2 BHK',sqft:600,price:'2.45 Cr*' },
+      { bhk: '3 BHK', sqft:990, price:'3.72 Cr' },
+],
+    possession: ':   OCTOBER 2028.',
+    structure: '    :   4B + G + 24',
+    reraId: '    P51800047539',
+    images: [
+      '/ELIXER - POWAI2385.jpg',
+      '/ELIXER - POWAI4785.jpg',
+      '/ELIXER - POWAI6396.jpg',
+      '/ELIXER - POWAI8758.jpg',
+      '/ELIXER - POWAI',
+    ],
+  }]
