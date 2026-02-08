@@ -1501,8 +1501,8 @@ export const projects: Project[] = [
     ]
   },
     {
-    id: 'ELIXER - POWAI',
-    name: 'WESTBAY – ANDHERI',
+    id: 'ELIXER-POWAI',
+    name: 'ELIXER-POWAI',
     developer: '  :   L&T REALTY',
     location: '   : ANDHERI (W)..',
     city: 'Thane',
