@@ -23,7 +23,7 @@ export type Project = {
   association?:string
 }
 
-export const projects: Project[] = [
+const rawProjects: Project[] = [
   {
     id: 'piramal-mahalaxmi',
     name: 'Piramal Mahalaxmi',
@@ -310,11 +310,11 @@ export const projects: Project[] = [
     structure: 'G + 5P + 34',
     reraId: 'P51900046369',
     images: [
-      'lt-island-mahim21.jpg',
-      'lt-island-mahim22.jpg',
-      'lt-island-mahim23.jpg',
-      'lt-island-mahim24.jpg',
-      'lt-island-mahim25.jpg',
+      '/lt-island-mahim21.jpg',
+      '/lt-island-mahim22.jpg',
+      '/lt-island-mahim23.jpg',
+      '/lt-island-mahim24.jpg',
+      '/lt-island-mahim25.jpg',
     ]
   },
   {
@@ -335,11 +335,11 @@ export const projects: Project[] = [
     structure: '5P + 63',
     reraId: 'P519000006367',
     images: [
-      'rustomjee-crown-prabhadevi27.jpg',
-      'rustomjee-crown-prabhadevi28.jpg',
-      'rustomjee-crown-prabhadevi29.jpg',
-      'rustomjee-crown-prabhadevi30.jpg',
-      'rustomjee-crown-prabhadevi31.jpg',
+      '/rustomjee-crown-prabhadevi27.jpg',
+      '/rustomjee-crown-prabhadevi28.jpg',
+      '/rustomjee-crown-prabhadevi29.jpg',
+      '/rustomjee-crown-prabhadevi30.jpg',
+      '/rustomjee-crown-prabhadevi31.jpg',
     ]
   },
   {
@@ -364,7 +364,7 @@ export const projects: Project[] = [
       '/rustomjee-crown-prabhadevi36.jpg',
       '/rustomjee-crown-prabhadevi37.jpg',
       '/rustomjee-crown-prabhadevi38.jpg',
-      'rustomjee-crown-prabhadevi/39.jpg',
+      '/rustomjee-crown-prabhadevi/39.jpg',
     ]
   },
   {
@@ -484,11 +484,11 @@ export const projects: Project[] = [
     structure: 'G + 3P + 34',
     reraId: 'P51800055166',
     images: [
-      'adani-codename-triumph-kanjurmarg62.jpg',
-      'adani-codename-triumph-kanjurmarg63.jpg',
-      'adani-codename-triumph-kanjurmarg64.jpg',
-      'adani-codename-triumph-kanjurmarg65.jpg',
-      'adani-codename-triumph-kanjurmarg66.jpg',
+      '/adani-codename-triumph-kanjurmarg62.jpg',
+      '/adani-codename-triumph-kanjurmarg63.jpg',
+      '/adani-codename-triumph-kanjurmarg64.jpg',
+      '/adani-codename-triumph-kanjurmarg65.jpg',
+      '/adani-codename-triumph-kanjurmarg66.jpg',
     ]
   },
   {
@@ -508,11 +508,11 @@ export const projects: Project[] = [
     structure: 'G + 47',
     reraId: 'P51800018099',
     images: [
-      'piramal-revanta-mulund74.jpg',
-      'piramal-revanta-mulund75.jpg',
-      'piramal-revanta-mulund76.jpg',
-      'piramal-revanta-mulund77.jpg',
-      'piramal-revanta-mulund78.jpg',
+      '/piramal-revanta-mulund74.jpg',
+      '/piramal-revanta-mulund75.jpg',
+      '/piramal-revanta-mulund76.jpg',
+      '/piramal-revanta-mulund77.jpg',
+      '/piramal-revanta-mulund78.jpg',
     ]
   },
   {
@@ -534,11 +534,11 @@ export const projects: Project[] = [
     structure: 'G + 54',
     reraId: 'P51800077457',
     images: [
-      'prestige-city-mulund-forest-hills77.jpg',
-      'prestige-city-mulund-forest-hills78.jpg',
-      'prestige-city-mulund-forest-hills79.jpg',
-      'prestige-city-mulund-forest-hills80.jpg',
-      'prestige-city-mulund-forest-hills81.jpg',
+      '/prestige-city-mulund-forest-hills77.jpg',
+      '/prestige-city-mulund-forest-hills78.jpg',
+      '/prestige-city-mulund-forest-hills79.jpg',
+      '/prestige-city-mulund-forest-hills80.jpg',
+      '/prestige-city-mulund-forest-hills81.jpg',
     ]
   },
   {
@@ -559,11 +559,11 @@ export const projects: Project[] = [
     structure: 'G + 54',
     reraId: 'P51800005285',
     images: [
-      'prestige-city-mulund-seista82.jpg',
-      'prestige-city-mulund-seista83.jpg',
-      'prestige-city-mulund-seista84.jpg',
-      'prestige-city-mulund-seista85.jpg',
-      'prestige-city-mulund-seista86.jpg',
+      '/prestige-city-mulund-seista82.jpg',
+      '/prestige-city-mulund-seista83.jpg',
+      '/prestige-city-mulund-seista84.jpg',
+      '/prestige-city-mulund-seista85.jpg',
+      '/prestige-city-mulund-seista86.jpg',
     ]
   },
   {
@@ -585,12 +585,12 @@ export const projects: Project[] = [
     structure: 'G + 54',
     reraId: 'P51800045339',
     images: [
-      'prestige-city-mulund-bellanza89.jpg',
-      'prestige-city-mulund-bellanza90.jpg',
-      'prestige-city-mulund-bellanza91.jpg',
-      'prestige-city-mulund-bellanza92.jpg',
-      'prestige-city-mulund-bellanza93.jpg',
-      'prestige-city-mulund-bellanza94.jpg',
+      '/prestige-city-mulund-bellanza89.jpg',
+      '/prestige-city-mulund-bellanza90.jpg',
+      '/prestige-city-mulund-bellanza91.jpg',
+      '/prestige-city-mulund-bellanza92.jpg',
+      '/prestige-city-mulund-bellanza93.jpg',
+      '/prestige-city-mulund-bellanza94.jpg',
     ]
   },
   {
@@ -610,13 +610,13 @@ export const projects: Project[] = [
     structure: 'Stilt + 62',
     reraId: 'P51800002656',
     images: [
-      'oberoi-enigma-mulund96.jpg',
-      'oberoi-enigma-mulund97.jpg',
-      'oberoi-enigma-mulund98.jpg',
-      'oberoi-enigma-mulund99.jpg',
-      'oberoi-enigma-mulund100.jpg',
-      'oberoi-enigma-mulund101.jpg',
-      'oberoi-enigma-mulund102.jpg',
+      '/oberoi-enigma-mulund96.jpg',
+      '/oberoi-enigma-mulund97.jpg',
+      '/oberoi-enigma-mulund98.jpg',
+      '/oberoi-enigma-mulund99.jpg',
+      '/oberoi-enigma-mulund100.jpg',
+      '/oberoi-enigma-mulund101.jpg',
+      '/oberoi-enigma-mulund102.jpg',
     ]
   },
   {
@@ -1524,3 +1524,23 @@ export const projects: Project[] = [
       '/ELIXER - POWAI',
     ],
   }]
+
+const normalizePublicAssetPath = (path: string) => {
+  if (!path) return path
+  const trimmedPath = path.trim()
+  if (
+    trimmedPath.startsWith('/') ||
+    trimmedPath.startsWith('http://') ||
+    trimmedPath.startsWith('https://') ||
+    trimmedPath.startsWith('data:')
+  ) {
+    return trimmedPath
+  }
+
+  return `/${trimmedPath}`
+}
+
+export const projects: Project[] = rawProjects.map((project) => ({
+  ...project,
+  images: project.images.map(normalizePublicAssetPath),
+}))

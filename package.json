@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev -p 3002",
+    "dev:turbo": "next dev --turbopack",
+    "dev:turbo:3002": "next dev --turbopack -p 3002",
+    "kill:3002": "powershell -NoProfile -Command \"$conn = Get-NetTCPConnection -LocalPort 3002 -State Listen -ErrorAction SilentlyContinue; if ($conn) { Stop-Process -Id $conn.OwningProcess -Force; Write-Output ('Killed PID ' + $conn.OwningProcess + ' on port 3002') } else { Write-Output 'Port 3002 already free' }\"",
+    "dev:reset": "npm run kill:3002; npm run clean; npm run dev",
+    "clean": "powershell -NoProfile -Command \"if (Test-Path .next) { Remove-Item .next -Recurse -Force }\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

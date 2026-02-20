@@ -1,0 +1,24 @@
+# CitizenHousing
+
+> CitizenHousing helps users discover verified residential, commercial, and farmhouse properties in India.
+
+## Site
+- Home: https://citizenhousing.in/
+- Properties: https://citizenhousing.in/properties
+- Farmhouse Listings: https://citizenhousing.in/properties/farmhouse
+- About: https://citizenhousing.in/about
+- Contact: https://citizenhousing.in/Contact
+
+## Core Pages
+- Buying Services: https://citizenhousing.in/services/buying
+- Selling Services: https://citizenhousing.in/services/selling
+- Rental Services: https://citizenhousing.in/services/rental
+- Legal Services: https://citizenhousing.in/services/legal
+- FAQ: https://citizenhousing.in/faq
+- Terms: https://citizenhousing.in/terms
+- Privacy Policy: https://citizenhousing.in/PrivacyPolicy
+
+## Crawling Notes
+- Use canonical pages and current sitemap: https://citizenhousing.in/sitemap.xml
+- Property detail pages are under: https://citizenhousing.in/properties/[slug]
+- Farmhouse detail pages are under: https://citizenhousing.in/properties/farmhouse/[slug]
