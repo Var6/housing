@@ -185,11 +185,11 @@ const rawProjects: Project[] = [
     structure:'G + 40',
     reraId: 'P51800077080',
     images: [
-      '/godrej-nurture-bhanudup67.jpg',
-      '/godrej-nurture-bhanudup68.jpg',
-      '/godrej-nurture-bhanudup69.jpg',
-      '/godrej-nurture-bhanudup70.jpg',
-      '/godrej-nurture-bhanudup71.jpg',
+      'godrej-nurture-bhandup/67.webp',
+      'godrej-nurture-bhandup/68.jfif',
+      'godrej-nurture-bhandup/69.jpeg',
+      'godrej-nurture-bhandup/70.jfif',
+      'godrej-nurture-bhandup/71.jfif',
     ]
   },
   {
@@ -636,11 +636,11 @@ const rawProjects: Project[] = [
     structure: 'Stilt + 60',
     reraId: 'P51800006141',
     images: [
-      'oberoi-eternia-mulund105.jpg',
-      'oberoi-eternia-mulund106.jpg',
-      'oberoi-eternia-mulund107.jpg',
-      'oberoi-eternia-mulund108.jpg',
-      'oberoi-eternia-mulund109.jpg',
+      'oberoi-eternia-mulund/105.jfif',
+      'oberoi-eternia-mulund/106.jfif',
+      'oberoi-eternia-mulund/107.jfif',
+      'oberoi-eternia-mulund/108.jpg',
+      'oberoi-eternia-mulund/109.jfif',
     ]
   },
   {
@@ -661,12 +661,12 @@ const rawProjects: Project[] = [
     structure: 'G + 57',
     reraId: 'P51800023075',
     images: [
-      'lt-rejuve-360-mulund112.jpg',
-      'lt-rejuve-360-mulund113.jpg',
-      'lt-rejuve-360-mulund114.jpg',
-      'lt-rejuve-360-mulund115.jpg',
-      'lt-rejuve-360-mulund116.jpg',
-      'lt-rejuve-360-mulund117.jpg',
+      'lt-rejuve-360-mulund/112.jfif',
+      'lt-rejuve-360-mulund/113.jpg',
+      'lt-rejuve-360-mulund/114.jpg',
+      'lt-rejuve-360-mulund/115.jfif',
+      'lt-rejuve-360-mulund/116.jfif',
+      'lt-rejuve-360-mulund/117.jfif',
     ]
   },
   {
@@ -687,14 +687,14 @@ const rawProjects: Project[] = [
     structure: 'G + 33',
     reraId: 'P51800033272',
     images: [
-      'kalpataru-summit-mulund6.jpg',
-      'kalpataru-summit-mulund787.jpg',
-      'kalpataru-summit-mulund4454.jpg',
-      'kalpataru-summit-mulund4555.jpg',
-      'kalpataru-summit-mulund4747.jpg',
-      'kalpataru-summit-mulund41444.jpg',
-      'kalpataru-summit-mulund74747.jpg',
-      'kalpataru-summit-mulund74858.jpg',
+      'kalpataru-summit-mulund/6.jpg',
+      'kalpataru-summit-mulund/787.jfif',
+      'kalpataru-summit-mulund/4454.jfif',
+      'kalpataru-summit-mulund/4555.webp',
+      'kalpataru-summit-mulund/4747.jfif',
+      'kalpataru-summit-mulund/41444.jfif',
+      'kalpataru-summit-mulund/74747.jfif',
+      'kalpataru-summit-mulund/74858.jfif',
     ]
   },
   {
@@ -714,12 +714,12 @@ const rawProjects: Project[] = [
     structure: 'G + 17',
     reraId: 'P51800028427',
     images: [
-      'puravankara-clermont-chembur568.jpg',
-      'puravankara-clermont-chembur858.jpg',
-      'puravankara-clermont-chembur3233.jpg',
-      'puravankara-clermont-chembur4747.jpg',
-      'puravankara-clermont-chembur525585.jpg',
-      'puravankara-clermont-chembur788778.jpg',
+      'puravankara-clermont-chembur/568.jfif',
+      'puravankara-clermont-chembur/858.jfif',
+      'puravankara-clermont-chembur/3233.jfif',
+      'puravankara-clermont-chembur/4747.jfif',
+      'puravankara-clermont-chembur/525585.jfif',
+      'puravankara-clermont-chembur/788778.jfif',
     ]
   },
   {
@@ -740,13 +740,13 @@ const rawProjects: Project[] = [
     structure: 'G + 44',
     reraId: 'P51700053668',
     images: [
-      'godrej-ascend-thane414.jpg',
-      'godrej-ascend-thane1414.jpg',
-      'godrej-ascend-thane2525.jpg',
-      'godrej-ascend-thane8588.jpg',
-      'godrej-ascend-thane25252.jpg',
-      'godrej-ascend-thane78787.jpg',
-      'godrej-ascend-thane87878.jpg',
+      'godrej-ascend-thane/414.jfif',
+      'godrej-ascend-thane/1414.jfif',
+      'godrej-ascend-thane/2525.jfif',
+      'godrej-ascend-thane/8588.jfif',
+      'godrej-ascend-thane/25252.jfif',
+      'godrej-ascend-thane/78787.png',
+      'godrej-ascend-thane/87878.jfif',
     ]
   },
   {
@@ -766,11 +766,11 @@ const rawProjects: Project[] = [
     structure: 'G + 60',
     reraId: 'P51700050312',
     images: [
-      'godrej-forest-ville-thane858.jpg',
-      'godrej-forest-ville-thane4747.jpg',
-      'godrej-forest-ville-thane7477.jpg',
-      'godrej-forest-ville-thane8588.jpg',
-      'godrej-forest-ville-thane858585.jpg',
+      'godrej-forest-ville-thane/858.webp',
+      'godrej-forest-ville-thane/4747.jfif',
+      'godrej-forest-ville-thane/7477.jfif',
+      'godrej-forest-ville-thane/8588.jfif',
+      'godrej-forest-ville-thane/858585.jfif',
     ]
   },
   {
@@ -790,16 +790,16 @@ const rawProjects: Project[] = [
     structure: 'G + 42',
     reraId: 'P51700034190',
     images: [
-      'raymond-tenx-habitat-thane2121.jpg',
-      'raymond-tenx-habitat-thane5258.jpg',
-      'raymond-tenx-habitat-thane7877.jpg',
-      'raymond-tenx-habitat-thane8989.jpg',
-      'raymond-tenx-habitat-thane74747.jpg',
-      'raymond-tenx-habitat-thane74774.jpg',
+      'raymond-tenx-habitat-thane/2121.jfif',
+      'raymond-tenx-habitat-thane/5258.jpg',
+      'raymond-tenx-habitat-thane/7877.jfif',
+      'raymond-tenx-habitat-thane/8989.jpg',
+      'raymond-tenx-habitat-thane/74747.jpg',
+      'raymond-tenx-habitat-thane/74774.webp',
     ]
   },
    {
-    id: 'PIRAMAL ARANYA-RANI BAUG',
+    id: 'piramal-aranya-rani-baug',
     name: ': PIRAMAL REALTY',
     developer: ' PIRAMAL REALTY',
     location: ' BYCULLA, MUMBAI',
@@ -815,15 +815,15 @@ const rawProjects: Project[] = [
     structure: 'G + 52',
     reraId: 'P51900018039',
     images: [
-      'primalaranya-rani bug11.jpg',
-      'primalaranya-rani bug12.jpg',
-      'primalaranya-rani bug13.jpg',
-      'primalaranya-rani bug14.jpg',
-      'primalaranya-rani bug15.jpg',
+      'piramal-aranya-byculla/11.jfif',
+      'piramal-aranya-byculla/12.jfif',
+      'piramal-aranya-byculla/13.jfif',
+      'piramal-aranya-byculla/14.jfif',
+      'piramal-aranya-byculla/15.jfif',
     ]
   },
  {
-    id: 'THE VIEWS - GHATKOPAR',
+    id: 'the-views-ghatkopar',
     name: ': THE VIEWS - GHATKOPAR',
     developer: '  ADANI REALTY',
     location: '  Ghatkopar,Mumbai',
@@ -840,15 +840,15 @@ const rawProjects: Project[] = [
     structure: '2B + Stilt + 21',
     reraId: 'P51900031165',
     images: [
-      'primalaranya-rani bug11.jpg',
-      'primalaranya-rani bug12.jpg',
-      'primalaranya-rani bug13.jpg',
-      'primalaranya-rani bug14.jpg',
-      'primalaranya-rani bug15.jpg',
+      'piramal-aranya-byculla/11.jfif',
+      'piramal-aranya-byculla/12.jfif',
+      'piramal-aranya-byculla/13.jfif',
+      'piramal-aranya-byculla/14.jfif',
+      'piramal-aranya-byculla/15.jfif',
     ]
   },
    {
-    id: 'CODENAME TRIUMPH- KANJURMARG',
+    id: 'codename-triumph-kanjurmarg',
     name: ': CODENAME TRIUMPH-KANJURMARG',
     developer: ' ADANI REALTY',
     location: '  KANJURMARG,Mumbai',
@@ -866,11 +866,11 @@ const rawProjects: Project[] = [
     structure: 'G + 52',
     reraId: 'P51900018039',
     images: [
-      'primalaranya-rani bug11.jpg',
-      'primalaranya-rani bug12.jpg',
-      'primalaranya-rani bug13.jpg',
-      'primalaranya-rani bug14.jpg',
-      'primalaranya-rani bug15.jpg',
+      'piramal-aranya-byculla/11.jfif',
+      'piramal-aranya-byculla/12.jfif',
+      'piramal-aranya-byculla/13.jfif',
+      'piramal-aranya-byculla/14.jfif',
+      'piramal-aranya-byculla/15.jfif',
     ]
   },
  {
@@ -892,15 +892,15 @@ const rawProjects: Project[] = [
     structure: ' 2B+G+12',
     reraId: ' P51700032812',
     images: [
-      '9 PBR – PALM BEACH ROAD4747.JPG',
-      '9 PBR – PALM BEACH ROAD6369.JPG',
-      '9 PBR – PALM BEACH ROAD8589.JPG',
-      '9 PBR – PALM BEACH ROAD8787.JPG',
-      '9 PBR – PALM BEACH ROAD9689.JPG',
+      '9 PBR – PALM BEACH ROAD/4747.jfif',
+      '9 PBR – PALM BEACH ROAD/6369.jfif',
+      '9 PBR – PALM BEACH ROAD/8589.jfif',
+      '9 PBR – PALM BEACH ROAD/8787.jfif',
+      '9 PBR – PALM BEACH ROAD/9689.jfif',
     ]
   },
   {
-   id: 'CHESTERTON - THANE',
+   id: 'chesterton-thane',
     name: 'CHESTERTON - THAN',
     developer: ' House Of Hiranandani',
     location: '  Thane, Mumbai',
@@ -915,15 +915,15 @@ const rawProjects: Project[] = [
     structure: 'G + 10',
     reraId: ' P51700019400',
     images: [
-      'CHESTERTON - THANE565.JPG',
-      'CHESTERTON - THANE747.JPG',
-      'CHESTERTON - THANE898.JPG',
-      'CHESTERTON - THANE969.JPG',
-      'CHESTERTON - THANE47474.JPG',
+      'CHESTERTON - THANE/565.jfif',
+      'CHESTERTON - THANE/747.jpg',
+      'CHESTERTON - THANE/898.jfif',
+      'CHESTERTON - THANE/969.jpg',
+      'CHESTERTON - THANE/47474.webp',
     ]
   },
   {
-    id: 'WEST GATE - THANE',
+    id: 'west-gate-thane',
     name: 'WEST GATE - THANE',
     developer: ': House Of Hiranandani.',
     location: '  Waghbil,Thane',
@@ -941,15 +941,15 @@ const rawProjects: Project[] = [
     structure: '  Stilt+47',
     reraId: '  Stilt+4',
     images: [
-      'WEST GATE - THANE2525.JPG',
-      'WEST GATE - THANE3687.JPG',
-      'WEST GATE - THANE4545.JPG',
-      'WEST GATE - THANE6565.JPG',
-      'WEST GATE - THANE74747.JPG',
+      'WESTGATE-THANE/2525.jfif',
+      'WESTGATE-THANE/3687.avif',
+      'WESTGATE-THANE/4545.jfif',
+      'WESTGATE-THANE/6565.jfif',
+      'WESTGATE-THANE/6969.jfif',
     ]
   },
   {
-    id: 'GODREJ NURTURE-BHANDUP',
+    id: 'godrej-nurture-bhandup',
     name: 'GODREJ NURTURE-BHANDUP',
     developer: ':  GODREJ PROPERTIES.',
     location: ' : LBS Marg, Bhandup',
@@ -966,15 +966,15 @@ const rawProjects: Project[] = [
     structure: '  : G+40',
     reraId: '   P51800077080',
     images: [
-      'GODREJ NURTURE-BHANDUP67.JPG',
-      'GODREJ NURTURE-BHANDUP68.JPG',
-      'GODREJ NURTURE-BHANDUP69.JPG',
-      'GODREJ NURTURE-BHANDUP70.JPG',
-      'GODREJ NURTURE-BHANDUP71.JPG',
+      'GODREJ NURTURE-BHANDUP/67.webp',
+      'GODREJ NURTURE-BHANDUP/68.jfif',
+      'GODREJ NURTURE-BHANDUP/69.jpeg',
+      'GODREJ NURTURE-BHANDUP/70.jfif',
+      'GODREJ NURTURE-BHANDUP/71.jfif',
     ]
   },
 {
-    id: 'FOREST VILLE -THANE',
+    id: 'forest-ville-thane',
     name: 'FOREST VILLE -THANE',
     developer: ' Godrej Properties.',
     location: '   Kolshet Rd, Thane',
@@ -990,16 +990,16 @@ const rawProjects: Project[] = [
     structure: '   G+60',
     reraId: '  P51700050312',
     images: [
-      'FOREST VILLE -THANE1447.JPG',
-      'FOREST VILLE -THANE4747.JPG',
-      'FOREST VILLE -THANE5874.JPG',
-      'FOREST VILLE -THANE6968.JPG',
-      'FOREST VILLE -THANE85878.JPG',
+      'FOREST VILLE -THANE/1447.jfif',
+      'FOREST VILLE -THANE/4747.jfif',
+      'FOREST VILLE -THANE/5874.jfif',
+      'FOREST VILLE -THANE/6968.jfif',
+      'FOREST VILLE -THANE/85878.jfif',
     ]
   },
   {
-    id: 'WEST GATE - THANE',
-    name: 'WEST GATE - THANE',
+    id: 'westgate-thane-premium',
+    name: 'WEST GATE - THANE (Premium)',
     developer: ': House Of Hiranandani.',
     location: '  Waghbil,Thane',
     city: 'Thane',
@@ -1016,15 +1016,15 @@ const rawProjects: Project[] = [
     structure: '  Stilt+47',
     reraId: '  Stilt+4',
     images: [
-      'WEST GATE - THANE2525.JPG',
-      'WEST GATE - THANE3687.JPG',
-      'WEST GATE - THANE4545.JPG',
-      'WEST GATE - THANE6565.JPG',
-      'WEST GATE - THANE74747.JPG',
+      'WESTGATE-THANE/2525.jfif',
+      'WESTGATE-THANE/3687.avif',
+      'WESTGATE-THANE/4545.jfif',
+      'WESTGATE-THANE/6565.jfif',
+      'WESTGATE-THANE/74747.jfif',
     ]
   },
 {
-    id: 'RAYMOND TENX ERA',
+    id: 'raymond-tenx-era',
     name: 'RAYMOND REALTY',
     developer: ': House Of Hiranandani.',
     location: '   MAHARASHTRA',
@@ -1042,14 +1042,14 @@ const rawProjects: Project[] = [
     structure: '  G + 42',
     reraId: '  Stilt+4',
     images: [
-      'RAYMOND TENX ERA4144.JPG',
-      'RAYMOND TENX ERA6969.JPG',
-      'RAYMOND TENX ERA25858.JPG',
-      'RAYMOND TENX ERA74747.JPG',
+      'RAYMOND TENX ERA/4144.jpeg',
+      'RAYMOND TENX ERA/6969.jfif',
+      'RAYMOND TENX ERA/25858.jfif',
+      'RAYMOND TENX ERA/74747.jfif',
     ]
   },
   {
-    id: 'THE ADDRESS BY GS',
+    id: 'the-address-by-gs',
     name: 'THE ADDRESS BY GS',
     developer: ':  RAYMOND REALTY.',
     location: '   MAHARASHTRA',
@@ -1065,14 +1065,14 @@ const rawProjects: Project[] = [
     structure: '   G + 40',
     reraId: '  Stilt+4',
     images: [
-      'THE ADDRESS BY GS5252.JPG',
-      'THE ADDRESS BY GS5858.JPG',
-      'THE ADDRESS BY GS6996.JPG',
-      'THE ADDRESS BY GS25898.JPG',
+      'THE ADDRESS BY GS/5252.jpg',
+      'THE ADDRESS BY GS/5858.webp',
+      'THE ADDRESS BY GS/6996.jfif',
+      'THE ADDRESS BY GS/25898.jfif',
     ]
   },
   {
-    id: 'PARK AVENUE-HIGH STREET',
+    id: 'park-avenue-high-street',
     name: 'THE ADDRESS BY GS',
     developer: ':  RAYMOND REALTY.',
     location: '   MAHARASHTRA',
@@ -1088,15 +1088,15 @@ const rawProjects: Project[] = [
     structure: '   G + 40',
     reraId: '  Stilt+4',
     images: [
-      'THE ADDRESS BY GS2124.JPG',
-      'THE ADDRESS BY GS3674.JPG',
-      'THE ADDRESS BY GS5256.JPG',
-      'THE ADDRESS BY GS8587.JPG',
-      'THE ADDRESS BY GS9697.JPG',
+      'THE ADDRESS BY GS/2124.jfif',
+      'THE ADDRESS BY GS/3674.jfif',
+      'THE ADDRESS BY GS/5256.jfif',
+      'THE ADDRESS BY GS/8587.jfif',
+      'THE ADDRESS BY GS/9697.jfif',
     ]
   },
   {
-    id: 'SOLITAIRE - THANE',
+    id: 'solitaire-thane',
     name: 'SOLITAIRE - THANE',
     developer: '  House Of Hiranandani.',
     location: '   : GB Road, Thane',
@@ -1111,15 +1111,15 @@ const rawProjects: Project[] = [
     structure: '   : G + 36',
     reraId: '   P51700000413',
     images: [
-      'SOLITAIRE - THANE1241.jpg',
-      'SOLITAIRE - THANE5256.jpg',
-      'SOLITAIRE - THANE6589.jpg',
-      'SOLITAIRE - THANE7474.jpg',
+      'SOLITAIRE - THANE/1241.jfif',
+      'SOLITAIRE - THANE/5256.jfif',
+      'SOLITAIRE - THANE/6589.jfif',
+      'SOLITAIRE - THANE/7474.jfif',
     ]
   },
   {
-    id: 'CHESTERTON-THANE',
-    name: 'SOLITAIRE - THANE',
+    id: 'chesterton-thane-shop',
+    name: 'CHESTERTON - THANE (Shop)',
     developer: '  House Of Hiranandani.',
     location: '   : : Thane, Mumbai',
     city: 'Thane',
@@ -1133,15 +1133,15 @@ const rawProjects: Project[] = [
     structure: '   : G + 10',
     reraId: '    P51700019400',
     images: [
-      'CHESTERTON - THANE565.jpg',
-      'CHESTERTON - THANE747.jpg',
-      'CHESTERTON - THANE898.jpg',
-      'CHESTERTON - THANE969.jpg',
-      'CHESTERTON - THANE47474.jpg',
+      'CHESTERTON - THANE/565.jfif',
+      'CHESTERTON - THANE/747.jpg',
+      'CHESTERTON - THANE/898.jfif',
+      'CHESTERTON - THANE/969.jpg',
+      'CHESTERTON - THANE/47474.webp',
     ]
   },
   {
-    id: 'TATASEREIN-THANE',
+    id: 'tata-serein-thane',
     name: 'TATA SEREIN - THANE',
     developer: '  TATA Housing.',
     location:'Pokhran Road No.2, Thane',
@@ -1156,15 +1156,11 @@ const rawProjects: Project[] = [
     structure: '   : G + 27',
     reraId: '    P51700052235',
     images: [
-      'TATA SEREIN - THANE325.jpg',
-      'TATA SEREIN - THANE747.jpg',
-      'TATA SEREIN - THANE969.jpg',
-      'TATA SEREIN - THANE2525.jpg',
-      'TATA SEREIN - THANE4747.jpg',
+      'Contact for Images',
     ]
   },
   {
-    id: 'RUSTOMJEE UBTOWN URBANIA THANE',
+    id: 'rustomjee-ubtown-urbania-thane',
     name: 'RUSTOMJEE UBTOWN URBANIA THANE',
     developer: ' RUSTOMJEE.',
     location: ': Majiwada, Thane',
@@ -1182,15 +1178,11 @@ const rawProjects: Project[] = [
     structure: '   :  G + 53',
     reraId: '    P51700050803',
     images: [
-      'RUSTOMJEE UBTOWN URBANIA THANE365.jpg',
-      'RUSTOMJEE UBTOWN URBANIA THANE4544.jpg',
-      'RUSTOMJEE UBTOWN URBANIA THANE5858.jpg',
-      'RUSTOMJEE UBTOWN URBANIA THANE6566.jpg',
-      'RUSTOMJEE UBTOWN URBANIA THANE45454.jpg',
+      'Contact for Images',
     ]
   },
   {
-    id: 'VERDANT VISTAS -THANE',
+    id: 'verdant-vistas-thane',
     name: 'VERDANT VISTAS -THANE',
     developer: ' RUSTOMJEE.',
     location: ': Majiwada, Thane',
@@ -1384,7 +1376,7 @@ const rawProjects: Project[] = [
     ]
   },
 {
-    id: 'RUSTOMJEE PRIVE - BKC',
+    id: 'rustomjee-prive-bkc',
     name: 'RUSTOMJEE PRIVE - BKC',
     developer: ' RUSTOMJEE',
     location: '   BKC.',
@@ -1407,7 +1399,7 @@ const rawProjects: Project[] = [
     ]
   },
   {
-    id: 'TEN BKC - BANDRA',
+    id: 'ten-bkc-bandra',
     name: 'TEN BKC - BANDRA',
     developer: '  ADANI REALTY',
     location: '    KALANAGAR BANDRA.',
@@ -1430,7 +1422,7 @@ const rawProjects: Project[] = [
     ]
   },
   {
-    id: 'RUSTOMJEE ERIKA - BANDRA',
+    id: 'rustomjee-erika-bandra',
     name: 'RUSTOMJEE ERIKA - BANDRA',
     developer: '  : RUSTOMJEE',
     location: '    KALANAGAR BANDRA.',
@@ -1453,7 +1445,7 @@ const rawProjects: Project[] = [
     ]
   },
   {
-    id: 'RUSTOMJEE PARISHRAM – PALI HILL',
+    id: 'rustomjee-parishram-pali-hill',
     name: 'RUSTOMJEE PARISHRAM – PALI HILL',
     developer: '  : RUSTOMJEE',
     location: '    Bandra, Pali Hill..',
@@ -1493,35 +1485,30 @@ const rawProjects: Project[] = [
     structure: 'G + 24',
     reraId: 'P51800047539',
     images: [
-      ' WESTBAY – ANDHERI662.jpg',
-      ' WESTBAY – ANDHERI745.jpg',
-      'WESTBAY – ANDHERI747.jpg',
-      'WESTBAY – ANDHERI969.jpg',
-      'WESTBAY – ANDHERI',
+      'WESTBAY – ANDHERI/662.jfif',
+      'WESTBAY – ANDHERI/745.jfif',
+      'WESTBAY – ANDHERI/747.jpg',
+      'WESTBAY – ANDHERI/969.jpeg',
     ]
   },
     {
-    id: 'ELIXER-POWAI',
-    name: 'ELIXER-POWAI',
+    id: 'elixer-powai',
+    name: 'ELIXER - POWAI',
     developer: '  :   L&T REALTY',
-    location: '   : ANDHERI (W)..',
-    city: 'Thane',
+    location: '   : POWAI Mumbai',
+    city: 'Mumbai',
      association:" Powai, Mumbai",
     state: 'Maharashtra',
-    region: 'Thane to Kalyan',
+    region: 'Mumbai Central',
     units: [
       { bhk:'2 BHK',sqft:600,price:'2.45 Cr*' },
       { bhk: '3 BHK', sqft:990, price:'3.72 Cr' },
 ],
-    possession: ':   OCTOBER 2028.',
-    structure: '    :   4B + G + 24',
-    reraId: '    P51800047539',
+    possession: 'OCTOBER 2028',
+    structure: '4B + G + 24',
+    reraId: 'P51800047539',
     images: [
-      '/ELIXER - POWAI2385.jpg',
-      '/ELIXER - POWAI4785.jpg',
-      '/ELIXER - POWAI6396.jpg',
-      '/ELIXER - POWAI8758.jpg',
-      '/ELIXER - POWAI',
+      'Contact for Images',
     ],
   }]
 
@@ -1544,3 +1531,4 @@ export const projects: Project[] = rawProjects.map((project) => ({
   ...project,
   images: project.images.map(normalizePublicAssetPath),
 }))
+

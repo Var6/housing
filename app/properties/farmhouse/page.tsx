@@ -40,7 +40,7 @@ export default function FarmhouseListingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProperties.map((property) => (
             <article key={property.id} className="bg-white rounded-2xl overflow-hidden shadow-md border border-green-100">
-              <img src={property.image} alt={property.name} className="w-full h-64 object-cover" />
+              <img src={property.images[2]} alt={property.name} className="w-full h-64 object-cover" />
               <div className="p-6">
                 <p className="text-green-700 text-sm font-semibold mb-2">{property.type}</p>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">{property.name}</h2>
