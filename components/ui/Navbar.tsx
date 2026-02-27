@@ -77,7 +77,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Mock session - replace with your auth logic
   useEffect(() => {
     // setSession({ user: { name: 'John Doe', email: 'john@example.com', image: null } });
   }, []);

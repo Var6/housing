@@ -638,11 +638,11 @@ export default function LegalAssistance() {
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2" />
-                <span>+91 98765-43210</span>
+                <span>+91 90310-07097</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2" />
-                <span>legal@citizenhomes.com</span>
+                <span>citizen.housing@citizencooperative.in</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 mr-2" />

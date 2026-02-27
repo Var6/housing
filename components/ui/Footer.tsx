@@ -160,7 +160,7 @@ export default function Footer() {
               <span className="text-sm text-gray-300">Follow us:</span>
               <div className="flex space-x-3">
                 <a
-                  href="https://facebook.com/citizenhomes"
+                  href="https://facebook.com/citizenhousing"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -168,7 +168,7 @@ export default function Footer() {
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://twitter.com/citizenhomes"
+                  href="https://twitter.com/citizenhousing"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -176,7 +176,7 @@ export default function Footer() {
                   <Twitter className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://instagram.com/citizenhomes"
+                  href="https://instagram.com/citizenhousing"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -184,7 +184,7 @@ export default function Footer() {
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/company/citizenhomes"
+                  href="https://linkedin.com/company/citizenhousing"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"

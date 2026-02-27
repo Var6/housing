@@ -39,18 +39,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://citizenhousing.in"), // Replace with your actual domain
+  metadataBase: new URL("https://citizenhousing.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
     description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes.",
-    url: "https://citizenhousing.in", // Replace with your actual domain
+    url: "https://citizenhousing.in",
     siteName: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
     images: [
       {
-        url: "/logo/citizenhousing-og-image.png", // Add your Open Graph image here
+        url: "/logo/citizenhousing-og-image.png",
         width: 1200,
         height: 630,
         alt: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Real Estate Platform",
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
     description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes.",
-    images: ["/logo/citizenhousing-twitter-card.png"], // Add your Twitter card image here
-    creator: "@citizenhousing", // Replace with your actual Twitter handle
+    images: ["/logo/citizenhousing-twitter-card.png"],
+    creator: "@citizenhousing",
   },
   robots: {
     index: true,
@@ -116,10 +116,10 @@ export default function RootLayout({
               "name": "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
               "legalName": "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
               "description": "India's trusted platform for buying, selling, and renting homes",
-              "url": "https://citizenhousing.in", // Replace with your actual domain
-              "logo": "https://citizenhousing.in/logo/citizenhousing-logo2.png", // Replace with your actual logo URL
+              "url": "https://citizenhousing.in",
+              "logo": "https://citizenhousing.in/logo/citizenhousing-logo2.png",
               "sameAs": [
-                "https://www.facebook.com/citizenhousing", // Add your social media links
+                "https://www.facebook.com/citizenhousing",
                 "https://www.twitter.com/citizenhousing",
                 "https://www.linkedin.com/company/citizenhousing",
                 "https://www.instagram.com/citizenhousing"
@@ -133,7 +133,7 @@ export default function RootLayout({
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-7352569099", // Add your phone number
+                "telephone": "+91-7352569099",
                 "contactType": "customer service",
                 "email": "itsupport@citizencooperative.in"
               }

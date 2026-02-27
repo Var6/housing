@@ -338,7 +338,7 @@ const TermsOfServicePage = () => {
               </p>
               <div className="bg-blue-50 p-4 rounded-lg">
                 <p className="text-blue-800 text-sm">
-                  <strong>DMCA Notice:</strong> If you believe your copyright has been infringed, please contact us at legal@citizenhousing.com with detailed information.
+                  <strong>DMCA Notice:</strong> If you believe your copyright has been infringed, please contact us at citizen.housing@citizencooperative.in with detailed information.
                 </p>
               </div>
             </TermsSection>
@@ -462,14 +462,14 @@ const TermsOfServicePage = () => {
                     <Mail className="w-5 h-5 text-blue-600" />
                     <div>
                       <p className="font-medium">General Inquiries</p>
-                      <p className="text-sm">legal@citizenhousing.com</p>
+                      <p className="text-sm">citizen.housing@citizencooperative.in</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5 text-blue-600" />
                     <div>
                       <p className="font-medium">Legal Helpline</p>
-                      <p className="text-sm">+91-11-4567-8900</p>
+                      <p className="text-sm">+91-9031007097</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -477,9 +477,9 @@ const TermsOfServicePage = () => {
                     <div>
                       <p className="font-medium">Registered Address</p>
                       <p className="text-sm">
-                        CitizenHousing Private Limited<br />
-                        123 Housing Street<br />
-                        New Delhi, India 110001
+                        CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED<br />
+                        1st Floor, Shanti Devi Nivas<br />
+                        Near Sichai Bhawan, Patna, India 800002
                       </p>
                     </div>
                   </div>
@@ -489,7 +489,7 @@ const TermsOfServicePage = () => {
                   <p className="text-sm text-gray-600 mb-2">
                     For formal legal notices and compliance matters:
                   </p>
-                  <p className="text-sm font-medium">compliance@citizenhousing.com</p>
+                  <p className="text-sm font-medium">citizen.housing@citizencooperative.in</p>
                   <p className="text-sm text-gray-500 mt-2">
                     Response time: 5-7 business days
                   </p>

@@ -302,7 +302,7 @@ const FAQPage = () => {
       {
         id: 'sp1',
         question: 'How can I contact CitizenHousing support?',
-        answer: 'Reach us via live chat (9 AM - 9 PM), email (support@citizenhousing.com), phone (+91-11-4567-8900), or submit a support ticket through your dashboard. We aim to respond within 2 hours.',
+        answer: 'Reach us via live chat (9 AM - 9 PM), email (citizen.housing@citizencooperative.in), phone (+91-9031007097), or submit a support ticket through your dashboard. We aim to respond quickly during business hours.',
         tags: ['contact', 'support']
       },
       {
@@ -676,11 +676,11 @@ const FAQPage = () => {
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="w-4 h-4 text-blue-600" />
-                  <span>support@citizenhousing.com</span>
+                  <span>citizen.housing@citizencooperative.in</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Phone className="w-4 h-4 text-blue-600" />
-                  <span>+91-11-4567-8900</span>
+                  <span>+91-9031007097</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Clock className="w-4 h-4 text-blue-600" />
@@ -693,7 +693,7 @@ const FAQPage = () => {
             <div className="border-t border-gray-200 pt-6">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div className="text-sm text-gray-500">
-                  © 2025 CitizenHousing Private Limited. All rights reserved.
+                  © 2025 CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED. All rights reserved.
                 </div>
                 <div className="flex items-center space-x-4 text-xs text-gray-400">
                   <span>FAQ v2.0</span>

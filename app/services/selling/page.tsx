@@ -124,7 +124,7 @@ export default function PropertySelling() {
       name: "Amit Kumar",
       location: "Delhi",
       rating: 5,
-      comment: "Best decision to choose CitizenHomes. They made selling hassle-free."
+      comment: "Best decision to choose CitizenHousing. They made selling hassle-free."
     }
   ];
 
@@ -408,11 +408,11 @@ export default function PropertySelling() {
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2" />
-                <span>+91 98765-43210</span>
+                <span>+91 90310-07097</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2" />
-                <span>sell@citizenhomes.com</span>
+                <span>citizen.housing@citizencooperative.in</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 mr-2" />
