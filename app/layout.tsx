@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "CitizenHousing - Find Your Perfect Home",
-    template: "%s | CitizenHousing"
+    default: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
+    template: "%s | CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED"
   },
-  description: "Discover your dream property with CitizenHousing - India's trusted platform for buying, selling, and renting homes. Browse thousands of verified listings from residential apartments to commercial spaces.",
+  description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes. Browse thousands of verified listings from residential apartments to commercial spaces.",
   keywords: [
     "real estate",
     "property",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "buy property",
     "rent house"
   ],
-  authors: [{ name: "CitizenHousing Team" }],
-  creator: "CitizenHousing Private Limited",
-  publisher: "CitizenHousing",
+  authors: [{ name: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED" }],
+  creator: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
+  publisher: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
   formatDetection: {
     email: false,
     address: false,
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "CitizenHousing - Find Your Perfect Home",
-    description: "Discover your dream property with CitizenHousing - India's trusted platform for buying, selling, and renting homes.",
+    title: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
+    description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes.",
     url: "https://citizenhousing.in", // Replace with your actual domain
-    siteName: "CitizenHousing",
+    siteName: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
     images: [
       {
         url: "/logo/citizenhousing-og-image.png", // Add your Open Graph image here
         width: 1200,
         height: 630,
-        alt: "CitizenHousing - Real Estate Platform",
+        alt: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Real Estate Platform",
       },
     ],
     locale: "en_IN",
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CitizenHousing - Find Your Perfect Home",
-    description: "Discover your dream property with CitizenHousing - India's trusted platform for buying, selling, and renting homes.",
+    title: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
+    description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes.",
     images: ["/logo/citizenhousing-twitter-card.png"], // Add your Twitter card image here
     creator: "@citizenhousing", // Replace with your actual Twitter handle
   },
@@ -113,7 +113,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
-              "name": "CitizenHousing",
+              "name": "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
+              "legalName": "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED",
               "description": "India's trusted platform for buying, selling, and renting homes",
               "url": "https://citizenhousing.in", // Replace with your actual domain
               "logo": "https://citizenhousing.in/logo/citizenhousing-logo2.png", // Replace with your actual logo URL

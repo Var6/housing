@@ -106,7 +106,7 @@ export default function Navbar() {
                   <h1 className="text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
                     CitizenHousing
                   </h1>
-                  <p className="text-xs text-gray-500 -mt-1">Find Your Dream Home</p>
+                  <p className="text-xs text-gray-500 -mt-1">CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED</p>
                 </div>
               </a>
             </div>

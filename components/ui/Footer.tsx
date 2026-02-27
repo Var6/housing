@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
              <Image src="/logo2.png" alt="Citizen Housing Logo" width={40} height={40} />
-              <span className="text-xl font-bold">Citizen Housing</span>
+              <span className="text-xl font-bold">CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner in finding the perfect home. We connect citizens with quality housing solutions across the country.
@@ -213,7 +213,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © 2025 citizen grih nirman. All rights reserved.
+              © 2025 CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <span>Developed by</span>
