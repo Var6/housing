@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { MapPin, ChevronDown } from 'lucide-react';
+import { MapPin, ChevronDown, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 // Types
@@ -17,34 +17,9 @@ interface State {
   cities?: City[];
 }
 
-// Mock data - replace with your API calls
-const mockStates: State[] = [
-  {
-    _id: 'MH',
-    name: 'Maharashtra',
-    cities: [
-      { _id: 'MH-MUM', name: 'Mumbai', propertyCount: 21 },
-      { _id: 'MH-THA', name: 'Thane', propertyCount: 4 },
-      { _id: 'MH-KAL', name: 'Kalyan', propertyCount: 1 },
-      { _id: 'MH-NMV', name: 'Navi Mumbai', propertyCount: 1 },
-      //{ _id: 'MH-PAN', name: 'Panvel', propertyCount: 3 },
-     // { _id: 'MH-PAL', name: 'Palghar', propertyCount: 3 },
-     // { _id: 'MH-VIR', name: 'Virar', propertyCount: 2 },
-     // { _id: 'MH-MIR', name: 'Mira Road', propertyCount: 1 }
-    ]
-  },
-  {
-    _id: 'UP',
-    name: 'Uttar Pradesh',
-    cities: [
-      { _id: 'UP-GN', name: 'Greater Noida', propertyCount: 4 },
-    
-    ]
-  }
-];
-
 export default function LocationRibbon() {
   const [states, setStates] = useState<State[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeState, setActiveState] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
@@ -58,9 +33,19 @@ export default function LocationRibbon() {
   }, []);
 
   useEffect(() => {
-    // Replace with your API call
-    // fetch('/api/states').then(res => res.json()).then(data => setStates(data));
-    setStates(mockStates);
+    // Fetch locations from API
+    fetch('/api/locations')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setStates(data);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to fetch locations:', err);
+        setLoading(false);
+      });
   }, []);
 
 const router = useRouter();
@@ -99,6 +84,21 @@ const handleNavigation = (stateName: string, cityName?: string) => {
   };
 
   const getActiveStateData = () => states.find(s => s._id === activeState);
+
+  if (loading) {
+    return (
+      <div className="relative w-full bg-gradient-to-r from-green-800 via-green-500 to-green-300 shadow-lg">
+        <div className="flex items-center justify-center py-3 px-4">
+          <Loader2 className="h-5 w-5 text-white animate-spin mr-2" />
+          <span className="text-white text-sm">Loading locations...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (states.length === 0) {
+    return null;
+  }
 
   return (
     <div className="relative w-full bg-gradient-to-r from-green-800 via-green-500 to-green-300 shadow-lg">

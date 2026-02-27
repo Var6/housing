@@ -11,6 +11,7 @@ import {
   Instagram, 
   Linkedin,
   Github,
+  Youtube,
   Home,
   Search,
   Calculator,
@@ -19,6 +20,7 @@ import {
   Users
 } from 'lucide-react';
 import Image from 'next/image';
+import { contactInfo, socialLinks } from './TopRibbon';
 
 export default function Footer() {
   return (
@@ -28,10 +30,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-             <Image src="/logo2.png" alt="Citizen Housing Logo" width={40} height={40} />
-              <span className="text-xl font-bold">CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED</span>
+             <Image src="/logo2.png" alt="Citizen Housing Logo" width={50} height={50} />
+              <span className="text-xl font-bold">Citizen Housing</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
+              <span className="text-l font-bold text-center">CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED</span><br/>
               Your trusted partner in finding the perfect home. We connect citizens with quality housing solutions across the country.
             </p>
             <div className="space-y-2">
@@ -39,14 +42,14 @@ export default function Footer() {
                 <MapPin className="h-4 w-4 text-blue-400" />
                 <span>1st floor Shanti Devi Nivas <br/> Near Sichai Bhavan, Patna</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+              <a href={`tel:${contactInfo.phone}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span>+91 90310 07097</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-300">
+                <span>{contactInfo.phoneDisplay}</span>
+              </a>
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors">
                 <Mail className="h-4 w-4 text-blue-400" />
-                <span>sales@citizenimf.com</span>
-              </div>
+                <span>{contactInfo.email}</span>
+              </a>
             </div>
           </div>
 
@@ -159,38 +162,18 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-300">Follow us:</span>
               <div className="flex space-x-3">
-                <a
-                  href="https://facebook.com/citizenhousing"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://twitter.com/citizenhousing"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://instagram.com/citizenhousing"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://linkedin.com/company/citizenhousing"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
               </div>
             </div>
 

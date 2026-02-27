@@ -141,3 +141,51 @@ export async function getDashboardAnalytics() {
     listingTypes: byType.map((item) => ({ type: item._id || 'Unknown', count: item.count })),
   }
 }
+
+export type LocationData = {
+  _id: string
+  name: string
+  cities: {
+    _id: string
+    name: string
+    propertyCount: number
+  }[]
+}
+
+export async function getLocationData(): Promise<LocationData[]> {
+  await connectToDatabase()
+
+  const statesWithCities = await PropertyModel.aggregate([
+    {
+      $group: {
+        _id: { state: '$state', city: '$city' },
+        count: { $sum: 1 },
+      },
+    },
+    {
+      $group: {
+        _id: '$_id.state',
+        cities: {
+          $push: {
+            name: '$_id.city',
+            count: '$count',
+          },
+        },
+      },
+    },
+    { $sort: { _id: 1 } },
+  ])
+
+  return statesWithCities.map((state) => ({
+    _id: state._id?.replace(/\s+/g, '-').toUpperCase() || 'UNKNOWN',
+    name: state._id || 'Unknown',
+    cities: state.cities
+      .filter((c: any) => c.name)
+      .sort((a: any, b: any) => b.count - a.count)
+      .map((c: any) => ({
+        _id: `${state._id?.replace(/\s+/g, '-').toUpperCase()}-${c.name?.replace(/\s+/g, '-').toUpperCase()}`,
+        name: c.name,
+        propertyCount: c.count,
+      })),
+  }))
+}

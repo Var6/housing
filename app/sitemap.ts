@@ -1,10 +1,17 @@
 import type { MetadataRoute } from 'next'
-import { projects } from '@/data/project'
-import { farmhouseProperties } from '@/data/farmhouse'
+import { connectToDatabase } from '@/lib/mongodb'
+import { PropertyModel } from '@/models/Property'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-dynamic'
+export const revalidate = 3600 // Revalidate every hour
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://citizenhousing.in'
   const now = new Date()
+
+  // Connect to database and fetch all properties
+  await connectToDatabase()
+  const properties = await PropertyModel.find({}).select('slug kind updatedAt').lean()
 
   const staticRoutes = [
     '',
@@ -30,19 +37,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.7,
   }))
 
-  const propertyEntries: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${baseUrl}/properties/${project.id}`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }))
+  const propertyEntries: MetadataRoute.Sitemap = properties
+    .filter((p: any) => p.kind === 'property')
+    .map((property: any) => ({
+      url: `${baseUrl}/properties/${property.slug}`,
+      lastModified: property.updatedAt || now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
 
-  const farmhouseEntries: MetadataRoute.Sitemap = farmhouseProperties.map((property) => ({
-    url: `${baseUrl}/properties/farmhouse/${property.id}`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }))
+  const farmhouseEntries: MetadataRoute.Sitemap = properties
+    .filter((p: any) => p.kind === 'farmhouse')
+    .map((property: any) => ({
+      url: `${baseUrl}/properties/farmhouse/${property.slug}`,
+      lastModified: property.updatedAt || now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }))
 
   return [...staticEntries, ...propertyEntries, ...farmhouseEntries]
 }

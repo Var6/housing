@@ -1,58 +1,24 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { 
-  Building2, 
   Menu, 
   X, 
   Home, 
-  Search, 
-  Calculator, 
-  Shield, 
-  Award, 
   Users,
   Phone,
-  ChevronDown,
-  LogIn,
-  UserPlus,
-  MapPin,
-  Building,
-  Briefcase,
-  FileText,
-  HelpCircle,
-  Star,
-  Gavel,
-  Eye,
-  Settings,
-  TrendingUp,
   Heart,
-  Bell,
-  User,
-  LogOut,
-  Package,
-  Mail,
-  PhoneCall
+  Building
 } from 'lucide-react';
 import Image from 'next/image';
-import LocationRibbon from './ribbion'; // Import the separate component
+import LocationRibbon from './ribbion';
+import TopRibbon from './TopRibbon';
 import Link from 'next/link';
-
-// Types
-interface Session {
-  user?: {
-    name?: string | null;
-    email?: string | null;
-    image?: string | null;
-  };
-}
 
 // Main Navbar Component
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [session, setSession] = useState<Session | null>(null);
-  const [showUserMenu, setShowUserMenu] = useState(false);
-  const userMenuRef = useRef<HTMLDivElement>(null);
 
   const navigationItems = [
     { name: 'Home', href: '/', icon: <Home className="h-4 w-4" /> },
@@ -67,82 +33,51 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
-        setShowUserMenu(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    // setSession({ user: { name: 'John Doe', email: 'john@example.com', image: null } });
-  }, []);
-
-  const handleLogout = () => {
-    setSession(null);
-    setShowUserMenu(false);
-  };
-
   return (
     <>
+      <TopRibbon />
       <nav className={`sticky top-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/90 backdrop-blur-xl shadow-2xl' 
           : 'bg-white shadow-lg'
       }`}>
-        <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center h-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo */}
-            <div className="flex items-center mr-5">
-              <a href="/" className="flex items-center space-x-3 group">
-                <div className="relative">     
-                  <Image src="/logo2.png" alt="CitizenHousing Logo" width={40} height={40} />
+            <div className="flex items-center min-w-0 flex-shrink">
+              <Link href="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+                <div className="relative flex-shrink-0">     
+                  <Image src="/logo2.png" alt="CitizenHousing Logo" width={36} height={36} className="sm:w-10 sm:h-10" />
                 </div>           
-                <div>
-                  <h1 className="text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
+                <div className="min-w-0">
+                  <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent truncate">
                     CitizenHousing
                   </h1>
-                  <p className="text-xs text-gray-500 -mt-1">CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED</p>
+                  <p className="text-[8px] sm:text-[10px] text-gray-500 -mt-0.5 truncate hidden xs:block">CITIZEN LAND PROPERTY & CONSTRUCTION</p>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex flex-1 items-center space-x-2">
+            <div className="hidden md:flex items-center gap-1 lg:gap-2">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 px-2 py-2 rounded-lg text-lg font-medium text-orange-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-base lg:text-lg font-medium text-orange-700 hover:text-green-600 hover:bg-green-50 transition-all duration-200 whitespace-nowrap"
                 >
                   {item.icon}
                   <span>{item.name}</span>
-                </a>
+                </Link>
               ))}
-               <div className="ml-auto flex items-center space-x-4 text-sm font-medium text-orange-700">
-                  <Link href="mailto:sales@citizenimf.com">
-                  <span>
-                    <Mail className="inline-block h-4 w-4 mr-1 text-orange-700" /> 
-                    sales@citizenimf.com</span>
-                  </Link>
-                  <Link href="tel:+919876543210">
-                  <span>
-                    <PhoneCall className="inline-block h-4 w-4 mr-1 text-orange-700" />
-                    +91 9031007097
-                  </span>
-                    </Link>
-                </div>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center gap-2">
-              <a href="/properties/saved" className="p-2 rounded-lg text-gray-600 hover:text-green-600">
+            <div className="md:hidden flex items-center gap-1 flex-shrink-0">
+              <Link href="/properties/saved" className="p-2 rounded-lg text-gray-600 hover:text-green-600" aria-label="Saved properties">
                 <Heart className="h-5 w-5" />
-              </a>
-              <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg text-gray-700 hover:bg-gray-50">
+              </Link>
+              <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg text-gray-700 hover:bg-gray-50" aria-label={isOpen ? "Close menu" : "Open menu"}>
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
@@ -151,18 +86,18 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden border-t border-gray-200 bg-white">
-            <div className="px-4 py-4 space-y-3">
+          <div className="md:hidden border-t border-gray-200 bg-white animate-in slide-in-from-top-2 duration-200">
+            <div className="px-3 py-3 space-y-1">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-green-50 hover:text-green-600 active:bg-green-100 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.icon}
                   <span className="font-medium">{item.name}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

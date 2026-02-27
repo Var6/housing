@@ -63,7 +63,8 @@ export const metadata: Metadata = {
     title: "CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - Find Your Perfect Home",
     description: "Discover your dream property with CITIZEN LAND PROPERTY & CONSTRUCTION PRIVATE LIMITED - India's trusted platform for buying, selling, and renting homes.",
     images: ["/logo/citizenhousing-twitter-card.png"],
-    creator: "@citizenhousing",
+    site: "@CitizenHousingg",
+    creator: "@CitizenHousingg",
   },
   robots: {
     index: true,
@@ -113,10 +114,11 @@ export default function RootLayout({
               "url": "https://citizenhousing.in",
               "logo": "https://citizenhousing.in/logo/citizenhousing-logo2.png",
               "sameAs": [
-                "https://www.facebook.com/citizenhousing",
-                "https://www.twitter.com/citizenhousing",
-                "https://www.linkedin.com/company/citizenhousing",
-                "https://www.instagram.com/citizenhousing"
+                "https://www.facebook.com/share/1Fkb85HcL1/",
+                "https://x.com/CitizenHousingg",
+                "https://www.linkedin.com/company/citizenhousingpatna",
+                "https://www.instagram.com/citizenhousingpatna/",
+                "https://youtube.com/@citizenhousingpatna"
               ],
               "address": {
                 "@type": "PostalAddress",
@@ -127,9 +129,9 @@ export default function RootLayout({
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+91-7352569099",
+                "telephone": "+91-9031007097",
                 "contactType": "customer service",
-                "email": "itsupport@citizencooperative.in"
+                "email": "sales@citizenimf.com"
               }
             })
           }}
