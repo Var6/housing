@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { getAllProperties } from '@/lib/property-service'
 
+export const dynamic = 'force-dynamic'
+
 export default async function FarmhouseListingPage() {
   const farmhouses = await getAllProperties('farmhouse')
 

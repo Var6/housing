@@ -22,12 +22,17 @@ if (!global.mongooseCache) {
 }
 
 export async function connectToDatabase() {
+  const uri = MONGODB_URI
+  if (!uri) {
+    throw new Error('MONGODB_URI is not configured')
+  }
+
   if (cache.conn) {
     return cache.conn
   }
 
   if (!cache.promise) {
-    cache.promise = mongoose.connect(MONGODB_URI, {
+    cache.promise = mongoose.connect(uri, {
       dbName: process.env.MONGODB_DB || 'citizenhousing',
     })
   }

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPropertyBySlug } from '@/lib/property-service'
 
+export const dynamic = 'force-dynamic'
+
 export default async function FarmhouseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const property = await getPropertyBySlug(slug)

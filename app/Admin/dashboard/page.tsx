@@ -2,6 +2,8 @@ import Link from 'next/link'
 import LogoutButton from '@/components/admin/LogoutButton'
 import { getAllProperties, getDashboardAnalytics } from '@/lib/property-service'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboardPage() {
   const [analytics, allResidential, allFarmland] = await Promise.all([
     getDashboardAnalytics(),
