@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { MapPin, Home, Maximize, IndianRupee, Calendar, Layers, FileText, Search, Filter, Phone, Mail, X, Check } from 'lucide-react';
-import  { projects } from '@/data/project';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
@@ -14,6 +13,7 @@ type Unit = {
 
 type Project = {
   id: string;
+  kind?: 'property' | 'farmhouse';
   name: string;
   developer: string;
   location: string;
@@ -27,10 +27,10 @@ type Project = {
   possession: string;
   structure: string;
   reraId?: string;
+  priceVisible?: boolean;
 };
 
-const data=projects;
-export default function Propertyhai() {
+export default function Propertyhai({ projects }: { projects: Project[] }) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [regionFilter, setRegionFilter] = useState('all');

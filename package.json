@@ -11,7 +11,8 @@
     "clean": "powershell -NoProfile -Command \"if (Test-Path .next) { Remove-Item .next -Recurse -Force }\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
