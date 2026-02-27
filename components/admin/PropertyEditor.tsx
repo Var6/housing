@@ -1,6 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { useMemo, useState } from 'react'
+import { X, GripVertical, Plus, ImageIcon } from 'lucide-react'
 
 type Unit = {
   bhk: string
@@ -54,8 +56,6 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
     () => form.units.map((u) => `${u.bhk}|${u.sqft}|${u.price}`).join('\n'),
     [form.units],
   )
-
-  const imageText = useMemo(() => form.images.join('\n'), [form.images])
 
   const updateField = (key: keyof PropertyPayload, value: any) => {
     setForm((prev) => ({ ...prev, [key]: value }))
@@ -111,31 +111,34 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
     setMessage('Saved successfully')
   }
 
+  const inputClass = "border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
+  const textareaClass = "w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
+
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input className="border rounded-lg px-3 py-2" value={form.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Name" required />
-        <input className="border rounded-lg px-3 py-2" value={form.developer} onChange={(e) => updateField('developer', e.target.value)} placeholder="Developer" />
-        <input className="border rounded-lg px-3 py-2" value={form.location} onChange={(e) => updateField('location', e.target.value)} placeholder="Location" required />
-        <input className="border rounded-lg px-3 py-2" value={form.city} onChange={(e) => updateField('city', e.target.value)} placeholder="City" required />
-        <input className="border rounded-lg px-3 py-2" value={form.state} onChange={(e) => updateField('state', e.target.value)} placeholder="State" required />
-        <input className="border rounded-lg px-3 py-2" value={form.region} onChange={(e) => updateField('region', e.target.value)} placeholder="Region" />
-        <input className="border rounded-lg px-3 py-2" value={form.type} onChange={(e) => updateField('type', e.target.value)} placeholder="Type" />
-        <input className="border rounded-lg px-3 py-2" value={form.association || ''} onChange={(e) => updateField('association', e.target.value)} placeholder="Association" />
-        <input className="border rounded-lg px-3 py-2" value={form.possession} onChange={(e) => updateField('possession', e.target.value)} placeholder="Possession" />
-        <input className="border rounded-lg px-3 py-2" value={form.structure} onChange={(e) => updateField('structure', e.target.value)} placeholder="Structure" />
-        <input className="border rounded-lg px-3 py-2" value={form.reraId || ''} onChange={(e) => updateField('reraId', e.target.value)} placeholder="RERA" />
+        <input className={inputClass} value={form.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Name" required />
+        <input className={inputClass} value={form.developer} onChange={(e) => updateField('developer', e.target.value)} placeholder="Developer" />
+        <input className={inputClass} value={form.location} onChange={(e) => updateField('location', e.target.value)} placeholder="Location" required />
+        <input className={inputClass} value={form.city} onChange={(e) => updateField('city', e.target.value)} placeholder="City" required />
+        <input className={inputClass} value={form.state} onChange={(e) => updateField('state', e.target.value)} placeholder="State" required />
+        <input className={inputClass} value={form.region} onChange={(e) => updateField('region', e.target.value)} placeholder="Region" />
+        <input className={inputClass} value={form.type} onChange={(e) => updateField('type', e.target.value)} placeholder="Type" />
+        <input className={inputClass} value={form.association || ''} onChange={(e) => updateField('association', e.target.value)} placeholder="Association" />
+        <input className={inputClass} value={form.possession} onChange={(e) => updateField('possession', e.target.value)} placeholder="Possession" />
+        <input className={inputClass} value={form.structure} onChange={(e) => updateField('structure', e.target.value)} placeholder="Structure" />
+        <input className={inputClass} value={form.reraId || ''} onChange={(e) => updateField('reraId', e.target.value)} placeholder="RERA" />
       </div>
 
-      <label className="inline-flex items-center gap-2">
+      <label className="inline-flex items-center gap-2 text-slate-900">
         <input type="checkbox" checked={form.priceVisible} onChange={(e) => updateField('priceVisible', e.target.checked)} />
         <span>Show price in public pages</span>
       </label>
 
       <div>
-        <p className="font-semibold mb-2">Units (one per line: BHK|SQFT|PRICE)</p>
+        <p className="font-semibold mb-2 text-slate-900">Units (one per line: BHK|SQFT|PRICE)</p>
         <textarea
-          className="w-full border rounded-lg px-3 py-2 min-h-32"
+          className={`${textareaClass} min-h-32`}
           value={unitsText}
           onChange={(e) => {
             const parsed = e.target.value
@@ -152,23 +155,109 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
       </div>
 
       <div>
-        <p className="font-semibold mb-2">Images (one URL per line)</p>
-        <textarea
-          className="w-full border rounded-lg px-3 py-2 min-h-32"
-          value={imageText}
-          onChange={(e) => updateField('images', parseList(e.target.value))}
-        />
-        <div className="mt-3 flex items-center gap-3">
-          <input type="file" accept="image/*" onChange={onUpload} />
-          <span className="text-sm text-slate-600">{uploading ? 'Uploading to Cloudinary...' : 'Upload image'}</span>
+        <p className="font-semibold mb-2 text-slate-900">Images</p>
+        
+        {/* Image Gallery Preview */}
+        {form.images.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-4">
+            {form.images.map((url, index) => (
+              <div key={index} className="relative group aspect-square rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                {url.includes('cloudinary') || url.includes('res.cloudinary') ? (
+                  <Image
+                    src={url}
+                    alt={`Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  />
+                ) : url.startsWith('http') ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={url}
+                    alt={`Image ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-2 text-center">
+                    <ImageIcon className="w-8 h-8 text-slate-400 mb-1" />
+                    <span className="text-xs text-slate-500 truncate w-full">{url}</span>
+                  </div>
+                )}
+                
+                {/* Overlay with actions */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const newImages = [...form.images]
+                      if (index > 0) {
+                        [newImages[index], newImages[index - 1]] = [newImages[index - 1], newImages[index]]
+                        updateField('images', newImages)
+                      }
+                    }}
+                    disabled={index === 0}
+                    className="p-1.5 bg-white/90 rounded-lg text-slate-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Move left"
+                  >
+                    <GripVertical className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const newImages = form.images.filter((_, i) => i !== index)
+                      updateField('images', newImages)
+                    }}
+                    className="p-1.5 bg-red-500 rounded-lg text-white hover:bg-red-600"
+                    title="Remove image"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+                
+                {/* Index badge */}
+                <span className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-0.5 rounded-full">
+                  {index + 1}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Upload and URL input */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <label className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-slate-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors">
+            <Plus className="w-5 h-5 text-slate-500" />
+            <span className="text-sm text-slate-600">{uploading ? 'Uploading...' : 'Upload Image'}</span>
+            <input type="file" accept="image/*" onChange={onUpload} className="hidden" disabled={uploading} />
+          </label>
+          
+          <button
+            type="button"
+            onClick={() => {
+              const url = prompt('Enter image URL:')
+              if (url && url.trim()) {
+                updateField('images', [...form.images, url.trim()])
+              }
+            }}
+            className="flex items-center justify-center gap-2 px-4 py-3 border border-slate-300 rounded-xl hover:bg-slate-50 transition-colors"
+          >
+            <ImageIcon className="w-5 h-5 text-slate-500" />
+            <span className="text-sm text-slate-600">Add URL</span>
+          </button>
         </div>
+
+        {form.images.length > 0 && (
+          <p className="mt-2 text-xs text-slate-500">
+            {form.images.length} image{form.images.length !== 1 ? 's' : ''} • Hover to reorder or remove
+          </p>
+        )}
       </div>
 
       {form.kind === 'farmhouse' && (
         <div className="space-y-4 border rounded-xl p-4 bg-green-50">
-          <h3 className="font-bold text-lg">Farmland Details</h3>
+          <h3 className="font-bold text-lg text-slate-900">Farmland Details</h3>
           <textarea
-            className="w-full border rounded-lg px-3 py-2 min-h-24"
+            className={`${textareaClass} min-h-24`}
             placeholder="Description"
             value={form.farmhouseDetails?.description || ''}
             onChange={(e) =>
@@ -179,15 +268,15 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
             }
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input className="border rounded-lg px-3 py-2" placeholder="Price Range" value={form.farmhouseDetails?.priceRange || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), priceRange: e.target.value })} />
-            <input className="border rounded-lg px-3 py-2" placeholder="Area" value={form.farmhouseDetails?.area || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), area: e.target.value })} />
-            <input className="border rounded-lg px-3 py-2" placeholder="Bedrooms" value={form.farmhouseDetails?.bedrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bedrooms: e.target.value })} />
-            <input className="border rounded-lg px-3 py-2" placeholder="Bathrooms" value={form.farmhouseDetails?.bathrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bathrooms: e.target.value })} />
+            <input className={inputClass} placeholder="Price Range" value={form.farmhouseDetails?.priceRange || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), priceRange: e.target.value })} />
+            <input className={inputClass} placeholder="Area" value={form.farmhouseDetails?.area || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), area: e.target.value })} />
+            <input className={inputClass} placeholder="Bedrooms" value={form.farmhouseDetails?.bedrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bedrooms: e.target.value })} />
+            <input className={inputClass} placeholder="Bathrooms" value={form.farmhouseDetails?.bathrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bathrooms: e.target.value })} />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <textarea className="border rounded-lg px-3 py-2 min-h-24" placeholder="Features (one per line)" value={(form.farmhouseDetails?.features || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), features: parseList(e.target.value) })} />
-            <textarea className="border rounded-lg px-3 py-2 min-h-24" placeholder="Highlights (one per line)" value={(form.farmhouseDetails?.highlights || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), highlights: parseList(e.target.value) })} />
-            <textarea className="border rounded-lg px-3 py-2 min-h-24" placeholder="Nearby Places (one per line)" value={(form.farmhouseDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), nearbyPlaces: parseList(e.target.value) })} />
+            <textarea className={`${textareaClass} min-h-24`} placeholder="Features (one per line)" value={(form.farmhouseDetails?.features || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), features: parseList(e.target.value) })} />
+            <textarea className={`${textareaClass} min-h-24`} placeholder="Highlights (one per line)" value={(form.farmhouseDetails?.highlights || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), highlights: parseList(e.target.value) })} />
+            <textarea className={`${textareaClass} min-h-24`} placeholder="Nearby Places (one per line)" value={(form.farmhouseDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), nearbyPlaces: parseList(e.target.value) })} />
           </div>
         </div>
       )}

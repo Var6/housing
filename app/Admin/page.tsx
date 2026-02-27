@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
 
         <form onSubmit={onSubmit} className="space-y-4">
           <input
-            className="w-full border rounded-lg px-3 py-2"
+            className="w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
           />
           <input
             type="password"
-            className="w-full border rounded-lg px-3 py-2"
+            className="w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

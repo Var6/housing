@@ -1,7 +1,10 @@
+import { loadEnvConfig } from '@next/env'
 import { projects } from '@/data/project'
 import { farmhouseProperties } from '@/data/farmhouse'
 import { connectToDatabase } from '@/lib/mongodb'
 import { PropertyModel } from '@/models/Property'
+
+loadEnvConfig(process.cwd())
 
 function normalizeImages(images: string[] = []) {
   return images
@@ -61,10 +64,21 @@ async function seed() {
     }
   })
 
-  await PropertyModel.deleteMany({})
-  await PropertyModel.insertMany(documents)
+  const dedupedDocuments = Array.from(
+    new Map(documents.map((doc) => [doc.slug, doc])).values(),
+  )
 
-  console.log(`Seeded ${documents.length} records into MongoDB`)
+  await PropertyModel.bulkWrite(
+    dedupedDocuments.map((doc) => ({
+      updateOne: {
+        filter: { slug: doc.slug },
+        update: { $set: doc },
+        upsert: true,
+      },
+    })),
+  )
+
+  console.log(`Seeded ${dedupedDocuments.length} unique records into MongoDB`)
   process.exit(0)
 }
 
