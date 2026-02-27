@@ -2,10 +2,6 @@ import mongoose from 'mongoose'
 
 const MONGODB_URI = process.env.MONGODB_URI
 
-if (!MONGODB_URI) {
-  throw new Error('MONGODB_URI is not configured')
-}
-
 type MongooseCache = {
   conn: typeof mongoose | null
   promise: Promise<typeof mongoose> | null
@@ -37,6 +33,12 @@ export async function connectToDatabase() {
     })
   }
 
-  cache.conn = await cache.promise
+  try {
+    cache.conn = await cache.promise
+  } catch (error) {
+    cache.promise = null
+    throw error
+  }
+
   return cache.conn
 }

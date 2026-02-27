@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
-import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -80,11 +79,6 @@ export const metadata: Metadata = {
 icons: {
   icon: [
     { url: "/favicon.ico" },
-    { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-    { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
-  ],
-  apple: [
-    { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   ],
 },
 };
@@ -144,7 +138,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Analytics/>
         <Navbar />
         <main className="flex-grow">
           {children}
