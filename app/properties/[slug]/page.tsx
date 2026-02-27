@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPropertyBySlug } from '@/lib/property-service'
+import VisitLeadPopup from '@/components/UX/VisitLeadPopup'
 
 export const dynamic = 'force-dynamic'
 
@@ -70,6 +71,8 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
           </div>
         </aside>
       </section>
+
+      <VisitLeadPopup propertyName={project.name} storageKey={`property-${project.id}`} />
     </div>
   )
 }

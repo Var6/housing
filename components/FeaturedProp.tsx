@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { MapPin, Bed, Bath, Square, Heart, Eye, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
-import { Project } from '@/data/project';
+
 interface Property {
-  id: number;
+  id: string;
   title: string;
   location: string;
   price: string;
@@ -15,289 +15,30 @@ interface Property {
   bathrooms?: number;
   area: string;
   image: string;
-  featured: boolean;
+  kind: 'property' | 'farmhouse';
+  featured?: boolean;
   rating: number;
   reviews: number;
-  page: string;
   association?: string
 }
 
-export default function FeaturedProperties() {
+export default function FeaturedProperties({ properties }: { properties: Property[] }) {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [favorites, setFavorites] = useState<number[]>([]);
-
-  const properties: Property[] = [
-    {
-      id: 91,
-      title: "Centurion Luxury Farmhouse ",
-      location: "Near Jewar Airport, Greater Noida",
-      price: "Contact for Price",
-      originalPrice: "",
-      type: "villa",
-      page:"properties/farmhouse/centurion-farm-house-jewar",
-      bedrooms: 1,
-      bathrooms: 1,
-      area: "1000* sq ft",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
-      featured: true,
-      rating: 4.8,
-      association: "",
-      reviews: 24
-    },
-    {
-      id: 92,
-      title: "Lotus Farmhouse ",
-      location: "Noida ",
-      price: "Contact for Price",
-      type: "villa",
-      bedrooms: 3,
-      bathrooms: 2,
-      page:"properties/farmhouse/lotus-farms-techzone",
-      area: "1500 sq ft",
-      image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400",
-      featured: true,
-      rating: 4.6,
-      reviews: 18
-    },
-  {
-  id: 93,
-  title: 'Cyberthum',
-  location: 'Sector 140A',
-    price: "Contact for Price",
-  originalPrice: '',
-  type: "commercial",
-  page:"properties/cyberthum-sector-140a",
-      area: "1000* sq ft",
-  image: '/cyberthum/G3.jpg',
-    featured: true,
-      rating: 4.8,
-      reviews: 24
-},
-  {
-  id: 94,
-  title: 'Grandthum',
-  location: 'Techzone 4',
-  price: "Contact for Price",
-  originalPrice: '',
-  type: "Farmhouse",
-      page:"properties/grandthum-techzone-4",
-      bedrooms: 1,
-      bathrooms: 1,
-      area: "1000* sq ft",
-  image:'/grandthum/G1.jpg',
-  featured: true,
-      rating: 4.6,
-      reviews: 18
-  },
-  {
-      id: 1,
-      title: "Piramal Mahalaxmi",
-      location: "Jacob Circle, Mumbai",
-      price: "₹5.60 Cr",
-      originalPrice: "",
-      type: "apartment",
-      page: "properties/piramal-mahalaxmi",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "762 sq ft",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400",
-      featured: true,
-      rating: 4.9,
-      association: "Prudent Properties",
-      reviews: 45
-    },
-    {
-      id: 2,
-      title: "L&T Gateway",
-      location: "Sewri, Mumbai",
-      price: "₹6.52 Cr",
-      type: "apartment",
-      bedrooms: 3,
-      bathrooms: 2,
-      page: "properties/lt-gateway-sewri",
-      area: "1258 sq ft",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400",
-      featured: true,
-      rating: 4.8,
-      association: "Prudent Properties",
-      reviews: 38
-    },
-    {
-      id: 3,
-      title: "Piramal Aranya",
-      location: "Rani Baug, Byculla, Mumbai",
-      price: "₹6.10 Cr",
-      type: "apartment",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: "1050 sq ft",
-      page: "properties/piramal-aranya-byculla",
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400",
-      featured: true,
-      rating: 4.9,
-      association: "Prudent Properties",
-      reviews: 52
-    },
-    {
-      id: 4,
-      title: "Birla Niyaara",
-      location: "Worli, Mumbai",
-      price: "₹14.65 Cr",
-      type: "apartment",
-      bedrooms: 3,
-      bathrooms: 3,
-      area: "1151 sq ft",
-      page: "properties/birla-niyaara-worli",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400",
-      featured: true,
-      rating: 4.9,
-      association: "Prudent Properties",
-      reviews: 67
-    },
-    {
-      id: 5,
-      title: "L&T Island",
-      location: "Mahim, Mumbai",
-      price: "₹2.81 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "681 sq ft",
-      page: "properties/lt-island-mahim",
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400",
-      featured: true,
-      rating: 4.7,
-      association: "Prudent Properties",
-      reviews: 34
-    },
-    {
-      id: 6,
-      title: "Rustomjee Crown",
-      location: "Prabhadevi, Mumbai",
-      price: "₹18.90 Cr",
-      type: "apartment",
-      bedrooms: 4,
-      bathrooms: 3,
-      association: "Prudent Properties",
-      area: "2156 sq ft",
-      page: "properties/rustomjee-crown-prabhadevi",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400",
-      featured: true,
-      rating: 4.9,
-      reviews: 48
-    },
-    {
-      id: 7,
-      title: "180° Bay View",
-      location: "Matunga, Mumbai",
-      price: "₹4.15 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "824 sq ft",
-      page: "properties/rustomjee-180-bayview-matunga",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400",
-      featured: true,
-      rating: 4.8,
-      association: "Prudent Properties",
-      reviews: 29
-    },
-    {
-      id: 8,
-      title: "Godrej Horizon",
-      location: "Wadala, Mumbai",
-      price: "₹2.99 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "689 sq ft",
-      page: "properties/godrej-horizon-wadala",
-      image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400",
-      featured: true,
-      rating: 4.7,
-      association: "Prudent Properties",
-      reviews: 41
-    },
-    {
-      id: 9,
-      title: "L&T 77 Cross-Roads",
-      location: "Ghatkopar, Mumbai",
-      price: "₹1.17 Cr",
-      type: "apartment",
-      bedrooms: 1,
-      bathrooms: 1,
-      area: "413 sq ft",
-      page: "properties/lt-77-crossroads-ghatkopar",
-      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400",
-      featured: false,
-      rating: 4.6,
-      association: "Prudent Properties",
-      reviews: 25
-    },
-    {
-      id: 10,
-      title: "The Views by Adani",
-      location: "Ghatkopar, Mumbai",
-      price: "₹2.88 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "834 sq ft",
-      page: "properties/adani-the-views-ghatkopar",
-      image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400",
-      featured: true,
-      rating: 4.8,
-      association: "Prudent Properties",
-      reviews: 33
-    },
-    {
-      id: 11,
-      title: "Codename Triumph",
-      location: "Kanjurmarg, Mumbai",
-      price: "₹2.09 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      area: "738 sq ft",
-      page: "properties/adani-codename-triumph-kanjurmarg",
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400",
-      featured: false,
-      association: "Prudent Properties",
-      rating: 4.7,
-      reviews: 28
-    },
-    {
-      id: 12,
-      title: "Godrej Nurture",
-      location: "LBS Marg, Bhandup, Mumbai",
-      price: "₹1.65 Cr",
-      type: "apartment",
-      bedrooms: 2,
-      bathrooms: 2,
-      association: "Prudent Properties",
-      area: "655 sq ft",
-      page: "properties/godrej-nurture-bhandup",
-      image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
-      featured: false,
-      rating: 4.6,
-      reviews: 22
-    },
-
-  ];
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   const filters = [
     { key: 'all', label: 'All Properties' },
-    { key: 'apartment', label: 'Apartments' },
-    { key: 'commercial', label: 'Commercial' },
-    { key: 'villa', label: 'Villas' },
-    { key: 'plot', label: 'Plots' }
+    ...Array.from(new Set(properties.map((p) => p.type?.trim()).filter(Boolean))).map((type) => ({
+      key: type.toLowerCase(),
+      label: type,
+    })),
   ];
 
   const filteredProperties = activeFilter === 'all' 
     ? properties 
-    : properties.filter(p => p.type === activeFilter);
+    : properties.filter((p) => p.type.toLowerCase() === activeFilter);
 
-  const toggleFavorite = (id: number) => {
+  const toggleFavorite = (id: string) => {
     setFavorites(prev => 
       prev.includes(id) 
         ? prev.filter(fav => fav !== id)
@@ -337,7 +78,12 @@ export default function FeaturedProperties() {
 
         {/* Properties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProperties.map((property) => (
+          {filteredProperties.map((property) => {
+            const href = property.kind === 'farmhouse'
+              ? `/properties/farmhouse/${property.id}`
+              : `/properties/${property.id}`;
+
+            return (
             <div
               key={property.id}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
@@ -426,7 +172,7 @@ export default function FeaturedProperties() {
                       <div className="text-sm text-gray-500 line-through">{property.originalPrice}</div>
                     )}
                   </div>
-                  <Link href={`/${property.page}`}>
+                  <Link href={href}>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-1 group">
                     <span>View Details</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -444,15 +190,15 @@ export default function FeaturedProperties() {
                 }
               </div>
             </div>
-          ))}
+          )})}
         </div>
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 mx-auto">
+          <Link href="/properties" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 mx-auto">
             <span>View All Properties</span>
             <ArrowRight className="h-5 w-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

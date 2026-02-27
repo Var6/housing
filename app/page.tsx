@@ -6,9 +6,34 @@ import TestimonialsSection from "@/components/Testimonial";
 import HeroCarousel from "@/components/UX/HeroCarousel";
 import SlidePartners from "@/components/UX/SlidePartners";
 import WhyChooseUs from "@/components/Whychooseus";
+import { getAllProperties } from "@/lib/property-service";
 
 
-export default function Home() {
+export default async function Home() {
+  const allProperties = await getAllProperties();
+
+  const featured = allProperties.slice(0, 12).map((item) => {
+    const firstUnit = item.units[0];
+    const bedrooms = firstUnit ? Number.parseInt(firstUnit.bhk, 10) || undefined : undefined;
+    const image = item.images[0] || "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400";
+
+    return {
+      id: item.id,
+      title: item.name,
+      location: [item.location, item.city].filter(Boolean).join(', '),
+      price: item.priceVisible && firstUnit?.price ? `₹${firstUnit.price}` : 'Contact for Price',
+      type: item.type || (item.kind === 'farmhouse' ? 'Farmhouse' : 'Property'),
+      bedrooms,
+      bathrooms: bedrooms,
+      area: firstUnit?.sqft ? `${firstUnit.sqft} sq ft` : item.farmhouseDetails?.area || 'On Request',
+      image,
+      kind: item.kind,
+      rating: 4.8,
+      reviews: 20,
+      association: item.association,
+    };
+  });
+
   return (
     <div>    
     <HeroCarousel
@@ -18,7 +43,7 @@ export default function Home() {
        // <HeroSection key="hero main" />,
       ]}/>
 
-      <FeaturedProperties/>
+      <FeaturedProperties properties={featured}/>
       <WhyChooseUs/>
       <ServicesSection/>
       <TestimonialsSection/>

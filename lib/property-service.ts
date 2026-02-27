@@ -72,6 +72,12 @@ export async function getPropertyBySlug(slug: string) {
   return doc ? toDTO(doc) : null
 }
 
+export async function deletePropertyBySlug(slug: string) {
+  await connectToDatabase()
+  const doc = await PropertyModel.findOneAndDelete({ slug }).lean()
+  return doc ? toDTO(doc) : null
+}
+
 export async function upsertProperty(payload: Partial<PropertyDTO> & { id: string }) {
   await connectToDatabase()
 

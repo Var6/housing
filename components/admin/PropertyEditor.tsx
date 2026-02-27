@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { X, GripVertical, Plus, ImageIcon } from 'lucide-react'
 
 type Unit = {
@@ -46,11 +47,24 @@ const parseList = (value: string) =>
     .map((line) => line.trim())
     .filter(Boolean)
 
-export default function PropertyEditor({ initial }: { initial: PropertyPayload }) {
+export default function PropertyEditor({
+  initial,
+  availableTypes,
+  isNew = false,
+}: {
+  initial: PropertyPayload
+  availableTypes: string[]
+  isNew?: boolean
+}) {
+  const router = useRouter()
   const [form, setForm] = useState<PropertyPayload>(initial)
   const [saving, setSaving] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [message, setMessage] = useState('')
+  const [deleting, setDeleting] = useState(false)
+  const [isCustomType, setIsCustomType] = useState(
+    Boolean(form.type) && !availableTypes.includes(form.type),
+  )
 
   const unitsText = useMemo(
     () => form.units.map((u) => `${u.bhk}|${u.sqft}|${u.price}`).join('\n'),
@@ -93,8 +107,11 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
     setSaving(true)
     setMessage('')
 
-    const response = await fetch(`/api/admin/properties/${form.id}`, {
-      method: 'PUT',
+    const endpoint = isNew ? '/api/admin/properties' : `/api/admin/properties/${form.id}`
+    const method = isNew ? 'POST' : 'PUT'
+
+    const response = await fetch(endpoint, {
+      method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     })
@@ -108,7 +125,38 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
 
     setForm(payload)
     setSaving(false)
-    setMessage('Saved successfully')
+    setMessage(isNew ? 'Created successfully' : 'Saved successfully')
+
+    if (isNew && payload?.id) {
+      router.replace(`/Admin/dashboard/${payload.id}`)
+      router.refresh()
+    }
+  }
+
+  const onDelete = async () => {
+    if (!form.id) return
+
+    const confirmed = window.confirm(
+      'Delete this property? This will also delete linked Cloudinary images and cannot be undone.',
+    )
+    if (!confirmed) return
+
+    setDeleting(true)
+    setMessage('')
+
+    const response = await fetch(`/api/admin/properties/${form.id}`, {
+      method: 'DELETE',
+    })
+
+    const payload = await response.json()
+    if (!response.ok) {
+      setDeleting(false)
+      setMessage(payload?.error || 'Failed to delete property')
+      return
+    }
+
+    router.push('/Admin/dashboard')
+    router.refresh()
   }
 
   const inputClass = "border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
@@ -117,13 +165,50 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <select
+          className={inputClass}
+          value={form.kind}
+          onChange={(e) => updateField('kind', e.target.value as 'property' | 'farmhouse')}
+        >
+          <option value="property">Residential Property</option>
+          <option value="farmhouse">Farmhouse</option>
+        </select>
         <input className={inputClass} value={form.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Name" required />
         <input className={inputClass} value={form.developer} onChange={(e) => updateField('developer', e.target.value)} placeholder="Developer" />
         <input className={inputClass} value={form.location} onChange={(e) => updateField('location', e.target.value)} placeholder="Location" required />
         <input className={inputClass} value={form.city} onChange={(e) => updateField('city', e.target.value)} placeholder="City" required />
         <input className={inputClass} value={form.state} onChange={(e) => updateField('state', e.target.value)} placeholder="State" required />
         <input className={inputClass} value={form.region} onChange={(e) => updateField('region', e.target.value)} placeholder="Region" />
-        <input className={inputClass} value={form.type} onChange={(e) => updateField('type', e.target.value)} placeholder="Type" />
+        <select
+          className={inputClass}
+          value={isCustomType ? '__new__' : form.type}
+          onChange={(e) => {
+            const next = e.target.value
+            if (next === '__new__') {
+              setIsCustomType(true)
+              updateField('type', '')
+            } else {
+              setIsCustomType(false)
+              updateField('type', next)
+            }
+          }}
+        >
+          <option value="">Select type</option>
+          {availableTypes.map((type) => (
+            <option key={type} value={type}>
+              {type}
+            </option>
+          ))}
+          <option value="__new__">+ Create New Type</option>
+        </select>
+        {isCustomType && (
+          <input
+            className={inputClass}
+            value={form.type}
+            onChange={(e) => updateField('type', e.target.value)}
+            placeholder="Enter new type"
+          />
+        )}
         <input className={inputClass} value={form.association || ''} onChange={(e) => updateField('association', e.target.value)} placeholder="Association" />
         <input className={inputClass} value={form.possession} onChange={(e) => updateField('possession', e.target.value)} placeholder="Possession" />
         <input className={inputClass} value={form.structure} onChange={(e) => updateField('structure', e.target.value)} placeholder="Structure" />
@@ -282,9 +367,21 @@ export default function PropertyEditor({ initial }: { initial: PropertyPayload }
       )}
 
       {message && <p className="text-sm text-blue-700">{message}</p>}
-      <button disabled={saving || uploading} className="rounded-lg bg-blue-700 px-5 py-2 text-white font-semibold hover:bg-blue-800 disabled:opacity-70">
-        {saving ? 'Saving...' : 'Save Changes'}
-      </button>
+      <div className="flex flex-wrap items-center gap-3">
+        <button disabled={saving || uploading || deleting} className="rounded-lg bg-blue-700 px-5 py-2 text-white font-semibold hover:bg-blue-800 disabled:opacity-70">
+          {saving ? 'Saving...' : isNew ? 'Create Property' : 'Save Changes'}
+        </button>
+        {!isNew && (
+          <button
+            type="button"
+            onClick={onDelete}
+            disabled={saving || uploading || deleting}
+            className="rounded-lg bg-red-600 px-5 py-2 text-white font-semibold hover:bg-red-700 disabled:opacity-70"
+          >
+            {deleting ? 'Deleting...' : 'Delete Property'}
+          </button>
+        )}
+      </div>
     </form>
   )
 }

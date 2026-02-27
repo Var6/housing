@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { getPropertyBySlug, upsertProperty } from '@/lib/property-service'
+import { deletePropertyBySlug, getPropertyBySlug, upsertProperty } from '@/lib/property-service'
+import { deleteCloudinaryImagesByUrls } from '@/lib/cloudinary'
 
 export async function GET(
   _request: Request,
@@ -49,4 +50,31 @@ export async function PUT(
   })
 
   return NextResponse.json(updated)
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id } = await params
+  const item = await getPropertyBySlug(id)
+
+  if (!item) {
+    return NextResponse.json({ error: 'Not found' }, { status: 404 })
+  }
+
+  const cloudinaryCleanup = await deleteCloudinaryImagesByUrls(item.images || [])
+
+  if (cloudinaryCleanup.failed.length > 0) {
+    return NextResponse.json(
+      {
+        error: 'Failed to delete one or more Cloudinary images',
+        failedAssets: cloudinaryCleanup.failed,
+      },
+      { status: 500 },
+    )
+  }
+
+  const deleted = await deletePropertyBySlug(id)
+  return NextResponse.json({ success: true, deleted, cloudinaryCleanup })
 }

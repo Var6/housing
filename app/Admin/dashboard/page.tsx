@@ -22,6 +22,12 @@ export default async function AdminDashboardPage() {
           </div>
           <div className="flex items-center gap-3">
             <Link
+              href="/Admin/dashboard/new"
+              className="px-4 py-2 bg-blue-700 border border-blue-700 rounded-xl text-white font-medium hover:bg-blue-800 transition-colors"
+            >
+              + Create Listing
+            </Link>
+            <Link
               href="/"
               className="px-4 py-2 bg-white border border-slate-300 rounded-xl text-slate-700 font-medium hover:bg-slate-50 transition-colors"
             >
