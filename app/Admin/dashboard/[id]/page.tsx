@@ -47,14 +47,19 @@ export default async function EditPropertyPage({ params }: { params: Promise<{ i
   const editLabel = item?.kind === 'farmhouse' ? 'Farmland' : 'Property'
 
   return (
-    <div className="min-h-screen bg-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200">
       <div className="max-w-5xl mx-auto px-4 py-8">
-        <Link href="/Admin/dashboard" className="text-blue-700 font-semibold">← Back to Dashboard</Link>
-        <h1 className="text-3xl font-bold text-slate-900 mt-4 mb-6">
+        <div className="rounded-2xl border border-slate-200 bg-white/90 backdrop-blur p-5 shadow-sm mb-6">
+          <Link href="/Admin/dashboard" className="text-blue-700 font-semibold">← Back to Dashboard</Link>
+          <h1 className="text-3xl font-bold text-slate-900 mt-3">
           {isNew ? 'Create Property' : `Edit ${editLabel}`}
         </h1>
+          <p className="text-slate-600 mt-1">
+            {isNew ? 'Add a new listing with media, units, and metadata.' : 'Update listing details, media, and publishing information.'}
+          </p>
+        </div>
 
-        <div className="bg-white rounded-xl p-6 shadow-sm border">
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
           <PropertyEditor initial={initial} availableTypes={availableTypes} isNew={isNew} />
         </div>
       </div>

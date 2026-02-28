@@ -164,7 +164,9 @@ export default function PropertyEditor({
 
   return (
     <form onSubmit={onSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Basic Information</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <select
           className={inputClass}
           value={form.kind}
@@ -213,6 +215,7 @@ export default function PropertyEditor({
         <input className={inputClass} value={form.possession} onChange={(e) => updateField('possession', e.target.value)} placeholder="Possession" />
         <input className={inputClass} value={form.structure} onChange={(e) => updateField('structure', e.target.value)} placeholder="Structure" />
         <input className={inputClass} value={form.reraId || ''} onChange={(e) => updateField('reraId', e.target.value)} placeholder="RERA" />
+        </div>
       </div>
 
       <label className="inline-flex items-center gap-2 text-slate-900">
@@ -220,7 +223,8 @@ export default function PropertyEditor({
         <span>Show price in public pages</span>
       </label>
 
-      <div>
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Units</h3>
         <p className="font-semibold mb-2 text-slate-900">Units (one per line: BHK|SQFT|PRICE)</p>
         <textarea
           className={`${textareaClass} min-h-32`}
@@ -239,7 +243,8 @@ export default function PropertyEditor({
         />
       </div>
 
-      <div>
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
+        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Media</h3>
         <p className="font-semibold mb-2 text-slate-900">Images</p>
         
         {/* Image Gallery Preview */}
@@ -339,7 +344,7 @@ export default function PropertyEditor({
       </div>
 
       {form.kind === 'farmhouse' && (
-        <div className="space-y-4 border rounded-xl p-4 bg-green-50">
+        <div className="space-y-4 border rounded-2xl p-4 bg-green-50 border-green-200">
           <h3 className="font-bold text-lg text-slate-900">Farmland Details</h3>
           <textarea
             className={`${textareaClass} min-h-24`}

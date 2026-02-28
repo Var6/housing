@@ -165,7 +165,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
               <span>{project.structure}</span>
             </div>
           </div>
-          {project.type!='Farmhouse'?(
+          {project.kind !== 'farmhouse' ? (
               <Link 
             href={`/properties/${project.id}`}
             className="w-full px-5 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"

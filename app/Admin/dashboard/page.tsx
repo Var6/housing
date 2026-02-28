@@ -13,9 +13,9 @@ export default async function AdminDashboardPage() {
   ])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-200">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
+        <div className="mb-8 rounded-2xl border border-slate-200 bg-white/90 backdrop-blur p-5 shadow-sm flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-slate-900">Admin Dashboard</h1>
             <p className="text-slate-600">Manage your property listings</p>

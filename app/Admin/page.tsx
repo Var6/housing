@@ -33,33 +33,44 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-md p-8">
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Admin Login</h1>
-        <p className="text-slate-600 mb-6">Use your CitizenHousing admin credentials.</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white/95 backdrop-blur rounded-3xl shadow-xl border border-slate-200 p-8">
+        <div className="mb-6">
+          <div className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 mb-3">
+            CitizenHousing Admin
+          </div>
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">Welcome Back</h1>
+          <p className="text-slate-600">Sign in to manage listings, media, and property details.</p>
+        </div>
 
         <form onSubmit={onSubmit} className="space-y-4">
-          <input
-            className="w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            className="w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5">Username</label>
+            <input
+              className="w-full border border-slate-300 rounded-xl px-3 py-2.5 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
+            <input
+              type="password"
+              className="w-full border border-slate-300 rounded-xl px-3 py-2.5 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          {error && <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2">{error}</p>}
 
           <button
             disabled={loading}
-            className="w-full rounded-lg bg-blue-700 py-2 text-white font-semibold hover:bg-blue-800 disabled:opacity-70"
+            className="w-full rounded-xl bg-blue-700 py-2.5 text-white font-semibold hover:bg-blue-800 disabled:opacity-70"
           >
             {loading ? 'Signing in...' : 'Login'}
           </button>

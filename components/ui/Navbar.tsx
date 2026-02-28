@@ -53,7 +53,7 @@ export default function Navbar() {
                   <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent truncate">
                     CitizenHousing
                   </h1>
-                  <p className="text-[8px] sm:text-[10px] text-gray-500 -mt-0.5 truncate hidden xs:block">CITIZEN LAND PROPERTY & CONSTRUCTION</p>
+                  <p className="text-[10px] sm:text-xs tracking-wide text-gray-900 -mt-0.5 truncate hidden xs:block">CITIZEN LAND, PROPERTY & CONSTRUCTION Pvt Ltd</p>
                 </div>
               </Link>
             </div>
