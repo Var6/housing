@@ -95,28 +95,28 @@ export default async function EditPropertyPage({ params }: PageParams) {
     <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-r from-slate-800 via-emerald-900 to-teal-900 py-5">
-         <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 md:px-6">
+         <div className="relative z-10 mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 md:px-6">
           <Link
-            href="/Admin/dashboard"
+            href={"/Admin/dashboard"}
             className="group inline-flex items-center gap-2 rounded-lg px-2 py-1 text-sm font-medium text-slate-300 transition hover:bg-slate-100 hover:text-slate-900"
           >
             <ArrowLeft className="h-4 w-4 transition group-hover:-translate-x-0.5" />
             Dashboard
-          </Link>
-
+ </Link>
           <ChevronRight className="h-4 w-4 text-slate-300" />
           <span className="text-sm text-slate-300">Listings</span>
           <ChevronRight className="h-4 w-4 text-slate-300" />
           <span className="max-w-[220px] truncate text-sm font-semibold text-slate-500">
             {isNew ? 'New' : item?.name ?? id}
           </span>
+         
 
           <div className="ml-auto" />
           <div className="hidden sm:block">
             <StatusBadge isNew={isNew} />
           </div>
         </div>
-        <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,#34d399_0,transparent_35%),radial-gradient(circle_at_80%_10%,#5eead4_0,transparent_30%)]" />
+        <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,#34d399_0,transparent_35%),radial-gradient(circle_at_80%_10%,#5eead4_0,transparent_30%)]" />
         <div className="relative mx-auto flex max-w-7xl items-center gap-4 px-4 py-10 md:px-6 md:py-12">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/25 bg-white/15 text-white shadow-lg backdrop-blur">
             <KindIcon kind={item?.kind} />

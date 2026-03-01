@@ -7,12 +7,14 @@ import HeroCarousel from "@/components/UX/HeroCarousel";
 import SlidePartners from "@/components/UX/SlidePartners";
 import WhyChooseUs from "@/components/Whychooseus";
 import { getAllProperties } from "@/lib/property-service";
+import { sortListingsByPriority } from "@/lib/listing-priority";
 
 
 export default async function Home() {
   const allProperties = await getAllProperties();
+  const sortedProperties = sortListingsByPriority(allProperties);
 
-  const featured = allProperties.slice(0, 12).map((item) => {
+  const featured = sortedProperties.slice(0, 12).map((item) => {
     const firstUnit = item.units[0];
     const bedrooms = firstUnit ? Number.parseInt(firstUnit.bhk, 10) || undefined : undefined;
     const image = item.images[0] || "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400";

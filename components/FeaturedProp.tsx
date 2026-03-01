@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { MapPin, Bed, Bath, Square, Heart, Eye, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
+import { sortTypeLabelsByPriority } from '@/lib/listing-priority';
 
 interface Property {
   id: string;
@@ -28,7 +29,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
 
   const filters = [
     { key: 'all', label: 'All Properties' },
-    ...Array.from(new Set(properties.map((p) => p.type?.trim()).filter(Boolean))).map((type) => ({
+    ...sortTypeLabelsByPriority(Array.from(new Set(properties.map((p) => p.type?.trim()).filter(Boolean)))).map((type) => ({
       key: type.toLowerCase(),
       label: type,
     })),

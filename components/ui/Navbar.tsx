@@ -51,9 +51,9 @@ export default function Navbar() {
                 </div>           
                 <div className="min-w-0">
                   <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent truncate">
-                    CitizenHousing
+                    Citizen Housing
                   </h1>
-                  <p className="text-[10px] sm:text-xs tracking-wide text-gray-900 -mt-0.5 truncate hidden xs:block">CITIZEN LAND, PROPERTY & CONSTRUCTION Pvt Ltd</p>
+                  <p className="text-[10px] sm:text-xs tracking-wide text-gray-900 -mt-0.5 truncate hidden sm:block">CITIZEN LAND, PROPERTY & CONSTRUCTION Pvt Ltd</p>
                 </div>
               </Link>
             </div>
