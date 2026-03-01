@@ -191,12 +191,12 @@ const CareersPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -208,17 +208,17 @@ const CareersPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+      <div className="bg-gradient-to-r from-emerald-600 to-green-700 text-white">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">
               Build the Future of Housing
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-emerald-100 max-w-3xl mx-auto mb-8">
               Join our mission to make finding and listing homes simple, transparent, and accessible for everyone. 
               Work with passionate people solving real problems that matter.
             </p>
-            <div className="flex items-center justify-center space-x-8 text-blue-100">
+            <div className="flex items-center justify-center space-x-8 text-emerald-100">
               <div className="text-center">
                 <div className="text-3xl font-bold">50+</div>
                 <div className="text-sm">Team Members</div>
@@ -249,7 +249,7 @@ const CareersPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4 text-blue-600">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4 text-emerald-600">
                   {value.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
@@ -278,7 +278,7 @@ const CareersPage = () => {
                   placeholder="Search jobs..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
               </div>
 
@@ -286,7 +286,7 @@ const CareersPage = () => {
               <select
                 value={selectedDepartment}
                 onChange={(e) => setSelectedDepartment(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               >
                 {departments.map((dept) => (
                   <option key={dept.id} value={dept.id}>{dept.name}</option>
@@ -297,7 +297,7 @@ const CareersPage = () => {
               <select
                 value={selectedLocation}
                 onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
               >
                 {locations.map((location) => (
                   <option key={location.id} value={location.id}>{location.name}</option>
@@ -343,7 +343,7 @@ const CareersPage = () => {
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {job.skills.map((skill, index) => (
-                      <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                      <span key={index} className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm">
                         {skill}
                       </span>
                     ))}
@@ -353,7 +353,7 @@ const CareersPage = () => {
                     <div className="text-sm text-gray-500">
                       Posted {job.posted} • {job.experience} experience
                     </div>
-                    <button className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <button className="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
                       Apply Now
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </button>
@@ -421,7 +421,7 @@ const CareersPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="text-blue-600 mb-4">{benefit.icon}</div>
+                <div className="text-emerald-600 mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </div>
@@ -433,16 +433,16 @@ const CareersPage = () => {
 
  
         {/* Join Us CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-emerald-600 to-green-700 rounded-2xl p-8 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Join Our Team?</h2>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
             Don't see a perfect fit? We're always looking for talented individuals who share our passion for transforming the housing market.
           </p>
           <div className="space-x-4">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Send Your Resume
             </button>
-            <button className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            <button className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-colors">
               Learn More About Us
             </button>
           </div>

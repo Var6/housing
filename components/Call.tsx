@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-emerald-900 via-emerald-800 to-green-900 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -17,11 +17,11 @@ export default function CTASection() {
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-white mb-6">
             Ready to Find Your
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
               Perfect Home?
             </span>
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
             Don't wait any longer. Let our expert team help you find the property of your dreams. 
             With thousands of verified listings and personalized support, your perfect home is just a click away.
           </p>
@@ -32,15 +32,15 @@ export default function CTASection() {
           {/* Browse Properties */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2 group">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-400 transition-colors">
+              <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-400 transition-colors">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Browse Properties</h3>
-              <p className="text-blue-100 mb-6">
+              <p className="text-emerald-100 mb-6">
                 Explore our extensive collection of verified properties across major cities in India.
               </p>
               <Link href="/properties">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
+              <button className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
                 <span>View All Properties</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -55,7 +55,7 @@ export default function CTASection() {
                 <MessageCircle className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Free Consultation</h3>
-              <p className="text-blue-100 mb-6">
+              <p className="text-emerald-100 mb-6">
                 Get expert advice from our real estate professionals and make informed decisions.
               </p>
               
@@ -74,7 +74,7 @@ export default function CTASection() {
                 <Phone className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Contact Us</h3>
-              <p className="text-blue-100 mb-6">
+              <p className="text-emerald-100 mb-6">
                 Have questions? Our support team is available 24/7 to assist you with any queries.
               </p>
               
@@ -91,61 +91,61 @@ export default function CTASection() {
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="flex flex-col items-center">
-              <Phone className="h-8 w-8 text-blue-400 mb-4" />
+              <Phone className="h-8 w-8 text-emerald-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Call Us</h4>
-              <p className="text-blue-100">+91 90310 07097</p>
-              <p className="text-blue-100">Wed-Mon, 10 AM - 6 PM</p>
+              <p className="text-emerald-100">+91 90310 07097</p>
+              <p className="text-emerald-100">Wed-Mon, 10 AM - 6 PM</p>
             </div>
             <div className="flex flex-col items-center">
-              <Mail className="h-8 w-8 text-blue-400 mb-4" />
+              <Mail className="h-8 w-8 text-emerald-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Email Us</h4>
-              <p className="text-blue-100">sales@citizenimf.com</p>
-              <p className="text-blue-100">We reply within 24 hours</p>
+              <p className="text-emerald-100">sales@citizenimf.com</p>
+              <p className="text-emerald-100">We reply within 24 hours</p>
             </div>
             <div className="flex flex-col items-center">
-              <MapPin className="h-8 w-8 text-blue-400 mb-4" />
+              <MapPin className="h-8 w-8 text-emerald-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Visit Us</h4>
-              <p className="text-blue-100">1st floor Shanti Devi Nivas</p>
-              <p className="text-blue-100">Near Sichai Bhavan, Patna</p>
+              <p className="text-emerald-100">1st floor Shanti Devi Nivas</p>
+              <p className="text-emerald-100">Near Sichai Bhavan, Patna</p>
             </div>
           </div>
         </div>
 
         {/* Newsletter Signup */}
-        <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 backdrop-blur-sm rounded-2xl p-8 text-center">
+        <div className="bg-gradient-to-r from-emerald-600/20 to-green-600/20 backdrop-blur-sm rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-emerald-100 mb-6 max-w-2xl mx-auto">
             Subscribe to our newsletter to get the latest property listings, market insights, and exclusive deals delivered to your inbox.
           </p>
           <div className="max-w-md mx-auto flex gap-4">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent"
             />
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 whitespace-nowrap">
+            <button className="bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 whitespace-nowrap">
               Subscribe
             </button>
           </div>
-          <p className="text-blue-200 text-sm mt-4">
+          <p className="text-emerald-200 text-sm mt-4">
             No spam, unsubscribe at any time.
           </p>
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-blue-100 text-lg mb-8">
+          <p className="text-emerald-100 text-lg mb-8">
             Join thousands of happy families who found their perfect home with us
           </p>
-          <button className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-12 py-4 rounded-lg font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+          <button className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-12 py-4 rounded-lg font-bold text-lg hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 transform hover:scale-105 shadow-2xl">
             Start Your Journey Today
           </button>
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-blue-400/10 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-indigo-400/10 rounded-full animate-pulse"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-400/10 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-green-400/10 rounded-full animate-pulse"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-400/10 rounded-full animate-pulse"></div>
     </section>
   );

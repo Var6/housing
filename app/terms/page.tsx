@@ -34,7 +34,7 @@ const TermsOfServicePage = () => {
         className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors rounded-xl"
       >
         <div className="flex items-center space-x-3">
-          <div className="text-blue-600">{icon}</div>
+          <div className="text-emerald-600">{icon}</div>
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
         </div>
         {activeSection === id ? (
@@ -52,12 +52,12 @@ const TermsOfServicePage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -71,8 +71,8 @@ const TermsOfServicePage = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
-            <FileText className="w-10 h-10 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 rounded-full mb-6">
+            <FileText className="w-10 h-10 text-emerald-600" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Terms of Service
@@ -103,7 +103,7 @@ const TermsOfServicePage = () => {
                     onClick={() => setActiveSection(item.id)}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm transition-colors text-left ${
                       activeSection === item.id
-                        ? 'bg-blue-100 text-blue-700'
+                        ? 'bg-emerald-100 text-emerald-700'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
                   >
@@ -140,8 +140,8 @@ const TermsOfServicePage = () => {
               <p className="mb-4">
                 If you are using our services on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.
               </p>
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="text-blue-800 text-sm">
+              <div className="bg-emerald-50 p-4 rounded-lg">
+                <p className="text-emerald-800 text-sm">
                   <strong>Note:</strong> These Terms may be updated from time to time. Your continued use of the platform after changes constitutes acceptance of the new Terms.
                 </p>
               </div>
@@ -200,9 +200,9 @@ const TermsOfServicePage = () => {
                 CitizenHousing provides an online platform that connects property owners with potential buyers and renters. Our services include:
               </p>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-medium text-blue-900 mb-2">For Property Owners:</h5>
-                  <ul className="text-sm text-blue-800 space-y-1">
+                <div className="bg-emerald-50 p-4 rounded-lg">
+                  <h5 className="font-medium text-emerald-900 mb-2">For Property Owners:</h5>
+                  <ul className="text-sm text-emerald-800 space-y-1">
                     <li>• Property listing creation and management</li>
                     <li>• Photo and video uploading</li>
                     <li>• Inquiry management</li>
@@ -260,7 +260,7 @@ const TermsOfServicePage = () => {
                 <li>No spam or duplicate listings</li>
                 <li>No contact information in listing descriptions (use our messaging system)</li>
               </ul>
-              <p className="text-sm bg-blue-50 p-4 rounded-lg">
+              <p className="text-sm bg-emerald-50 p-4 rounded-lg">
                 <strong>Quality Assurance:</strong> We reserve the right to review, edit, or remove listings that don't meet our standards or violate these Terms.
               </p>
             </TermsSection>
@@ -336,8 +336,8 @@ const TermsOfServicePage = () => {
               <p className="mb-4">
                 By uploading content to our Platform, you grant CitizenHousing a worldwide, non-exclusive, royalty-free license to use, display, and distribute your content for the purpose of providing our services. You retain ownership of your content.
               </p>
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="text-blue-800 text-sm">
+              <div className="bg-emerald-50 p-4 rounded-lg">
+                <p className="text-emerald-800 text-sm">
                   <strong>DMCA Notice:</strong> If you believe your copyright has been infringed, please contact us at citizen.housing@citizencooperative.in with detailed information.
                 </p>
               </div>
@@ -389,19 +389,19 @@ const TermsOfServicePage = () => {
               <h4 className="font-semibold text-gray-900 mb-3">Resolution Process:</h4>
               <div className="space-y-3 mb-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                  <div className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
                   <div>
                     <strong>Direct Resolution:</strong> First, attempt to resolve disputes directly with the other party through our messaging system.
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                  <div className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
                   <div>
                     <strong>Platform Mediation:</strong> If direct resolution fails, contact our support team for mediation assistance.
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                  <div className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
                   <div>
                     <strong>Legal Action:</strong> Disputes that cannot be resolved through our platform are subject to binding arbitration under Indian law.
                   </div>
@@ -427,8 +427,8 @@ const TermsOfServicePage = () => {
                 <li>Outstanding fees remain due and payable</li>
                 <li>Certain provisions of these Terms survive termination</li>
               </ul>
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <p className="text-blue-800 text-sm">
+              <div className="bg-emerald-50 p-4 rounded-lg">
+                <p className="text-emerald-800 text-sm">
                   <strong>Data Retention:</strong> After termination, we may retain your data for legal compliance and fraud prevention as outlined in our Privacy Policy.
                 </p>
               </div>
@@ -459,21 +459,21 @@ const TermsOfServicePage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-blue-600" />
+                    <Mail className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">General Inquiries</p>
                       <p className="text-sm">citizen.housing@citizencooperative.in</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-blue-600" />
+                    <Phone className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">Legal Helpline</p>
                       <p className="text-sm">+91-9031007097</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Building className="w-5 h-5 text-blue-600" />
+                    <Building className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">Registered Address</p>
                       <p className="text-sm">
@@ -503,7 +503,7 @@ const TermsOfServicePage = () => {
         <div className="mt-16 text-center">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="flex items-center justify-center mb-4">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mr-3">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full mr-3">
                 <Home className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">CitizenHousing</h2>
@@ -514,22 +514,22 @@ const TermsOfServicePage = () => {
             
             {/* Footer Links */}
             <div className="flex items-center justify-center space-x-6 mb-6">
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors">
                 <Globe className="w-4 h-4" />
                 <span className="text-sm">Privacy Policy</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors">
                 <FileText className="w-4 h-4" />
                 <span className="text-sm">User Agreement</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors">
                 <Shield className="w-4 h-4" />
                 <span className="text-sm">Security</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors">
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">Support</span>
               </button>
@@ -552,16 +552,16 @@ const TermsOfServicePage = () => {
             </div>
 
             {/* Call to Action */}
-            <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-100">
+            <div className="mt-8 p-4 bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg border border-emerald-100">
               <p className="text-sm text-gray-700 mb-3">
                 Have questions about these terms? Our legal team is here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                <button className="inline-flex items-center justify-center px-4 py-2 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition-colors">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Legal Team
                 </button>
-                <button className="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 text-sm font-medium rounded-lg hover:bg-blue-50 transition-colors">
+                <button className="inline-flex items-center justify-center px-4 py-2 border border-emerald-600 text-emerald-600 text-sm font-medium rounded-lg hover:bg-emerald-50 transition-colors">
                   <FileText className="w-4 h-4 mr-2" />
                   Download PDF
                 </button>
@@ -571,10 +571,10 @@ const TermsOfServicePage = () => {
         </div>
 
         {/* Quick Reference Card */}
-        <div className="mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg text-white p-6">
+        <div className="mt-8 bg-gradient-to-r from-green-600 to-purple-600 rounded-xl shadow-lg text-white p-6">
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-3">Quick Reference</h3>
-            <p className="text-indigo-100 mb-6">
+            <p className="text-green-100 mb-6">
               Key points to remember about using CitizenHousing
             </p>
           </div>
@@ -584,21 +584,21 @@ const TermsOfServicePage = () => {
                 <UserCheck className="w-6 h-6" />
               </div>
               <h4 className="font-medium mb-2">Age Requirement</h4>
-              <p className="text-sm text-indigo-100">You must be 18+ years old to use our platform</p>
+              <p className="text-sm text-green-100">You must be 18+ years old to use our platform</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-3">
                 <Shield className="w-6 h-6" />
               </div>
               <h4 className="font-medium mb-2">Account Security</h4>
-              <p className="text-sm text-indigo-100">Keep your login credentials secure and private</p>
+              <p className="text-sm text-green-100">Keep your login credentials secure and private</p>
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-full mb-3">
                 <AlertTriangle className="w-6 h-6" />
               </div>
               <h4 className="font-medium mb-2">Due Diligence</h4>
-              <p className="text-sm text-indigo-100">Always verify properties and exercise caution</p>
+              <p className="text-sm text-green-100">Always verify properties and exercise caution</p>
             </div>
           </div>
         </div>

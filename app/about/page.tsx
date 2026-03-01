@@ -46,8 +46,8 @@ const companies = [
   },
   {
     name: 'Citizen Grih Nirman (Sahkari) Samiti ltd',
-    websiteLabel: 'citizencooperative.in',
-    websiteUrl: 'https://citizencooperative.in',
+    websiteLabel: 'citizenhousing.in',
+    websiteUrl: 'https://citizenhousing.in',
     description: 'Cooperative housing initiative focused on affordable, community-led development.',
   },
 ]
@@ -106,6 +106,7 @@ export default function AboutUsPage() {
                 <p className="mt-3 text-emerald-800">{company.description}</p>
                 <div className="mt-5 inline-flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-2">
                   <Globe className="h-4 w-4 text-emerald-700" />
+                  <span className="text-sm font-semibold text-emerald-800">Official Website:</span>
                   <Link
                     href={company.websiteUrl}
                     target="_blank"

@@ -111,12 +111,12 @@ const ContactUsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -144,7 +144,7 @@ const ContactUsPage = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="flex items-center space-x-3 mb-6">
-                <MessageSquare className="w-6 h-6 text-blue-600" />
+                <MessageSquare className="w-6 h-6 text-emerald-600" />
                 <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
               </div>
 
@@ -160,7 +160,7 @@ const ContactUsPage = () => {
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -177,7 +177,7 @@ const ContactUsPage = () => {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                       placeholder="Enter your email"
                     />
                   </div>
@@ -194,7 +194,7 @@ const ContactUsPage = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -208,7 +208,7 @@ const ContactUsPage = () => {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({...formData, category: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                   >
                     <option value="">Select a category</option>
                     <option value="buying">Buying Property</option>
@@ -230,7 +230,7 @@ const ContactUsPage = () => {
                   type="text"
                   value={formData.subject}
                   onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                   placeholder="Brief description of your inquiry"
                 />
               </div>
@@ -244,7 +244,7 @@ const ContactUsPage = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"
                   placeholder="Please provide details about your inquiry..."
                 ></textarea>
               </div>
@@ -252,7 +252,7 @@ const ContactUsPage = () => {
               {/* Submit Button */}
               <button
                 onClick={handleSubmit}
-                className="mt-6 w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center space-x-2"
+                className="mt-6 w-full bg-emerald-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-emerald-700 transition-colors focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 flex items-center justify-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span>Send Message</span>
@@ -266,7 +266,7 @@ const ContactUsPage = () => {
             {contactMethods.map((method, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full text-blue-600">
+                  <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full text-emerald-600">
                     {method.icon}
                   </div>
                   <div className="flex-1">
@@ -295,7 +295,7 @@ const ContactUsPage = () => {
                 {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
                   <button
                     key={index}
-                    className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                    className="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-600 hover:bg-emerald-100 hover:text-emerald-600 transition-colors"
                   >
                     <Icon className="w-5 h-5" />
                   </button>

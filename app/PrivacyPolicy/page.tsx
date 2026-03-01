@@ -50,7 +50,7 @@ const PrivacyPolicyPage = () => {
         className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors rounded-xl"
       >
         <div className="flex items-center space-x-3">
-          <div className="text-blue-600">{icon}</div>
+          <div className="text-emerald-600">{icon}</div>
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
         </div>
         {activeSection === id ? (
@@ -69,12 +69,12 @@ const PrivacyPolicyPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -88,8 +88,8 @@ const PrivacyPolicyPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
-            <Shield className="w-10 h-10 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 rounded-full mb-6">
+            <Shield className="w-10 h-10 text-emerald-600" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Privacy Policy
@@ -121,7 +121,7 @@ const PrivacyPolicyPage = () => {
                     onClick={() => setActiveSection(item.id)}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm transition-colors text-left ${
                       activeSection === item.id
-                        ? 'bg-blue-100 text-blue-700'
+                        ? 'bg-emerald-100 text-emerald-700'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
                   >
@@ -136,14 +136,14 @@ const PrivacyPolicyPage = () => {
           {/* Main Content */}
           <div className="lg:col-span-3">
             {/* Key Highlights */}
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mb-8">
               <div className="flex items-start space-x-3">
-                <AlertCircle className="w-6 h-6 text-blue-600 mt-1" />
+                <AlertCircle className="w-6 h-6 text-emerald-600 mt-1" />
                 <div>
-                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                  <h3 className="text-lg font-semibold text-emerald-900 mb-2">
                     Key Privacy Highlights
                   </h3>
-                  <ul className="text-blue-800 space-y-1">
+                  <ul className="text-emerald-800 space-y-1">
                     <li>• We never sell your personal information to third parties</li>
                     <li>• Your property search history remains private</li>
                     <li>• We use industry-standard encryption for data protection</li>
@@ -213,9 +213,9 @@ const PrivacyPolicyPage = () => {
               <p className="mb-4">We use your information for the following purposes:</p>
               
               <div className="grid md:grid-cols-2 gap-4 mb-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <h5 className="font-medium text-blue-900 mb-2">Service Delivery:</h5>
-                  <ul className="text-sm text-blue-800 space-y-1">
+                <div className="bg-emerald-50 p-4 rounded-lg">
+                  <h5 className="font-medium text-emerald-900 mb-2">Service Delivery:</h5>
+                  <ul className="text-sm text-emerald-800 space-y-1">
                     <li>• Process property listings</li>
                     <li>• Facilitate property searches</li>
                     <li>• Enable communication between users</li>
@@ -247,7 +247,7 @@ const PrivacyPolicyPage = () => {
               <h4 className="font-semibold text-gray-900 mb-3">We may share your information with:</h4>
               
               <div className="space-y-4">
-                <div className="border-l-4 border-blue-500 pl-4">
+                <div className="border-l-4 border-emerald-500 pl-4">
                   <h5 className="font-medium text-gray-900">Other Users</h5>
                   <p className="text-sm">Property listings, contact information (with your consent), and public profile information.</p>
                 </div>
@@ -281,10 +281,10 @@ const PrivacyPolicyPage = () => {
               </p>
 
               <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Lock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <h5 className="font-medium text-blue-900">Encryption</h5>
-                  <p className="text-sm text-blue-800">SSL/TLS encryption for data transmission</p>
+                <div className="text-center p-4 bg-emerald-50 rounded-lg">
+                  <Lock className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                  <h5 className="font-medium text-emerald-900">Encryption</h5>
+                  <p className="text-sm text-emerald-800">SSL/TLS encryption for data transmission</p>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-lg">
                   <Shield className="w-8 h-8 text-green-600 mx-auto mb-2" />
@@ -311,7 +311,7 @@ const PrivacyPolicyPage = () => {
 
               <div className="space-y-3">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
                   <div>
                     <h5 className="font-medium">Essential Cookies</h5>
                     <p className="text-sm">Required for basic website functionality and security.</p>
@@ -377,8 +377,8 @@ const PrivacyPolicyPage = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-4 rounded-lg mt-4">
-                <p className="text-blue-800 text-sm">
+              <div className="bg-emerald-50 p-4 rounded-lg mt-4">
+                <p className="text-emerald-800 text-sm">
                   <strong>To exercise your rights:</strong> Contact us at citizen.housing@citizencooperative.in or use the settings in your account dashboard.
                 </p>
               </div>
@@ -416,14 +416,14 @@ const PrivacyPolicyPage = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-blue-600" />
+                    <Mail className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">Email</p>
                       <p className="text-sm">citizen.housing@citizencooperative.in</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Home className="w-5 h-5 text-blue-600" />
+                    <Home className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">Address</p>
                       <p className="text-sm">1st Floor, Shanti Devi Nivas<br />Near Sichai Bhawan, Patna, India 800002</p>

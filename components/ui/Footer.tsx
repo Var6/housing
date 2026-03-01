@@ -39,15 +39,15 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-300">
-                <MapPin className="h-4 w-4 text-blue-400" />
+                <MapPin className="h-4 w-4 text-emerald-400" />
                 <span>1st floor Shanti Devi Nivas <br/> Near Sichai Bhavan, Patna</span>
               </div>
-              <a href={`tel:${contactInfo.phone}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors">
-                <Phone className="h-4 w-4 text-blue-400" />
+              <a href={`tel:${contactInfo.phone}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-emerald-400 transition-colors">
+                <Phone className="h-4 w-4 text-emerald-400" />
                 <span>{contactInfo.phoneDisplay}</span>
               </a>
-              <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-blue-400 transition-colors">
-                <Mail className="h-4 w-4 text-blue-400" />
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-2 text-sm text-gray-300 hover:text-emerald-400 transition-colors">
+                <Mail className="h-4 w-4 text-emerald-400" />
                 <span>{contactInfo.email}</span>
               </a>
             </div>
@@ -58,25 +58,25 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Home className="h-4 w-4" />
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link href="/properties" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/properties" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Building2 className="h-4 w-4" />
                   <span>All Properties</span>
                 </Link>
               </li>
               <li>
-                <Link  href="https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link  href="https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Calculator className="h-4 w-4" />
                   <span>EMI Calculator</span>
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/about" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Users className="h-4 w-4" />
                   <span>About Us</span>
                 </Link>
@@ -89,27 +89,27 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services/buying" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/services/buying" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Property Buying Guide
                 </Link>
               </li>
               <li>
-                <Link href="/services/selling" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/services/selling" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Property Selling
                 </Link>
               </li>
               <li>
-                <Link href="/services/rental" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/services/rental" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Rental Services
                 </Link>
               </li>
               <li>
-                <Link href="/services/legal" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/services/legal" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Legal Assistance
                 </Link>
               </li>
               <li>
-                <Link href="/https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/https://citizencooperative.in/housing-loan" rel="noopener noreferrer" target="_blank" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Home Loan Support
                 </Link>
               </li>
@@ -121,33 +121,33 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white">Support & Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/Contact" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/Contact" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Contact Support
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/faq" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/PrivacyPolicy" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/PrivacyPolicy" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Shield className="h-4 w-4" />
                   <span>Privacy Policy</span>
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/terms" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/careers" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                <Link href="/testimonials" className="flex items-center space-x-2 text-gray-300 hover:text-emerald-400 transition-colors text-sm">
                   <Award className="h-4 w-4" />
                   <span>Testimonials</span>
                 </Link>
@@ -166,7 +166,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                    className="text-gray-400 hover:text-emerald-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                     title={social.name}
@@ -182,9 +182,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Subscribe to newsletter"
-                  className="bg-gray-800 text-white px-4 py-2 rounded-l-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-48"
+                  className="bg-gray-800 text-white px-4 py-2 rounded-l-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 w-48"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-md text-sm transition-colors">
+                <button className="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-r-md text-sm transition-colors">
                   Subscribe
                 </button>
               </div>
@@ -204,7 +204,7 @@ export default function Footer() {
                 href="https://github.com/var6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors"
+                className="flex items-center space-x-1 text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 <Github className="h-4 w-4" />
                 <span>Rishabh Ranjan</span>

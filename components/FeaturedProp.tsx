@@ -53,7 +53,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Featured <span className="text-blue-600">Properties</span>
+            Featured <span className="text-emerald-600">Properties</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Discover our handpicked selection of premium properties across major cities in India
@@ -68,8 +68,8 @@ export default function FeaturedProperties({ properties }: { properties: Propert
               onClick={() => setActiveFilter(filter.key)}
               className={`px-6 py-3 rounded-full transition-all duration-300 font-medium ${
                 activeFilter === filter.key
-                  ? 'bg-blue-600 text-white shadow-lg transform scale-105'
-                  : 'bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-600 shadow-md'
+                  ? 'bg-emerald-600 text-white shadow-lg transform scale-105'
+                  : 'bg-white text-gray-600 hover:bg-emerald-50 hover:text-emerald-600 shadow-md'
               }`}
             >
               {filter.label}
@@ -99,7 +99,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex gap-2">
                   {property.featured && (
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                       Featured
                     </span>
                   )}
@@ -121,7 +121,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
                   >
                     <Heart className="h-5 w-5" fill={favorites.includes(property.id) ? 'currentColor' : 'none'} />
                   </button>
-                  <button className="p-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-600 hover:bg-blue-500 hover:text-white transition-all duration-300">
+                  <button className="p-2 rounded-full bg-white/80 backdrop-blur-sm text-gray-600 hover:bg-emerald-500 hover:text-white transition-all duration-300">
                     <Eye className="h-5 w-5" />
                   </button>
                 </div>
@@ -139,7 +139,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
                 </div>
 
                 {/* Title & Location */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
                   {property.title}
                 </h3>
                 <div className="flex items-center text-gray-600 mb-4">
@@ -168,13 +168,13 @@ export default function FeaturedProperties({ properties }: { properties: Propert
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-2xl font-bold text-blue-600">{property.price}</div>
+                    <div className="text-2xl font-bold text-emerald-600">{property.price}</div>
                     {property.originalPrice && (
                       <div className="text-sm text-gray-500 line-through">{property.originalPrice}</div>
                     )}
                   </div>
                   <Link href={href}>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-1 group">
+                  <button className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center space-x-1 group">
                     <span>View Details</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -196,7 +196,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Link href="/properties" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 mx-auto">
+          <Link href="/properties" className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 mx-auto">
             <span>View All Properties</span>
             <ArrowRight className="h-5 w-5" />
           </Link>

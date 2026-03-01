@@ -1,140 +1,102 @@
 'use client';
 
-import { Home, ArrowLeft, Search, MapPin } from 'lucide-react';
+import Link from 'next/link';
+import { Home, ArrowLeft, Search, MapPin, TreePine, Building2 } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <div className=" pt-9 min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 flex items-center justify-center px-4">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-green-900 px-4 py-12 sm:py-16">
+      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_25%,#6ee7b7_0,transparent_28%),radial-gradient(circle_at_85%_12%,#34d399_0,transparent_24%)]" />
 
-      <div className="relative max-w-4xl mx-auto text-center">
-        {/* 404 Illustration */}
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center">
-            <div className="relative">
-              {/* Large 404 Text */}
-              <h1 className="text-9xl md:text-[200px] font-bold text-white/10 select-none">
-                404
-              </h1>
-              
-              {/* Floating House Icon */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-full p-8 animate-bounce">
-                  <Home className="h-16 w-16 text-blue-300" />
+      <div className="relative mx-auto flex min-h-[80vh] w-full max-w-5xl items-center justify-center">
+        <div className="w-full rounded-3xl border border-emerald-200/20 bg-white/10 p-6 text-center shadow-[0_20px_60px_-30px_rgba(6,95,70,0.65)] backdrop-blur-xl sm:p-10">
+          <div className="mx-auto mb-6 inline-flex h-24 w-24 items-center justify-center rounded-full border border-emerald-200/30 bg-emerald-100/10">
+            <Home className="h-12 w-12 text-emerald-200" />
+          </div>
+
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">Error 404</p>
+          <h1 className="mt-3 text-4xl font-extrabold text-white md:text-6xl">Page Not Found</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-emerald-100 md:text-lg">
+            This page is not available right now. It may have moved, been removed, or the URL may be incorrect.
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-emerald-900 transition hover:bg-emerald-50"
+            >
+              <Home className="h-5 w-5" />
+              Back to Home
+            </Link>
+
+            <button
+              onClick={() => window.history.back()}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-100/50 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-emerald-900"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              Go Back
+            </button>
+          </div>
+
+          <div className="mt-10 rounded-2xl border border-emerald-200/25 bg-white/10 p-5 sm:p-6">
+            <h2 className="text-lg font-bold text-white sm:text-xl">Popular Links</h2>
+            <div className="mt-4 grid gap-3 text-left sm:grid-cols-2">
+              <Link
+                href="/properties/farmhouse"
+                className="group flex items-center gap-3 rounded-xl border border-emerald-200/20 bg-white/10 p-4 transition hover:bg-white/20"
+              >
+                <TreePine className="h-5 w-5 text-emerald-200" />
+                <div>
+                  <p className="font-semibold text-white">Farmhouse</p>
+                  <p className="text-sm text-emerald-100">Countryside options</p>
                 </div>
-              </div>
+              </Link>
+
+              <Link
+                href="/properties/commercial"
+                className="group flex items-center gap-3 rounded-xl border border-emerald-200/20 bg-white/10 p-4 transition hover:bg-white/20"
+              >
+                <Building2 className="h-5 w-5 text-emerald-200" />
+                <div>
+                  <p className="font-semibold text-white">Commercial</p>
+                  <p className="text-sm text-emerald-100">Business properties</p>
+                </div>
+              </Link>
+
+              <Link
+                href="/properties/plot"
+                className="group flex items-center gap-3 rounded-xl border border-emerald-200/20 bg-white/10 p-4 transition hover:bg-white/20"
+              >
+                <MapPin className="h-5 w-5 text-emerald-200" />
+                <div>
+                  <p className="font-semibold text-white">Plots</p>
+                  <p className="text-sm text-emerald-100">Land opportunities</p>
+                </div>
+              </Link>
+
+              <Link
+                href="/properties"
+                className="group flex items-center gap-3 rounded-xl border border-emerald-200/20 bg-white/10 p-4 transition hover:bg-white/20"
+              >
+                <Search className="h-5 w-5 text-emerald-200" />
+                <div>
+                  <p className="font-semibold text-white">All Properties</p>
+                  <p className="text-sm text-emerald-100">Browse complete listings</p>
+                </div>
+              </Link>
             </div>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="space-y-6 mb-12">
-          <div className="space-y-2">
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Oops! Page Not Found
-            </h2>
-            <p className="text-xl text-blue-200">
-              Looks like this property doesn't exist in our listings
-            </p>
-          </div>
-          
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            The page you're looking for might have been removed, had its name changed, or is temporarily unavailable. Let's help you find your way back home.
+          <p className="mt-7 text-sm text-emerald-100">
+            Need help?{' '}
+            <a
+              href="mailto:citizen.housing@citizencooperative.in"
+              className="font-semibold text-white underline underline-offset-4"
+            >
+              citizen.housing@citizencooperative.in
+            </a>
           </p>
         </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a 
-            href="/"
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            <Home className="h-5 w-5" />
-            <span>Back to Home</span>
-          </a>
-          
-          <button 
-            onClick={() => window.history.back()}
-            className="inline-flex items-center justify-center gap-2 border-2 border-white/50 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-900 transition-all duration-300"
-          >
-            <ArrowLeft className="h-5 w-5" />
-            <span>Go Back</span>
-          </button>
-        </div>
-
-        {/* Quick Links */}
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
-          <h3 className="text-xl font-bold text-white mb-6">
-            Quick Links to Popular Pages
-          </h3>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a 
-              href="/properties/farmhouse"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-4 transition-all duration-300 group"
-            >
-              <div className="bg-green-500/20 p-2 rounded-lg group-hover:scale-110 transition-transform">
-                <Home className="h-5 w-5 text-green-300" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-white">Farmhouses</div>
-                <div className="text-sm text-blue-200">Luxury countryside living</div>
-              </div>
-            </a>
-
-            <a 
-              href="/properties/villa"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-4 transition-all duration-300 group"
-            >
-              <div className="bg-purple-500/20 p-2 rounded-lg group-hover:scale-110 transition-transform">
-                <Home className="h-5 w-5 text-purple-300" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-white">Villas</div>
-                <div className="text-sm text-blue-200">Modern premium homes</div>
-              </div>
-            </a>
-
-            <a 
-              href="/properties/plot"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-4 transition-all duration-300 group"
-            >
-              <div className="bg-blue-500/20 p-2 rounded-lg group-hover:scale-110 transition-transform">
-                <MapPin className="h-5 w-5 text-blue-300" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-white">Plots</div>
-                <div className="text-sm text-blue-200">Build your dream home</div>
-              </div>
-            </a>
-
-            <a 
-              href="/properties/commercial"
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-4 transition-all duration-300 group"
-            >
-              <div className="bg-orange-500/20 p-2 rounded-lg group-hover:scale-110 transition-transform">
-                <Search className="h-5 w-5 text-orange-300" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-white">Commercial</div>
-                <div className="text-sm text-blue-200">Business properties</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        {/* Footer Note */}
-        <p className="mt-8 text-sm text-blue-300">
-          Need help? Contact us at{' '}
-          <a href="mailto:citizen.housing@citizencooperative.in" className="underline hover:text-white transition-colors">
-            citizen.housing@citizencooperative.in
-          </a>
-        </p>
       </div>
     </div>
   );

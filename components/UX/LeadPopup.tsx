@@ -73,7 +73,7 @@ export default function LeadPopup({
           </h2>
 
           {propertyName && (
-            <p className="text-sm text-blue-600 mb-4">
+            <p className="text-sm text-emerald-600 mb-4">
               {propertyName}
             </p>
           )}
@@ -112,7 +112,7 @@ export default function LeadPopup({
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-60"
+              className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition disabled:opacity-60"
             >
               {loading ? 'Submitting...' : 'Submit'}
             </button>

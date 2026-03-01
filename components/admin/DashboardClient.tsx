@@ -89,10 +89,10 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
     <div className="space-y-6">
       {/* Stats Cards */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <article className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg">
+        <article className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-blue-100 text-sm font-medium">Total Listings</p>
+              <p className="text-emerald-100 text-sm font-medium">Total Listings</p>
               <p className="text-4xl font-bold mt-1">{analytics.totalListings}</p>
             </div>
             <div className="bg-white/20 p-3 rounded-xl">
@@ -100,10 +100,10 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
             </div>
           </div>
         </article>
-        <article className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl p-6 text-white shadow-lg">
+        <article className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-indigo-100 text-sm font-medium">Residential</p>
+              <p className="text-green-100 text-sm font-medium">Residential</p>
               <p className="text-4xl font-bold mt-1">{analytics.totalResidential}</p>
             </div>
             <div className="bg-white/20 p-3 rounded-xl">
@@ -128,13 +128,13 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
           <div className="flex items-center gap-2 mb-4">
-            <MapPin className="w-5 h-5 text-blue-600" />
+            <MapPin className="w-5 h-5 text-emerald-600" />
             <h2 className="text-lg font-bold text-slate-900">Top Cities</h2>
           </div>
           <div className="space-y-3">
             {analytics.topCities.slice(0, 5).map((item, index) => (
               <div key={item.city} className="flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center">
                   {index + 1}
                 </span>
                 <div className="flex-1 flex items-center justify-between">
@@ -150,13 +150,13 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
 
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
           <div className="flex items-center gap-2 mb-4">
-            <Home className="w-5 h-5 text-indigo-600" />
+            <Home className="w-5 h-5 text-green-600" />
             <h2 className="text-lg font-bold text-slate-900">Listing Types</h2>
           </div>
           <div className="space-y-3">
             {analytics.listingTypes.slice(0, 5).map((item, index) => (
               <div key={item.type} className="flex items-center gap-3">
-                <span className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold flex items-center justify-center">
+                <span className="w-6 h-6 rounded-full bg-green-100 text-green-700 text-xs font-bold flex items-center justify-center">
                   {index + 1}
                 </span>
                 <div className="flex-1 flex items-center justify-between">
@@ -180,7 +180,7 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
               onClick={() => setActiveTab('residential')}
               className={`flex items-center gap-2 px-6 py-4 font-semibold transition-colors ${
                 activeTab === 'residential'
-                  ? 'text-blue-700 border-b-2 border-blue-700 bg-blue-50/50'
+                  ? 'text-emerald-700 border-b-2 border-emerald-700 bg-emerald-50/50'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
@@ -212,7 +212,7 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
                 placeholder="Search by name, location, developer..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
               />
             </div>
 
@@ -223,7 +223,7 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
-                  className="pl-9 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+                  className="pl-9 pr-8 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none cursor-pointer"
                 >
                   <option value="">All Cities</option>
                   {cities.map((city) => (
@@ -237,7 +237,7 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
-                className="px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none cursor-pointer"
+                className="px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none cursor-pointer"
               >
                 <option value="">All Types</option>
                 {types.map((type) => (
@@ -261,13 +261,13 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
               <div className="flex bg-white border border-slate-300 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
+                  className={`p-2.5 ${viewMode === 'grid' ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
                 >
                   <LayoutGrid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2.5 ${viewMode === 'list' ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
+                  className={`p-2.5 ${viewMode === 'list' ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
                 >
                   <List className="w-5 h-5" />
                 </button>

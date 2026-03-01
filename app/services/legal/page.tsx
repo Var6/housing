@@ -263,22 +263,22 @@ export default function LegalAssistance() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-blue-800 text-white">
+      <div className="bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Legal Assistance Services
             </h1>
-            <p className="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
               Comprehensive legal support for all your property transactions. 
               Protect your investments with expert legal guidance and documentation services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
+              <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
                 <Scale className="h-5 w-5 mr-2" />
                 Get Legal Consultation
               </button>
-              <button className="bg-indigo-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-400 transition-colors inline-flex items-center justify-center">
+              <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors inline-flex items-center justify-center">
                 <FileText className="h-5 w-5 mr-2" />
                 Property Verification
               </button>
@@ -300,7 +300,7 @@ export default function LegalAssistance() {
           {legalServices.map((service, index) => {
             const IconComponent = service.icon;
             const colorClasses = {
-              blue: "from-blue-600 to-blue-700",
+              blue: "from-emerald-600 to-emerald-700",
               green: "from-green-600 to-green-700",
               purple: "from-purple-600 to-purple-700",
               orange: "from-orange-600 to-orange-700"
@@ -354,7 +354,7 @@ export default function LegalAssistance() {
               return (
                 <div key={step.id} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden">
                   <div className="flex flex-col lg:flex-row">
-                    <div className="lg:w-1/3 bg-gradient-to-br from-indigo-600 to-blue-700 p-8 text-white">
+                    <div className="lg:w-1/3 bg-gradient-to-br from-green-600 to-emerald-700 p-8 text-white">
                       <div className="flex items-center mb-4">
                         <div className="bg-white bg-opacity-20 rounded-full p-3 mr-4">
                           <IconComponent className="h-8 w-8" />
@@ -362,14 +362,14 @@ export default function LegalAssistance() {
                         <div className="text-2xl font-bold">Step {step.id}</div>
                       </div>
                       <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-indigo-100">{step.description}</p>
+                      <p className="text-green-100">{step.description}</p>
                     </div>
                     <div className="lg:w-2/3 p-8">
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Process Details:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {step.details.map((detail, idx) => (
                           <div key={idx} className="flex items-center">
-                            <CheckCircle className="h-5 w-5 text-indigo-500 mr-3" />
+                            <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
                             <span className="text-gray-700">{detail}</span>
                           </div>
                         ))}
@@ -402,7 +402,7 @@ export default function LegalAssistance() {
               const colorClasses = {
                 red: "bg-red-100 text-red-600 border-red-200",
                 yellow: "bg-yellow-100 text-yellow-600 border-yellow-200",
-                blue: "bg-blue-100 text-blue-600 border-blue-200",
+                blue: "bg-emerald-100 text-emerald-600 border-emerald-200",
                 orange: "bg-orange-100 text-orange-600 border-orange-200"
               };
               
@@ -439,11 +439,11 @@ export default function LegalAssistance() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {legalExperts.map((expert, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
-                <div className="bg-indigo-100 rounded-full p-4 w-fit mx-auto mb-4">
-                  <Briefcase className="h-8 w-8 text-indigo-600" />
+                <div className="bg-green-100 rounded-full p-4 w-fit mx-auto mb-4">
+                  <Briefcase className="h-8 w-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{expert.name}</h3>
-                <p className="text-indigo-600 font-medium mb-2">{expert.specialization}</p>
+                <p className="text-green-600 font-medium mb-2">{expert.specialization}</p>
                 <div className="space-y-1 text-sm text-gray-600 mb-4">
                   <div>{expert.experience}</div>
                   <div>{expert.cases}</div>
@@ -471,7 +471,7 @@ export default function LegalAssistance() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => {
               const colorClasses = {
-                blue: "border-blue-200 bg-blue-50 text-blue-600 bg-blue-600 hover:bg-blue-700",
+                blue: "border-emerald-200 bg-emerald-50 text-emerald-600 bg-emerald-600 hover:bg-emerald-700",
                 green: "border-green-200 bg-green-50 text-green-600 bg-green-600 hover:bg-green-700",
                 purple: "border-purple-200 bg-purple-50 text-purple-600 bg-purple-600 hover:bg-purple-700"
               };
@@ -530,13 +530,13 @@ export default function LegalAssistance() {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <Shield className="h-6 w-6 text-indigo-600" />
+                  <Shield className="h-6 w-6 text-green-600" />
                 </div>
                 <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
                 <div className="border-t pt-4">
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  <div className="text-sm font-medium text-indigo-600 mt-1">{testimonial.case}</div>
+                  <div className="text-sm font-medium text-green-600 mt-1">{testimonial.case}</div>
                 </div>
               </div>
             ))}
@@ -545,26 +545,26 @@ export default function LegalAssistance() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-indigo-600 text-white py-16">
+      <div className="bg-green-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold mb-6">Protect Your Property Investment</h2>
-              <p className="text-indigo-100 mb-8">
+              <p className="text-green-100 mb-8">
                 Don't take risks with property transactions. Get expert legal assistance 
                 to ensure your investments are legally secure and compliant.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-indigo-300 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-300 mr-3" />
                   <span>Expert legal consultation</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-indigo-300 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-300 mr-3" />
                   <span>Comprehensive document verification</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-indigo-300 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-300 mr-3" />
                   <span>Risk-free property transactions</span>
                 </div>
               </div>
@@ -574,7 +574,7 @@ export default function LegalAssistance() {
               <form className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Legal Service Required</label>
-                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
                     <option>Select service type</option>
                     <option>Property Documentation</option>
                     <option>Agreement Drafting</option>
@@ -585,7 +585,7 @@ export default function LegalAssistance() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
-                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
                     <option>Select property type</option>
                     <option>Residential Apartment</option>
                     <option>Villa/Independent House</option>
@@ -598,7 +598,7 @@ export default function LegalAssistance() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -606,21 +606,21 @@ export default function LegalAssistance() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter your phone number"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Brief Description</label>
                   <textarea
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     rows={3}
                     placeholder="Describe your legal requirement"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+                  className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                 >
                   Request Consultation
                 </button>

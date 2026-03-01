@@ -122,7 +122,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
 
 
         <div className="p-6">
-          <div className="flex items-center gap-2 text-blue-600 mb-3">
+          <div className="flex items-center gap-2 text-emerald-600 mb-3">
             <MapPin className="w-4 h-4" />
             <span className="text-sm font-semibold">{project.location}, {project.city}</span>
           </div>
@@ -168,7 +168,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
           {project.kind !== 'farmhouse' ? (
               <Link 
             href={`/properties/${project.id}`}
-            className="w-full px-5 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="w-full px-5 bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
           >
             View Details
           </Link>
@@ -176,7 +176,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
             
               <Link 
             href={`/properties/farmhouse/${project.id}`}
-            className="w-full px-5 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="w-full px-5 bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
           >
             View Details
           </Link>
@@ -195,7 +195,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
       <div className="min-h-screen px-4 py-8">
         <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl">
-          <div className="relative bg-gradient-to-br from-blue-600 to-purple-700 p-8 rounded-t-2xl">
+          <div className="relative bg-gradient-to-br from-emerald-600 to-purple-700 p-8 rounded-t-2xl">
             <button 
               onClick={onClose}
               className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-slate-100 transition"
@@ -216,17 +216,17 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
           <div className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="bg-slate-50 p-6 rounded-xl text-center">
-                <Calendar className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                <Calendar className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
                 <div className="text-sm text-slate-600 mb-1">Possession</div>
                 <div className="font-bold text-slate-900">{project.possession}</div>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl text-center">
-                <Layers className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                <Layers className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
                 <div className="text-sm text-slate-600 mb-1">Structure</div>
                 <div className="font-bold text-slate-900">{project.structure}</div>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl text-center">
-                <FileText className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                <FileText className="w-8 h-8 text-emerald-600 mx-auto mb-3" />
                 <div className="text-sm text-slate-600 mb-1">RERA ID</div>
                 <div className="font-bold text-slate-900 text-xs">{project.reraId || 'N/A'}</div>
               </div>
@@ -236,7 +236,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Available Units</h3>
               <div className="space-y-4">
                 {project.units.map((unit, idx) => (
-                  <div key={idx} className="border border-slate-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-md transition">
+                  <div key={idx} className="border border-slate-200 rounded-xl p-6 hover:border-emerald-500 hover:shadow-md transition">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                       <div>
                         <div className="text-sm text-slate-600 mb-1">Configuration</div>
@@ -245,7 +245,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
                       <div>
                         <div className="text-sm text-slate-600 mb-1">Carpet Area</div>
                         <div className="flex items-center gap-2">
-                          <Maximize className="w-5 h-5 text-blue-600" />
+                          <Maximize className="w-5 h-5 text-emerald-600" />
                           <span className="text-xl font-bold text-slate-900">{unit.sqft} sq.ft</span>
                         </div>
                       </div>
@@ -262,20 +262,20 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-8 rounded-xl">
+            <div className="bg-gradient-to-r from-emerald-600 to-purple-700 text-white p-8 rounded-xl">
               <h3 className="text-2xl font-bold mb-4">Interested in {project.name}?</h3>
               <p className="mb-6 opacity-90">Contact us for site visits, detailed brochures, and personalized assistance.</p>
               <div className="flex flex-wrap gap-4">
                 <a 
                   href="tel:+919031007097" 
-                  className="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+                  className="flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition"
                 >
                   <Phone className="w-5 h-5" />
                   Call Now
                 </a>
                 <a 
                   href="mailto:citizen.housing@citizencooperative.in" 
-                  className="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition"
+                  className="flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition"
                 >
                   <Mail className="w-5 h-5" />
                   Email Us
@@ -296,7 +296,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
   Premium Properties
   {cityParam ? ` in ${cityParam}` : stateParam ? ` in ${stateParam}` : ''}
 </h1>
-          <p className="text-xl text-blue-100 mb-8">Discover luxury residences from top developers</p>
+          <p className="text-xl text-emerald-100 mb-8">Discover luxury residences from top developers</p>
           
           <div className="bg-white rounded-xl p-4 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -307,7 +307,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
                   placeholder="Search projects, locations, or developers..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 />
               </div>
               <div className="relative">
@@ -315,7 +315,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
                 <select
                   value={regionFilter}
                   onChange={(e) => setRegionFilter(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 appearance-none bg-white"
+                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 appearance-none bg-white"
                 >
                   <option value="all">All Regions</option>
                   {regions.map(region => (
@@ -328,7 +328,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
                 <select
                   value={bhkFilter}
                   onChange={(e) => setBhkFilter(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 appearance-none bg-white"
+                  className="w-full pl-12 pr-4 py-3 rounded-lg border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 appearance-none bg-white"
                 >
                   <option value="all">All BHK</option>
                   <option value="2">2 BHK</option>
@@ -374,7 +374,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
             Contact Citizen Housing for expert guidance, site visits, and exclusive deals on premium properties.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+919031007097" className="flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition">
+            <a href="tel:+919031007097" className="flex items-center gap-2 bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition">
               <Phone className="w-5 h-5" />
               +91 9031007097
             </a>

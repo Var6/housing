@@ -20,7 +20,7 @@ export default function ServicesSection() {
       title: "Property Search",
       description: "Advanced search filters to help you find properties that match your exact requirements and budget.",
       features: ["Location-based search", "Price range filters", "Property type selection"],
-      color: "bg-blue-600"
+      color: "bg-emerald-600"
     },
     {
       icon: Home,
@@ -55,7 +55,7 @@ export default function ServicesSection() {
     //   title: "Consultation",
     //   description: "Expert consultation from experienced real estate professionals to guide you through your journey.",
     //   features: ["Expert advice", "Market insights", "Personalized guidance"],
-    //   color: "bg-indigo-600"
+    //   color: "bg-green-600"
     // }
   ];
 
@@ -72,7 +72,7 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-blue-600">Services</span>
+            Our <span className="text-emerald-600">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From property search to final documentation, we provide end-to-end real estate services to make your property journey smooth and hassle-free.
@@ -93,7 +93,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                 </ul>
 
                 {/* CTA */}
-                {/* <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 group">
+                {/* <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-medium hover:bg-emerald-600 hover:text-white transition-all duration-300 flex items-center justify-center space-x-2 group">
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </button> */}
@@ -134,8 +134,8 @@ export default function ServicesSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                  <stat.icon className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-emerald-200 transition-colors duration-300">
+                  <stat.icon className="h-8 w-8 text-emerald-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -146,18 +146,18 @@ export default function ServicesSection() {
 
         {/* CTA Section */}
         {/* <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Get Started?</h3>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-emerald-100 mb-8 max-w-2xl mx-auto">
               Let our experts help you find the perfect property or assist you with any real estate needs you may have.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={()=>window.location.href='/properties'}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+              className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
                 Browse Properties
               </button>
               <button   onClick={() => window.open('tel:+919031007097')}
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-300">
                 Contact Us Today
               </button>
             </div>

@@ -105,11 +105,11 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
-            <Users className="h-8 w-8 text-blue-600 mr-2" />
-            <span className="text-blue-600 font-semibold text-lg">Testimonials</span>
+            <Users className="h-8 w-8 text-emerald-600 mr-2" />
+            <span className="text-emerald-600 font-semibold text-lg">Testimonials</span>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-blue-600">Clients Say</span>
+            What Our <span className="text-emerald-600">Clients Say</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied customers have to say about their experience with Citizen Grih Nirman.
@@ -122,13 +122,13 @@ export default function TestimonialsSection() {
           <div className="flex justify-between items-center mb-8">
             <button
               onClick={prevSlide}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 transform hover:scale-110"
+              className="p-3 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors duration-300 transform hover:scale-110"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 transform hover:scale-110"
+              className="p-3 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors duration-300 transform hover:scale-110"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -139,10 +139,10 @@ export default function TestimonialsSection() {
             {testimonials.slice(currentSlide * 3, currentSlide * 3 + 3).map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-gray-50 rounded-2xl p-8 hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl group"
+                className="bg-gray-50 rounded-2xl p-8 hover:bg-emerald-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl group"
               >
                 {/* Quote Icon */}
-                <div className="text-blue-600 mb-4">
+                <div className="text-emerald-600 mb-4">
                   <Quote className="h-8 w-8" />
                 </div>
 
@@ -164,15 +164,15 @@ export default function TestimonialsSection() {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover ring-2 ring-blue-100 group-hover:ring-blue-200 transition-all duration-300"
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-emerald-100 group-hover:ring-emerald-200 transition-all duration-300"
                   />
                   <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h4 className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
                       {testimonial.name}
                     </h4>
                     <p className="text-sm text-gray-600">{testimonial.location}</p>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="text-xs text-blue-600 font-medium bg-blue-100 px-2 py-1 rounded-full">
+                      <span className="text-xs text-emerald-600 font-medium bg-emerald-100 px-2 py-1 rounded-full">
                         {testimonial.propertyType}
                       </span>
                       <span className="text-xs text-gray-500">{testimonial.date}</span>
@@ -190,7 +190,7 @@ export default function TestimonialsSection() {
                 key={i}
                 onClick={() => setCurrentSlide(i)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === i ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
+                  currentSlide === i ? 'bg-emerald-600' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}
@@ -198,23 +198,23 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
+        <div className="mt-16 bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-8 md:p-12 text-white">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="text-blue-100">Customer Satisfaction</div>
+              <div className="text-emerald-100">Customer Satisfaction</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">10+</div>
-              <div className="text-blue-100">Happy Families</div>
+              <div className="text-emerald-100">Happy Families</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">4.8/5</div>
-              <div className="text-blue-100">Average Rating</div>
+              <div className="text-emerald-100">Average Rating</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">24/7</div>
-              <div className="text-blue-100">Customer Support</div>
+              <div className="text-emerald-100">Customer Support</div>
             </div>
           </div>
         </div>
@@ -229,11 +229,11 @@ export default function TestimonialsSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={()=>window.location.href = '/properties'}
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+            className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105">
               Start Property Search
             </button>
             <button  onClick={() => window.location.href = 'tel:+919031007097'}
-            className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+            className="border-2 border-emerald-600 text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300">
               Get Free Consultation
             </button>
           </div>

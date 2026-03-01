@@ -46,7 +46,7 @@ export default async function AdminDashboardPage() {
               <div className="flex flex-wrap items-center gap-2.5">
                 <Link
                   href="/Admin/dashboard/new"
-                  className="inline-flex items-center gap-2 rounded-xl bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-800"
+                  className="inline-flex items-center gap-2 rounded-xl bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-800"
                 >
                   <Plus className="h-4 w-4" />
                   Create Listing
@@ -69,9 +69,9 @@ export default async function AdminDashboardPage() {
                   <span className="text-2xl font-extrabold text-slate-900">{totalListings}</span>
                 </div>
               </article>
-              <article className="rounded-2xl border border-blue-200/70 bg-blue-50/60 px-4 py-3.5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-blue-700">Residential</p>
-                <div className="mt-1 flex items-center gap-2 text-blue-900">
+              <article className="rounded-2xl border border-emerald-200/70 bg-emerald-50/60 px-4 py-3.5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Residential</p>
+                <div className="mt-1 flex items-center gap-2 text-emerald-900">
                   <Building2 className="h-4 w-4" />
                   <span className="text-2xl font-extrabold">{residentialCount}</span>
                 </div>

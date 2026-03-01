@@ -182,10 +182,10 @@ const TestimonialsPage = () => {
 
   const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
-      testimonial.featured ? 'ring-2 ring-blue-200 border-blue-100' : 'border border-gray-100'
+      testimonial.featured ? 'ring-2 ring-emerald-200 border-emerald-100' : 'border border-gray-100'
     }`}>
       {testimonial.featured && (
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 text-sm font-medium flex items-center">
+        <div className="bg-gradient-to-r from-emerald-600 to-purple-600 text-white px-4 py-2 text-sm font-medium flex items-center">
           <Award className="w-4 h-4 mr-2" />
           Featured Success Story
         </div>
@@ -230,7 +230,7 @@ const TestimonialsPage = () => {
 
         {/* Content */}
         <div className="relative mb-4">
-          <Quote className="absolute -top-2 -left-2 w-8 h-8 text-blue-200" />
+          <Quote className="absolute -top-2 -left-2 w-8 h-8 text-emerald-200" />
           <h4 className="font-semibold text-gray-900 mb-2 pl-6">{testimonial.title}</h4>
           <p className="text-gray-600 leading-relaxed pl-6">{testimonial.content}</p>
         </div>
@@ -242,12 +242,12 @@ const TestimonialsPage = () => {
 
         {/* Actions */}
         <div className="flex items-center justify-between">
-          <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
+          <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors">
             <Heart className="w-4 h-4" />
             <span className="text-sm font-medium">Helpful</span>
           </button>
           <div className="flex items-center space-x-2">
-            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full capitalize">
+            <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full capitalize">
               {testimonial.category.slice(0, -1)}
             </span>
             {testimonial.verified && (
@@ -272,7 +272,7 @@ const TestimonialsPage = () => {
         <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-all duration-300" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:bg-opacity-100 transition-all duration-300">
-            <Play className="w-6 h-6 text-blue-600 ml-1" />
+            <Play className="w-6 h-6 text-emerald-600 ml-1" />
           </div>
         </div>
         <div className="absolute top-4 right-4 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-sm">
@@ -291,12 +291,12 @@ const TestimonialsPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -324,7 +324,7 @@ const TestimonialsPage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {stats.map((stat, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center">
-                <div className="flex justify-center mb-3 text-blue-600">
+                <div className="flex justify-center mb-3 text-emerald-600">
                   {stat.icon}
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
@@ -358,7 +358,7 @@ const TestimonialsPage = () => {
                       onClick={() => setActiveFilter(filter.id)}
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                         activeFilter === filter.id
-                          ? 'bg-blue-600 text-white'
+                          ? 'bg-emerald-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                     >
@@ -374,7 +374,7 @@ const TestimonialsPage = () => {
                 <input
                   type="text"
                   placeholder="Search testimonials..."
-                  className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full lg:w-80"
+                  className="pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent w-full lg:w-80"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -405,7 +405,7 @@ const TestimonialsPage = () => {
                   setActiveFilter('all');
                   setSearchQuery('');
                 }}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
               >
                 Clear Filters
               </button>
@@ -414,13 +414,13 @@ const TestimonialsPage = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg text-white p-8 text-center">
+        <div className="bg-gradient-to-r from-emerald-600 to-purple-600 rounded-xl shadow-lg text-white p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-emerald-100 text-lg mb-8 max-w-2xl mx-auto">
             Join thousands of satisfied customers who have achieved their real estate dreams with CitizenHousing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Start Your Journey
             </button>
             <button className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-colors">
@@ -443,8 +443,8 @@ const TestimonialsPage = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
-                <TrendingUp className="w-6 h-6 text-blue-600" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4">
+                <TrendingUp className="w-6 h-6 text-emerald-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Transparent Process</h4>
               <p className="text-gray-600 text-sm">
@@ -467,7 +467,7 @@ const TestimonialsPage = () => {
         <div className="mt-16 text-center">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="flex items-center justify-center mb-4">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mr-3">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full mr-3">
                 <Home className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">CitizenHousing</h2>

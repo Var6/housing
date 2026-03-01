@@ -342,7 +342,7 @@ const FAQPage = () => {
           <h3 className="font-medium text-gray-900 text-lg">{faq.question}</h3>
           <div className="flex items-center mt-2 space-x-2">
             {faq.tags.map((tag, index) => (
-              <span key={index} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+              <span key={index} className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">
                 {tag}
               </span>
             ))}
@@ -367,12 +367,12 @@ const FAQPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full">
+            <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full">
               <Home className="w-6 h-6 text-white" />
             </div>
             <div>
@@ -386,8 +386,8 @@ const FAQPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
-            <HelpCircle className="w-10 h-10 text-blue-600" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 rounded-full mb-6">
+            <HelpCircle className="w-10 h-10 text-emerald-600" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             How Can We Help You?
@@ -403,7 +403,7 @@ const FAQPage = () => {
               <input
                 type="text"
                 placeholder="Search for answers..."
-                className="w-full pl-12 pr-4 py-4 text-lg border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-12 pr-4 py-4 text-lg border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -425,19 +425,19 @@ const FAQPage = () => {
                     onClick={() => setActiveCategory(category.id as FAQCategory)}
                     className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors text-left ${
                       activeCategory === category.id
-                        ? 'bg-blue-100 text-blue-700 border border-blue-200'
+                        ? 'bg-emerald-100 text-emerald-700 border border-emerald-200'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={activeCategory === category.id ? 'text-blue-600' : 'text-gray-400'}>
+                      <div className={activeCategory === category.id ? 'text-emerald-600' : 'text-gray-400'}>
                         {category.icon}
                       </div>
                       <span className="font-medium">{category.title}</span>
                     </div>
                     <span className={`px-2 py-1 text-xs rounded-full ${
                       activeCategory === category.id
-                        ? 'bg-blue-200 text-blue-700'
+                        ? 'bg-emerald-200 text-emerald-700'
                         : 'bg-gray-100 text-gray-600'
                     }`}>
                       {category.count}
@@ -447,12 +447,12 @@ const FAQPage = () => {
               </nav>
               
               {/* Quick Stats */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg">
+              <div className="mt-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg">
                 <h4 className="font-medium text-gray-900 mb-2">Need More Help?</h4>
                 <p className="text-sm text-gray-600 mb-3">
                   Can't find what you're looking for?
                 </p>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                <button className="w-full bg-emerald-600 text-white py-2 px-4 rounded-lg text-sm hover:bg-emerald-700 transition-colors">
                   Contact Support
                 </button>
               </div>
@@ -464,7 +464,7 @@ const FAQPage = () => {
             {/* Category Header */}
             <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
               <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full">
+                <div className="flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full">
                   {categories.find(c => c.id === activeCategory)?.icon}
                 </div>
                 <div>
@@ -480,14 +480,14 @@ const FAQPage = () => {
 
             {/* Search Results Notice */}
             {searchQuery && (
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
                 <div className="flex items-center space-x-3">
-                  <Search className="w-5 h-5 text-blue-600" />
+                  <Search className="w-5 h-5 text-emerald-600" />
                   <div>
-                    <p className="text-blue-900 font-medium">
+                    <p className="text-emerald-900 font-medium">
                       Search Results for "{searchQuery}"
                     </p>
-                    <p className="text-blue-700 text-sm">
+                    <p className="text-emerald-700 text-sm">
                       Found {filteredFAQs.length} matching questions
                     </p>
                   </div>
@@ -512,7 +512,7 @@ const FAQPage = () => {
                   </p>
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                    className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors"
                   >
                     Clear Search
                   </button>
@@ -524,10 +524,10 @@ const FAQPage = () => {
 
         {/* Help Section */}
         <div className="mt-16">
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg text-white p-8">
+          <div className="bg-gradient-to-r from-green-600 to-purple-600 rounded-xl shadow-lg text-white p-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold mb-4">Still Need Help?</h2>
-              <p className="text-indigo-100 max-w-2xl mx-auto">
+              <p className="text-green-100 max-w-2xl mx-auto">
                 Our support team is ready to assist you with any questions not covered in our FAQ. 
                 We're committed to providing excellent customer service.
               </p>
@@ -539,7 +539,7 @@ const FAQPage = () => {
                   <MessageCircle className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold mb-2">Live Chat</h3>
-                <p className="text-indigo-100 text-sm mb-4">
+                <p className="text-green-100 text-sm mb-4">
                   Get instant help from our support team
                 </p>
                 <button className="bg-white/20 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-colors text-sm">
@@ -552,7 +552,7 @@ const FAQPage = () => {
                   <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold mb-2">Email Support</h3>
-                <p className="text-indigo-100 text-sm mb-4">
+                <p className="text-green-100 text-sm mb-4">
                   Send us a detailed message
                 </p>
                 <button className="bg-white/20 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-colors text-sm">
@@ -565,7 +565,7 @@ const FAQPage = () => {
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold mb-2">Phone Support</h3>
-                <p className="text-indigo-100 text-sm mb-4">
+                <p className="text-green-100 text-sm mb-4">
                   Speak directly with our experts
                 </p>
                 <button className="bg-white/20 text-white px-4 py-2 rounded-lg hover:bg-white/30 transition-colors text-sm">
@@ -594,14 +594,14 @@ const FAQPage = () => {
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-4">
-                <Shield className="w-6 h-6 text-blue-600" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-100 rounded-full mb-4">
+                <Shield className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Safety Tips</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Essential safety guidelines for property transactions
               </p>
-              <button className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+              <button className="text-emerald-600 hover:text-emerald-700 text-sm font-medium">
                 Learn More →
               </button>
             </div>
@@ -638,7 +638,7 @@ const FAQPage = () => {
         <div className="mt-16 text-center">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="flex items-center justify-center mb-4">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mr-3">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-600 rounded-full mr-3">
                 <Home className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">CitizenHousing</h2>
@@ -649,22 +649,22 @@ const FAQPage = () => {
             
             {/* Quick Links */}
             <div className="flex items-center justify-center space-x-6 mb-6 flex-wrap">
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors mb-2">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors mb-2">
                 <FileText className="w-4 h-4" />
                 <span className="text-sm">Terms of Service</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors mb-2">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors mb-2">
                 <Eye className="w-4 h-4" />
                 <span className="text-sm">Privacy Policy</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors mb-2">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors mb-2">
                 <MessageCircle className="w-4 h-4" />
                 <span className="text-sm">Contact Us</span>
               </button>
               <div className="w-px h-4 bg-gray-300"></div>
-              <button className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors mb-2">
+              <button className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 transition-colors mb-2">
                 <Settings className="w-4 h-4" />
                 <span className="text-sm">Help Center</span>
               </button>
@@ -675,15 +675,15 @@ const FAQPage = () => {
               <h3 className="font-semibold text-gray-900 mb-4">Get in Touch</h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center justify-center space-x-2">
-                  <Mail className="w-4 h-4 text-blue-600" />
+                  <Mail className="w-4 h-4 text-emerald-600" />
                   <span>citizen.housing@citizencooperative.in</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
-                  <Phone className="w-4 h-4 text-blue-600" />
+                  <Phone className="w-4 h-4 text-emerald-600" />
                   <span>+91-9031007097</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
-                  <Clock className="w-4 h-4 text-blue-600" />
+                  <Clock className="w-4 h-4 text-emerald-600" />
                   <span>Mon-Sat, 9 AM - 9 PM</span>
                 </div>
               </div>
@@ -708,7 +708,7 @@ const FAQPage = () => {
         </div>
 
         {/* Feedback Section */}
-        <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow-lg p-6">
+        <div className="mt-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl shadow-lg p-6">
           <div className="text-center">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Was this FAQ helpful?

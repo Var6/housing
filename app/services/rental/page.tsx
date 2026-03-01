@@ -231,7 +231,7 @@ export default function RentalServices() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white">
+      <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-green-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -261,7 +261,7 @@ export default function RentalServices() {
           {rentalTypes.map((service, index) => {
             const IconComponent = service.icon;
             const colorClasses = {
-              blue: "from-blue-600 to-blue-700 bg-blue-100 text-blue-600",
+              blue: "from-emerald-600 to-emerald-700 bg-emerald-100 text-emerald-600",
               green: "from-green-600 to-green-700 bg-green-100 text-green-600"
             };
             
@@ -284,7 +284,7 @@ export default function RentalServices() {
                       </li>
                     ))}
                   </ul>
-                  <button className={`w-full mt-6 ${service.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-green-600 hover:bg-green-700'} text-white py-3 rounded-lg font-semibold transition-colors`}>
+                  <button className={`w-full mt-6 ${service.color === 'blue' ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-green-600 hover:bg-green-700'} text-white py-3 rounded-lg font-semibold transition-colors`}>
                     Get Started
                   </button>
                 </div>
@@ -323,7 +323,7 @@ export default function RentalServices() {
               return (
                 <div key={step.id} className="bg-gray-50 rounded-xl shadow-sm overflow-hidden">
                   <div className="flex flex-col lg:flex-row">
-                    <div className="lg:w-1/3 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 text-white">
+                    <div className="lg:w-1/3 bg-gradient-to-br from-purple-600 to-green-700 p-8 text-white">
                       <div className="flex items-center mb-4">
                         <div className="bg-white bg-opacity-20 rounded-full p-3 mr-4">
                           <IconComponent className="h-8 w-8" />
@@ -390,7 +390,7 @@ export default function RentalServices() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => {
               const colorClasses: Record<PricingPlanColor, string> = {
-                blue: "border-blue-200 bg-blue-50 text-blue-600 bg-blue-600 hover:bg-blue-700",
+                blue: "border-emerald-200 bg-emerald-50 text-emerald-600 bg-emerald-600 hover:bg-emerald-700",
                 green: "border-green-200 bg-green-50 text-green-600 bg-green-600 hover:bg-green-700",
                 purple: "border-purple-200 bg-purple-50 text-purple-600 bg-purple-600 hover:bg-purple-700"
               };
@@ -445,7 +445,7 @@ export default function RentalServices() {
                     ))}
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    testimonial.type === 'Tenant' ? 'bg-blue-100 text-blue-600' : 'bg-green-100 text-green-600'
+                    testimonial.type === 'Tenant' ? 'bg-emerald-100 text-emerald-600' : 'bg-green-100 text-green-600'
                   }`}>
                     {testimonial.type}
                   </span>
