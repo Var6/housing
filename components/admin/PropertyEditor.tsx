@@ -3,13 +3,15 @@
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { X, GripVertical, Plus, ImageIcon } from 'lucide-react'
+import { X, GripVertical, Plus, ImageIcon, Rows3 } from 'lucide-react'
+import { set } from 'mongoose'
 
 type Unit = {
   bhk: string
   sqft: number
   price: string
 }
+
 
 type PropertyPayload = {
   id: string
@@ -62,17 +64,36 @@ export default function PropertyEditor({
   const [uploading, setUploading] = useState(false)
   const [message, setMessage] = useState('')
   const [deleting, setDeleting] = useState(false)
-  const [isCustomType, setIsCustomType] = useState(
-    Boolean(form.type) && !availableTypes.includes(form.type),
-  )
 
   const unitsText = useMemo(
     () => form.units.map((u) => `${u.bhk}|${u.sqft}|${u.price}`).join('\n'),
     [form.units],
   )
+  const unitsCount = form.units.length
+
+  const categorySuggestions = useMemo(() => {
+    const normalized = availableTypes
+      .map((value) => value.trim())
+      .filter(Boolean)
+
+    return Array.from(new Map(normalized.map((value) => [value.toLowerCase(), value])).values()).sort(
+      (a, b) => a.localeCompare(b),
+    )
+  }, [availableTypes])
+
+  const quickTypeOptions = ['Residential', 'Commercial', 'Farmhouse']
 
   const updateField = (key: keyof PropertyPayload, value: any) => {
     setForm((prev) => ({ ...prev, [key]: value }))
+  }
+
+  const selectQuickType = (nextType: string) => {
+    const normalized = nextType.trim().toLowerCase()
+    setForm((prev) => ({
+      ...prev,
+      kind: normalized === 'farmhouse' ? 'farmhouse' : 'property',
+      type: nextType,
+    }))
   }
 
   const onUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -107,13 +128,28 @@ export default function PropertyEditor({
     setSaving(true)
     setMessage('')
 
+    const cleanedForm: PropertyPayload = {
+      ...form,
+      name: form.name.trim(),
+      developer: form.developer.trim(),
+      location: form.location.trim(),
+      city: form.city.trim(),
+      state: form.state.trim(),
+      region: form.region.trim(),
+      type: form.type.trim(),
+      association: (form.association || '').trim(),
+      possession: form.possession.trim(),
+      structure: form.structure.trim(),
+      reraId: (form.reraId || '').trim(),
+    }
+
     const endpoint = isNew ? '/api/admin/properties' : `/api/admin/properties/${form.id}`
     const method = isNew ? 'POST' : 'PUT'
 
     const response = await fetch(endpoint, {
       method,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify(cleanedForm),
     })
 
     const payload = await response.json()
@@ -131,6 +167,11 @@ export default function PropertyEditor({
       router.replace(`/Admin/dashboard/${payload.id}`)
       router.refresh()
     }
+    setTimeout(() => { 
+    router.push('/Admin/dashboard')
+    router.refresh()
+    
+  }, 1000)
   }
 
   const onDelete = async () => {
@@ -159,76 +200,222 @@ export default function PropertyEditor({
     router.refresh()
   }
 
-  const inputClass = "border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
-  const textareaClass = "w-full border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400"
+  const inputClass = "border border-emerald-200 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none"
+  const textareaClass = "w-full border border-emerald-200 rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none"
+  const labelClass = 'text-sm font-semibold text-emerald-800'
+  const helperClass = 'text-xs text-emerald-600'
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
-      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Basic Information</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <select
-          className={inputClass}
-          value={form.kind}
-          onChange={(e) => updateField('kind', e.target.value as 'property' | 'farmhouse')}
-        >
-          <option value="property">Residential Property</option>
-          <option value="farmhouse">Farmhouse</option>
-        </select>
-        <input className={inputClass} value={form.name} onChange={(e) => updateField('name', e.target.value)} placeholder="Name" required />
-        <input className={inputClass} value={form.developer} onChange={(e) => updateField('developer', e.target.value)} placeholder="Developer" />
-        <input className={inputClass} value={form.location} onChange={(e) => updateField('location', e.target.value)} placeholder="Location" required />
-        <input className={inputClass} value={form.city} onChange={(e) => updateField('city', e.target.value)} placeholder="City" required />
-        <input className={inputClass} value={form.state} onChange={(e) => updateField('state', e.target.value)} placeholder="State" required />
-        <input className={inputClass} value={form.region} onChange={(e) => updateField('region', e.target.value)} placeholder="Region" />
-        <select
-          className={inputClass}
-          value={isCustomType ? '__new__' : form.type}
-          onChange={(e) => {
-            const next = e.target.value
-            if (next === '__new__') {
-              setIsCustomType(true)
-              updateField('type', '')
-            } else {
-              setIsCustomType(false)
-              updateField('type', next)
-            }
-          }}
-        >
-          <option value="">Select type</option>
-          {availableTypes.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
-          <option value="__new__">+ Create New Type</option>
-        </select>
-        {isCustomType && (
-          <input
-            className={inputClass}
-            value={form.type}
-            onChange={(e) => updateField('type', e.target.value)}
-            placeholder="Enter new type"
-          />
-        )}
-        <input className={inputClass} value={form.association || ''} onChange={(e) => updateField('association', e.target.value)} placeholder="Association" />
-        <input className={inputClass} value={form.possession} onChange={(e) => updateField('possession', e.target.value)} placeholder="Possession" />
-        <input className={inputClass} value={form.structure} onChange={(e) => updateField('structure', e.target.value)} placeholder="Structure" />
-        <input className={inputClass} value={form.reraId || ''} onChange={(e) => updateField('reraId', e.target.value)} placeholder="RERA" />
+    <form onSubmit={onSubmit} className="space-y-8">
+      {/* Property Type Quick Selector */}
+      <div className="rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-green-50 p-5 md:p-6 shadow-sm">
+        <div className="mb-4">
+          <h3 className="text-base font-bold text-emerald-900 mb-1">Property Type</h3>
+          <p className={helperClass}>Select one quickly, or use the category field below for custom types.</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {quickTypeOptions.map((option) => {
+            const active = form.type.trim().toLowerCase() === option.toLowerCase()
+            return (
+              <button
+                key={option}
+                type="button"
+                onClick={() => selectQuickType(option)}
+                className={`rounded-xl border-2 px-5 py-2.5 text-sm font-semibold transition-all ${
+                  active
+                    ? 'border-emerald-600 bg-emerald-600 text-white shadow-md scale-105'
+                    : 'border-emerald-200 bg-white text-emerald-700 hover:border-emerald-400 hover:bg-emerald-50'
+                }`}
+              >
+                {option}
+              </button>
+            )
+          })}
         </div>
       </div>
 
-      <label className="inline-flex items-center gap-2 text-slate-900">
-        <input type="checkbox" checked={form.priceVisible} onChange={(e) => updateField('priceVisible', e.target.checked)} />
-        <span>Show price in public pages</span>
-      </label>
+      {/* Basic Information */}
+      <div className="rounded-2xl border border-emerald-100 bg-white p-5 md:p-6 shadow-sm">
+        <h3 className="text-base font-bold text-emerald-900 mb-5 pb-3 border-b border-emerald-100">Basic Information</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Listing Group</span>
+            <select
+              className={`${inputClass} w-full`}
+              value={form.kind}
+              onChange={(e) => updateField('kind', e.target.value as 'property' | 'farmhouse')}
+            >
+              <option value="property">Property (Residential / Commercial)</option>
+              <option value="farmhouse">Farmhouse</option>
+            </select>
+          </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Units</h3>
-        <p className="font-semibold mb-2 text-slate-900">Units (one per line: BHK|SQFT|PRICE)</p>
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Project Name <span className="text-red-500">*</span></span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.name}
+              onChange={(e) => updateField('name', e.target.value)}
+              placeholder="Godrej Horizon Wadala"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Developer</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.developer}
+              onChange={(e) => updateField('developer', e.target.value)}
+              placeholder="Godrej Properties"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Location <span className="text-red-500">*</span></span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.location}
+              onChange={(e) => updateField('location', e.target.value)}
+              placeholder="Sector 140A, Noida"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>City <span className="text-red-500">*</span></span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.city}
+              onChange={(e) => updateField('city', e.target.value)}
+              placeholder="Mumbai"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>State <span className="text-red-500">*</span></span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.state}
+              onChange={(e) => updateField('state', e.target.value)}
+              placeholder="Maharashtra"
+              required
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Region</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.region}
+              onChange={(e) => updateField('region', e.target.value)}
+              placeholder="Western Suburbs"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Category / Type</span>
+            <input
+              className={`${inputClass} w-full`}
+              list="property-type-options"
+              value={form.type}
+              onChange={(e) => updateField('type', e.target.value)}
+              placeholder="Commercial, Residential, Plot, Villa"
+            />
+            <datalist id="property-type-options">
+              {categorySuggestions.map((type) => (
+                <option key={type} value={type} />
+              ))}
+            </datalist>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Association</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.association || ''}
+              onChange={(e) => updateField('association', e.target.value)}
+              placeholder="RERA Approved"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Possession</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.possession}
+              onChange={(e) => updateField('possession', e.target.value)}
+              placeholder="Dec 2028"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Structure</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.structure}
+              onChange={(e) => updateField('structure', e.target.value)}
+              placeholder="G+35 Floors"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>RERA ID</span>
+            <input
+              className={`${inputClass} w-full`}
+              value={form.reraId || ''}
+              onChange={(e) => updateField('reraId', e.target.value)}
+              placeholder="P51800012345"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Settings */}
+      <div className="rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm">
+        <h3 className="text-base font-bold text-emerald-900 mb-4 pb-3 border-b border-emerald-100">Settings</h3>
+        <label className="inline-flex items-center gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={form.priceVisible}
+            onChange={(e) => updateField('priceVisible', e.target.checked)}
+            className="w-5 h-5 rounded border-emerald-300 text-emerald-600 focus:ring-emerald-500"
+          />
+          <span className="text-emerald-800 font-medium">Show price in public pages</span>
+        </label>
+      </div>
+
+      {/* Units Section */}
+      <div className="rounded-2xl border border-emerald-100 bg-white p-5 md:p-6 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5 pb-3 border-b border-emerald-100">
+          <div className="flex items-center gap-3">
+            <span className="p-2.5 rounded-xl bg-emerald-100 text-emerald-700">
+              <Rows3 className="w-5 h-5" />
+            </span>
+            <div>
+              <h3 className="text-base font-bold text-emerald-900">Units</h3>
+              <p className="text-xs text-emerald-600">Add one configuration per line</p>
+            </div>
+          </div>
+          <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
+            {unitsCount} {unitsCount === 1 ? 'Unit' : 'Units'}
+          </span>
+        </div>
+
+        <div className="rounded-xl border border-slate-200 bg-white p-3 mb-3">
+          <p className="font-semibold text-slate-900 mb-2">Format: BHK|SQFT|PRICE</p>
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1">2 BHK|1200|1.25 Cr</span>
+            <span className="rounded-full bg-violet-50 text-violet-700 border border-violet-200 px-2.5 py-1">3 BHK|1650|1.85 Cr</span>
+            <span className="rounded-full bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1">Studio|450|48 L</span>
+          </div>
+        </div>
+
         <textarea
-          className={`${textareaClass} min-h-32`}
+          className={`${textareaClass} min-h-40 font-mono text-sm leading-6 border-emerald-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none`}
           value={unitsText}
+          placeholder={'2 BHK|1200|1.25 Cr\n3 BHK|1650|1.85 Cr'}
           onChange={(e) => {
             const parsed = e.target.value
               .split('\n')
@@ -241,11 +428,16 @@ export default function PropertyEditor({
             updateField('units', parsed)
           }}
         />
+
+        <p className="mt-2 text-xs text-slate-500">
+          Tip: Use the exact `|` separator between BHK, SQFT and PRICE.
+        </p>
       </div>
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-4">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-slate-600 mb-3">Media</h3>
-        <p className="font-semibold mb-2 text-slate-900">Images</p>
+      {/* Media Section */}
+      <div className="rounded-2xl border border-emerald-100 bg-white p-5 md:p-6 shadow-sm">
+        <h3 className="text-base font-bold text-emerald-900 mb-5 pb-3 border-b border-emerald-100">Media</h3>
+        <p className="font-semibold mb-3 text-emerald-800">Project Images</p>
         
         {/* Image Gallery Preview */}
         {form.images.length > 0 && (
@@ -315,7 +507,7 @@ export default function PropertyEditor({
 
         {/* Upload and URL input */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <label className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-slate-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors">
+          <label className="flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-emerald-300 rounded-xl cursor-pointer hover:border-emerald-500 hover:bg-emerald-50 transition-colors">
             <Plus className="w-5 h-5 text-slate-500" />
             <span className="text-sm text-slate-600">{uploading ? 'Uploading...' : 'Upload Image'}</span>
             <input type="file" accept="image/*" onChange={onUpload} className="hidden" disabled={uploading} />
@@ -344,36 +536,153 @@ export default function PropertyEditor({
       </div>
 
       {form.kind === 'farmhouse' && (
-        <div className="space-y-4 border rounded-2xl p-4 bg-green-50 border-green-200">
-          <h3 className="font-bold text-lg text-slate-900">Farmland Details</h3>
-          <textarea
-            className={`${textareaClass} min-h-24`}
-            placeholder="Description"
-            value={form.farmhouseDetails?.description || ''}
-            onChange={(e) =>
-              updateField('farmhouseDetails', {
-                ...(form.farmhouseDetails || {}),
-                description: e.target.value,
-              })
-            }
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input className={inputClass} placeholder="Price Range" value={form.farmhouseDetails?.priceRange || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), priceRange: e.target.value })} />
-            <input className={inputClass} placeholder="Area" value={form.farmhouseDetails?.area || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), area: e.target.value })} />
-            <input className={inputClass} placeholder="Bedrooms" value={form.farmhouseDetails?.bedrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bedrooms: e.target.value })} />
-            <input className={inputClass} placeholder="Bathrooms" value={form.farmhouseDetails?.bathrooms || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bathrooms: e.target.value })} />
+        <div className="space-y-5 border rounded-2xl p-5 md:p-6 bg-gradient-to-br from-emerald-50 to-green-50 border-emerald-200 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <h3 className="font-bold text-lg text-slate-900">Farmland Details</h3>
+            <span className="inline-flex items-center rounded-full border border-emerald-300 bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+              Full Details Section
+            </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <textarea className={`${textareaClass} min-h-24`} placeholder="Features (one per line)" value={(form.farmhouseDetails?.features || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), features: parseList(e.target.value) })} />
-            <textarea className={`${textareaClass} min-h-24`} placeholder="Highlights (one per line)" value={(form.farmhouseDetails?.highlights || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), highlights: parseList(e.target.value) })} />
-            <textarea className={`${textareaClass} min-h-24`} placeholder="Nearby Places (one per line)" value={(form.farmhouseDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), nearbyPlaces: parseList(e.target.value) })} />
+
+          <div className="w-full rounded-xl border border-emerald-200 bg-white p-4 space-y-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-800 mb-1">Description / Paragraph</p>
+              <p className="text-xs text-slate-500">Write a full paragraph about the project, amenities, surroundings, and value proposition.</p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() =>
+                  updateField('farmhouseDetails', {
+                    ...(form.farmhouseDetails || {}),
+                    description: (form.farmhouseDetails?.description || '')
+                      ? `${form.farmhouseDetails?.description}\nLuxury-focused living with premium open spaces and serene privacy.`
+                      : 'Luxury-focused living with premium open spaces and serene privacy.',
+                  })
+                }
+                className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 hover:bg-slate-100"
+              >
+                + Luxury line
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  updateField('farmhouseDetails', {
+                    ...(form.farmhouseDetails || {}),
+                    description: (form.farmhouseDetails?.description || '')
+                      ? `${form.farmhouseDetails?.description}\nDesigned with key amenities, landscaped greens, and comfort-first planning.`
+                      : 'Designed with key amenities, landscaped greens, and comfort-first planning.',
+                  })
+                }
+                className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 hover:bg-slate-100"
+              >
+                + Amenities line
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  updateField('farmhouseDetails', {
+                    ...(form.farmhouseDetails || {}),
+                    description: (form.farmhouseDetails?.description || '')
+                      ? `${form.farmhouseDetails?.description}\nStrong connectivity to key roads, business hubs, and social infrastructure.`
+                      : 'Strong connectivity to key roads, business hubs, and social infrastructure.',
+                  })
+                }
+                className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 hover:bg-slate-100"
+              >
+                + Connectivity line
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  updateField('farmhouseDetails', {
+                    ...(form.farmhouseDetails || {}),
+                    description: '',
+                  })
+                }
+                className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-medium text-rose-700 hover:bg-rose-100"
+              >
+                Clear paragraph
+              </button>
+            </div>
+
+            <textarea
+              className={`${textareaClass} w-full min-h-52 text-sm leading-6 border-emerald-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none`}
+              placeholder="Write detailed project description here..."
+              value={form.farmhouseDetails?.description || ''}
+              onChange={(e) =>
+                updateField('farmhouseDetails', {
+                  ...(form.farmhouseDetails || {}),
+                  description: e.target.value,
+                })
+              }
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Price Range</span>
+              <input className={`${inputClass} w-full`} placeholder="₹75L - ₹1.2Cr" value={form.farmhouseDetails?.priceRange || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), priceRange: e.target.value })} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Area</span>
+              <input className={`${inputClass} w-full`} placeholder="2400 sq.ft" value={form.farmhouseDetails?.area || ''} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), area: e.target.value })} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Bedrooms</span>
+              <select
+                className={`${inputClass} w-full`}
+                value={form.farmhouseDetails?.bedrooms || ''}
+                onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bedrooms: e.target.value })}
+              >
+                <option value="">Select bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Bathrooms</span>
+              <select
+                className={`${inputClass} w-full`}
+                value={form.farmhouseDetails?.bathrooms || ''}
+                onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), bathrooms: e.target.value })}
+              >
+                <option value="">Select bathrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Features (one per line)</span>
+              <textarea className={`${textareaClass} min-h-28`} placeholder="Private Garden" value={(form.farmhouseDetails?.features || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), features: parseList(e.target.value) })} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Highlights (one per line)</span>
+              <textarea className={`${textareaClass} min-h-28`} placeholder="Gated Community" value={(form.farmhouseDetails?.highlights || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), highlights: parseList(e.target.value) })} />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Nearby Places (one per line)</span>
+            <textarea className={`${textareaClass} min-h-28`} placeholder="10 min to Jewar Airport" value={(form.farmhouseDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), nearbyPlaces: parseList(e.target.value) })} />
           </div>
         </div>
       )}
 
-      {message && <p className="text-sm text-blue-700">{message}</p>}
-      <div className="flex flex-wrap items-center gap-3">
-        <button disabled={saving || uploading || deleting} className="rounded-lg bg-blue-700 px-5 py-2 text-white font-semibold hover:bg-blue-800 disabled:opacity-70">
+      {/* Submit Buttons */}
+      {message && <p className="text-sm font-medium text-emerald-700 bg-emerald-50 rounded-lg px-4 py-2">{message}</p>}
+      <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-emerald-100">
+        <button disabled={saving || uploading || deleting} className="rounded-xl bg-emerald-600 px-8 py-3 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-70 shadow-sm">
           {saving ? 'Saving...' : isNew ? 'Create Property' : 'Save Changes'}
         </button>
         {!isNew && (
@@ -381,7 +690,7 @@ export default function PropertyEditor({
             type="button"
             onClick={onDelete}
             disabled={saving || uploading || deleting}
-            className="rounded-lg bg-red-600 px-5 py-2 text-white font-semibold hover:bg-red-700 disabled:opacity-70"
+            className="rounded-xl bg-red-600 px-8 py-3 text-white font-semibold hover:bg-red-700 transition-colors disabled:opacity-70 shadow-sm"
           >
             {deleting ? 'Deleting...' : 'Delete Property'}
           </button>
