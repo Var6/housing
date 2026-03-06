@@ -163,7 +163,7 @@ export default function FeaturedProperties({ properties }: { properties: Propert
                       <span>{property.area}</span>
                     </div>
                   </div>
-                ):(<></>)}
+                ):(<> </>)}
 
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between">
