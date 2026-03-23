@@ -17,7 +17,7 @@ export default function NotFound() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">Error 404</p>
           <h1 className="mt-3 text-4xl font-extrabold text-white md:text-6xl">Page Not Found</h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-emerald-100 md:text-lg">
-            This page is not available right now. It may have moved, been removed, or the URL may be incorrect.
+            This page is unavailable right now. It may have moved, been removed, or the URL may be incorrect.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
