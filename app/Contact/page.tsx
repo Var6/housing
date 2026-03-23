@@ -55,7 +55,7 @@ const ContactUsPage = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@citizencooperative.in", "sales@citizenimf.com"],
+      details: ["info@citizencooperative.in", "sales@citizenhousing.in"],
       description: "We'll respond within 24 hours"
     },
     {

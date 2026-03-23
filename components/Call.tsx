@@ -59,7 +59,7 @@ export default function CTASection() {
                 Get expert advice from our real estate professionals and make informed decisions.
               </p>
               
-              <button  onClick={()=>window.location.href='mailto:sales@citizenimf.com'}
+              <button  onClick={()=>window.location.href='mailto:sales@citizenhousing.in'}
               className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center space-x-2 mx-auto group">
                 <span>Book Consultation</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -99,7 +99,7 @@ export default function CTASection() {
             <div className="flex flex-col items-center">
               <Mail className="h-8 w-8 text-emerald-400 mb-4" />
               <h4 className="text-lg font-semibold text-white mb-2">Email Us</h4>
-              <p className="text-emerald-100">sales@citizenimf.com</p>
+              <p className="text-emerald-100">sales@citizenhousing.in</p>
               <p className="text-emerald-100">We reply within 24 hours</p>
             </div>
             <div className="flex flex-col items-center">

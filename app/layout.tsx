@@ -131,7 +131,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "telephone": "+91-9031007097",
                 "contactType": "customer service",
-                "email": "sales@citizenimf.com"
+                "email": "sales@citizenhousing.in"
               }
             })
           }}

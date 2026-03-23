@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 // Contact info - centralized for easy updates
 const contactInfo = {
-  email: 'sales@citizenimf.com',
+  email: 'sales@citizenhousing.in',
   phone: '+91 90310 07097',
   phoneDisplay: '+91 90310 07097',
 };
