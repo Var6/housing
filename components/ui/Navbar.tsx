@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import { 
-  Menu, 
-  X, 
-  Home, 
+  Menu,
+  X,
+  Home,
   Users,
   Phone,
   Heart,
-  Building
+  Building,
+  Landmark
 } from 'lucide-react';
 import Image from 'next/image';
 import LocationRibbon from './ribbion';
@@ -24,6 +25,7 @@ export default function Navbar() {
     { name: 'Home', href: '/', icon: <Home className="h-4 w-4" /> },
     { name: 'About', href: '/about', icon: <Users className="h-4 w-4" /> },
     { name: 'Properties', href: '/properties', icon: <Building className="h-4 w-4" /> },
+    { name: 'Land', href: '/properties/land', icon: <Landmark className="h-4 w-4" /> },
     { name: 'Contact', href: '/Contact', icon: <Phone className="h-4 w-4" /> }
   ];
 

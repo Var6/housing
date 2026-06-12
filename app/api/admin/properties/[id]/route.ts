@@ -47,6 +47,7 @@ export async function PUT(
     units: Array.isArray(body.units) ? body.units : [],
     images: Array.isArray(body.images) ? body.images : [],
     farmhouseDetails: body.farmhouseDetails || null,
+    landDetails: body.landDetails || null,
   })
 
   return NextResponse.json(updated)

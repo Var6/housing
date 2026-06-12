@@ -24,10 +24,34 @@ const farmhouseDetailsSchema = new Schema(
   { _id: false },
 )
 
+const landDetailsSchema = new Schema(
+  {
+    isFarmland: { type: Boolean, default: false },
+    priceRange: String,
+    totalArea: String,
+    pricePerUnit: String,
+    dimensions: String,
+    facing: String,
+    roadWidth: String,
+    boundaryWall: String,
+    soilType: String,
+    waterSource: String,
+    electricity: String,
+    approvals: String,
+    surveyNumber: String,
+    description: String,
+    image: String,
+    features: { type: [String], default: [] },
+    highlights: { type: [String], default: [] },
+    nearbyPlaces: { type: [String], default: [] },
+  },
+  { _id: false },
+)
+
 const propertySchema = new Schema(
   {
     slug: { type: String, required: true, unique: true, index: true },
-    kind: { type: String, enum: ['property', 'farmhouse'], default: 'property', index: true },
+    kind: { type: String, enum: ['property', 'farmhouse', 'land'], default: 'property', index: true },
     name: { type: String, required: true },
     developer: { type: String, default: '' },
     location: { type: String, required: true },
@@ -43,6 +67,7 @@ const propertySchema = new Schema(
     units: { type: [unitSchema], default: [] },
     images: { type: [String], default: [] },
     farmhouseDetails: { type: farmhouseDetailsSchema, default: null },
+    landDetails: { type: landDetailsSchema, default: null },
   },
   { timestamps: true },
 )

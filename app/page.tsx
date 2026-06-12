@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/Whychooseus";
 import { getAllProperties } from "@/lib/property-service";
 import { sortListingsByPriority } from "@/lib/listing-priority";
 
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const allProperties = await getAllProperties();
