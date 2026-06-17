@@ -13,9 +13,30 @@ type Unit = {
 }
 
 
+type LandDetails = {
+  isFarmland?: boolean
+  priceRange?: string
+  totalArea?: string
+  pricePerUnit?: string
+  dimensions?: string
+  facing?: string
+  roadWidth?: string
+  boundaryWall?: string
+  soilType?: string
+  waterSource?: string
+  electricity?: string
+  approvals?: string
+  surveyNumber?: string
+  description?: string
+  image?: string
+  features?: string[]
+  highlights?: string[]
+  nearbyPlaces?: string[]
+}
+
 type PropertyPayload = {
   id: string
-  kind: 'property' | 'farmhouse'
+  kind: 'property' | 'farmhouse' | 'land'
   name: string
   developer: string
   location: string
@@ -41,6 +62,7 @@ type PropertyPayload = {
     highlights?: string[]
     nearbyPlaces?: string[]
   } | null
+  landDetails?: LandDetails | null
 }
 
 const parseList = (value: string) =>
@@ -81,7 +103,7 @@ export default function PropertyEditor({
     )
   }, [availableTypes])
 
-  const quickTypeOptions = ['Residential', 'Commercial', 'Farmhouse']
+  const quickTypeOptions = ['Residential', 'Commercial', 'Farmhouse', 'Land']
 
   const updateField = (key: keyof PropertyPayload, value: any) => {
     setForm((prev) => ({ ...prev, [key]: value }))
@@ -89,10 +111,23 @@ export default function PropertyEditor({
 
   const selectQuickType = (nextType: string) => {
     const normalized = nextType.trim().toLowerCase()
+    const kind: PropertyPayload['kind'] =
+      normalized === 'farmhouse'
+        ? 'farmhouse'
+        : normalized === 'land' || normalized === 'farmland'
+          ? 'land'
+          : 'property'
     setForm((prev) => ({
       ...prev,
-      kind: normalized === 'farmhouse' ? 'farmhouse' : 'property',
+      kind,
       type: nextType,
+    }))
+  }
+
+  const updateLandField = (key: keyof LandDetails, value: any) => {
+    setForm((prev) => ({
+      ...prev,
+      landDetails: { ...(prev.landDetails || {}), [key]: value },
     }))
   }
 
@@ -243,10 +278,11 @@ export default function PropertyEditor({
             <select
               className={`${inputClass} w-full`}
               value={form.kind}
-              onChange={(e) => updateField('kind', e.target.value as 'property' | 'farmhouse')}
+              onChange={(e) => updateField('kind', e.target.value as PropertyPayload['kind'])}
             >
               <option value="property">Property (Residential / Commercial)</option>
               <option value="farmhouse">Farmhouse</option>
+              <option value="land">Land / Farmland (Plots &amp; Acreage)</option>
             </select>
           </div>
 
@@ -675,6 +711,128 @@ export default function PropertyEditor({
           <div className="flex flex-col gap-1.5">
             <span className={labelClass}>Nearby Places (one per line)</span>
             <textarea className={`${textareaClass} min-h-28`} placeholder="10 min to Jewar Airport" value={(form.farmhouseDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateField('farmhouseDetails', { ...(form.farmhouseDetails || {}), nearbyPlaces: parseList(e.target.value) })} />
+          </div>
+        </div>
+      )}
+
+      {form.kind === 'land' && (
+        <div className="space-y-5 border rounded-2xl p-5 md:p-6 bg-gradient-to-br from-amber-50 to-lime-50 border-amber-200 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <h3 className="font-bold text-lg text-slate-900">Land Details</h3>
+            <span className="inline-flex items-center rounded-full border border-amber-300 bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-700">
+              Plot / Acreage Section
+            </span>
+          </div>
+
+          <label className="inline-flex items-center gap-3 cursor-pointer rounded-xl border border-lime-300 bg-white px-4 py-3">
+            <input
+              type="checkbox"
+              checked={Boolean(form.landDetails?.isFarmland)}
+              onChange={(e) => updateLandField('isFarmland', e.target.checked)}
+              className="w-5 h-5 rounded border-lime-300 text-lime-600 focus:ring-lime-500"
+            />
+            <span className="text-slate-800 font-medium">This land is farmland / agricultural</span>
+          </label>
+
+          <div className="w-full rounded-xl border border-amber-200 bg-white p-4 space-y-3">
+            <div>
+              <p className="text-sm font-semibold text-slate-800 mb-1">Description / Paragraph</p>
+              <p className="text-xs text-slate-500">Describe the plot, its surroundings, connectivity, and suitability (farming, investment, construction).</p>
+            </div>
+            <textarea
+              className={`${textareaClass} w-full min-h-44 text-sm leading-6 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-100 outline-none`}
+              placeholder="Write detailed land description here..."
+              value={form.landDetails?.description || ''}
+              onChange={(e) => updateLandField('description', e.target.value)}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Price Range</span>
+              <input className={`${inputClass} w-full`} placeholder="₹40L - ₹1.2Cr" value={form.landDetails?.priceRange || ''} onChange={(e) => updateLandField('priceRange', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Price Per Unit</span>
+              <input className={`${inputClass} w-full`} placeholder="₹50 Lakh / Acre" value={form.landDetails?.pricePerUnit || ''} onChange={(e) => updateLandField('pricePerUnit', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Total Area</span>
+              <input className={`${inputClass} w-full`} placeholder="5 Acres / 2400 sq.yd" value={form.landDetails?.totalArea || ''} onChange={(e) => updateLandField('totalArea', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Dimensions</span>
+              <input className={`${inputClass} w-full`} placeholder="200 ft x 300 ft" value={form.landDetails?.dimensions || ''} onChange={(e) => updateLandField('dimensions', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Facing</span>
+              <select className={`${inputClass} w-full`} value={form.landDetails?.facing || ''} onChange={(e) => updateLandField('facing', e.target.value)}>
+                <option value="">Select facing</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                <option value="North-East">North-East</option>
+                <option value="North-West">North-West</option>
+                <option value="South-East">South-East</option>
+                <option value="South-West">South-West</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Road Width / Access</span>
+              <input className={`${inputClass} w-full`} placeholder="40 ft approach road" value={form.landDetails?.roadWidth || ''} onChange={(e) => updateLandField('roadWidth', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Boundary</span>
+              <select className={`${inputClass} w-full`} value={form.landDetails?.boundaryWall || ''} onChange={(e) => updateLandField('boundaryWall', e.target.value)}>
+                <option value="">Select boundary</option>
+                <option value="Compound Wall">Compound Wall</option>
+                <option value="Fenced">Fenced</option>
+                <option value="Partially Fenced">Partially Fenced</option>
+                <option value="Open">Open</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Electricity</span>
+              <select className={`${inputClass} w-full`} value={form.landDetails?.electricity || ''} onChange={(e) => updateLandField('electricity', e.target.value)}>
+                <option value="">Select availability</option>
+                <option value="Available">Available</option>
+                <option value="Near Site">Near Site</option>
+                <option value="Not Available">Not Available</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Water Source</span>
+              <input className={`${inputClass} w-full`} placeholder="Borewell / Canal / River" value={form.landDetails?.waterSource || ''} onChange={(e) => updateLandField('waterSource', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Soil Type</span>
+              <input className={`${inputClass} w-full`} placeholder="Black cotton / Red / Alluvial" value={form.landDetails?.soilType || ''} onChange={(e) => updateLandField('soilType', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Approvals / Clearances</span>
+              <input className={`${inputClass} w-full`} placeholder="NA Approved / DTCP / RERA" value={form.landDetails?.approvals || ''} onChange={(e) => updateLandField('approvals', e.target.value)} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Survey / Khasra No.</span>
+              <input className={`${inputClass} w-full`} placeholder="Survey No. 123/4" value={form.landDetails?.surveyNumber || ''} onChange={(e) => updateLandField('surveyNumber', e.target.value)} />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Features (one per line)</span>
+              <textarea className={`${textareaClass} min-h-28`} placeholder="Clear title&#10;Drip irrigation ready" value={(form.landDetails?.features || []).join('\n')} onChange={(e) => updateLandField('features', parseList(e.target.value))} />
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <span className={labelClass}>Highlights (one per line)</span>
+              <textarea className={`${textareaClass} min-h-28`} placeholder="Highway touch&#10;Gated layout" value={(form.landDetails?.highlights || []).join('\n')} onChange={(e) => updateLandField('highlights', parseList(e.target.value))} />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <span className={labelClass}>Nearby Places (one per line)</span>
+            <textarea className={`${textareaClass} min-h-28`} placeholder="15 min to NH-48&#10;5 km to town" value={(form.landDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateLandField('nearbyPlaces', parseList(e.target.value))} />
           </div>
         </div>
       )}

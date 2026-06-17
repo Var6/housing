@@ -16,7 +16,7 @@ interface Property {
   bathrooms?: number;
   area: string;
   image: string;
-  kind: 'property' | 'farmhouse';
+  kind: 'property' | 'farmhouse' | 'land';
   featured?: boolean;
   rating: number;
   reviews: number;
@@ -82,7 +82,9 @@ export default function FeaturedProperties({ properties }: { properties: Propert
           {filteredProperties.map((property) => {
             const href = property.kind === 'farmhouse'
               ? `/properties/farmhouse/${property.id}`
-              : `/properties/${property.id}`;
+              : property.kind === 'land'
+                ? `/properties/land/${property.id}`
+                : `/properties/${property.id}`;
 
             return (
             <div

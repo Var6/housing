@@ -13,7 +13,7 @@ type Unit = {
 
 type Project = {
   id: string;
-  kind?: 'property' | 'farmhouse';
+  kind?: 'property' | 'farmhouse' | 'land';
   name: string;
   developer: string;
   location: string;
@@ -165,23 +165,18 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
               <span>{project.structure}</span>
             </div>
           </div>
-          {project.kind !== 'farmhouse' ? (
-              <Link 
-            href={`/properties/${project.id}`}
+          <Link
+            href={
+              project.kind === 'farmhouse'
+                ? `/properties/farmhouse/${project.id}`
+                : project.kind === 'land'
+                  ? `/properties/land/${project.id}`
+                  : `/properties/${project.id}`
+            }
             className="w-full px-5 bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
           >
             View Details
           </Link>
-          ):(
-            
-              <Link 
-            href={`/properties/farmhouse/${project.id}`}
-            className="w-full px-5 bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
-          >
-            View Details
-          </Link>
-          )
-          }
           {project.association ?(
 
             <div className="text-red-600 pt-3 text-center">In Association with {project.association} </div>

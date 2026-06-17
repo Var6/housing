@@ -12,9 +12,30 @@ export interface Unit {
   [key: string]: unknown
 }
 
+export interface LandDetails {
+  isFarmland?: boolean
+  priceRange?: string
+  totalArea?: string
+  pricePerUnit?: string
+  dimensions?: string
+  facing?: string
+  roadWidth?: string
+  boundaryWall?: string
+  soilType?: string
+  waterSource?: string
+  electricity?: string
+  approvals?: string
+  surveyNumber?: string
+  description?: string
+  image?: string
+  features?: string[]
+  highlights?: string[]
+  nearbyPlaces?: string[]
+}
+
 export interface Property {
   id: string
-  kind: 'property' | 'farmhouse'
+  kind: 'property' | 'farmhouse' | 'land'
   name: string
   developer?: string
   location?: string
@@ -30,4 +51,5 @@ export interface Property {
   units?: Unit[]
   images?: unknown[]
   farmhouseDetails?: unknown
+  landDetails?: LandDetails | null
 }

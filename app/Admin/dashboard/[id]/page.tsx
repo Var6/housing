@@ -6,6 +6,7 @@ import {
   Pencil,
   Home,
   TreePine,
+  Landmark,
   Layers,
   Sparkles,
   ChevronRight,
@@ -38,6 +39,7 @@ const EMPTY_PROPERTY = {
   units: [] as Unit[],
   images: [] as string[],
   farmhouseDetails: null,
+  landDetails: null,
 }
 
 function deriveAvailableTypes(
@@ -55,6 +57,7 @@ function deriveAvailableTypes(
 
 function KindIcon({ kind }: { kind?: string }) {
   if (kind === 'farmhouse') return <TreePine className="w-5 h-5" />
+  if (kind === 'land') return <Landmark className="w-5 h-5" />
   return <Home className="w-5 h-5" />
 }
 
@@ -85,7 +88,7 @@ export default async function EditPropertyPage({ params }: PageParams) {
 
   const initial = item ?? EMPTY_PROPERTY
   const availableTypes = deriveAvailableTypes(allProperties)
-  const editLabel = item?.kind === 'farmhouse' ? 'Farmland' : 'Property'
+  const editLabel = item?.kind === 'farmhouse' ? 'Farmhouse' : item?.kind === 'land' ? 'Land' : 'Property'
   const pageTitle = isNew ? 'Create New Listing' : `Edit ${editLabel}`
   const pageSubtitle = isNew
     ? 'Add media, unit plans, and all listing metadata.'

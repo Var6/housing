@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { HoverEffect } from '@/components/ui/card-hover-effect'
 import { useState, useMemo } from 'react'
-import { Building2, TreePine, Search, Filter, LayoutGrid, List, MapPin, Home, TrendingUp, X } from 'lucide-react'
+import { Building2, TreePine, Landmark, Search, Filter, LayoutGrid, List, MapPin, Home, TrendingUp, X } from 'lucide-react'
 
 type Property = {
   id: string
@@ -18,6 +18,7 @@ type Analytics = {
   totalListings: number
   totalResidential: number
   totalFarmhouses: number
+  totalLand: number
   topCities: { city: string; count: number }[]
   listingTypes: { type: string; count: number }[]
 }
@@ -26,16 +27,18 @@ type Props = {
   analytics: Analytics
   residential: Property[]
   farmland: Property[]
+  land: Property[]
 }
 
-export default function DashboardClient({ analytics, residential, farmland }: Props) {
-  const [activeTab, setActiveTab] = useState<'residential' | 'farmland'>('residential')
+export default function DashboardClient({ analytics, residential, farmland, land }: Props) {
+  const [activeTab, setActiveTab] = useState<'residential' | 'farmland' | 'land'>('residential')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCity, setSelectedCity] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
-  const allProperties = activeTab === 'residential' ? residential : farmland
+  const allProperties =
+    activeTab === 'residential' ? residential : activeTab === 'farmland' ? farmland : land
 
   // Get unique cities and types for filters
   const cities = useMemo(() => {
@@ -88,7 +91,7 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
   return (
     <div className="space-y-6">
       {/* Stats Cards */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <article className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
@@ -114,11 +117,22 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
         <article className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-emerald-100 text-sm font-medium">Farmland</p>
+              <p className="text-emerald-100 text-sm font-medium">Farmhouse</p>
               <p className="text-4xl font-bold mt-1">{analytics.totalFarmhouses}</p>
             </div>
             <div className="bg-white/20 p-3 rounded-xl">
               <TreePine className="w-8 h-8" />
+            </div>
+          </div>
+        </article>
+        <article className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl p-6 text-white shadow-lg">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-amber-100 text-sm font-medium">Land / Farmland</p>
+              <p className="text-4xl font-bold mt-1">{analytics.totalLand}</p>
+            </div>
+            <div className="bg-white/20 p-3 rounded-xl">
+              <Landmark className="w-8 h-8" />
             </div>
           </div>
         </article>
@@ -196,7 +210,18 @@ export default function DashboardClient({ analytics, residential, farmland }: Pr
               }`}
             >
               <TreePine className="w-5 h-5" />
-              Farmland ({farmland.length})
+              Farmhouse ({farmland.length})
+            </button>
+            <button
+              onClick={() => setActiveTab('land')}
+              className={`flex items-center gap-2 px-6 py-4 font-semibold transition-colors ${
+                activeTab === 'land'
+                  ? 'text-amber-700 border-b-2 border-amber-600 bg-amber-50/50'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              }`}
+            >
+              <Landmark className="w-5 h-5" />
+              Land / Farmland ({land.length})
             </button>
           </div>
         </div>

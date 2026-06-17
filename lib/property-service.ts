@@ -7,9 +7,32 @@ type Unit = {
   price: string
 }
 
+export type LandDetailsDTO = {
+  isFarmland?: boolean
+  priceRange?: string
+  totalArea?: string
+  pricePerUnit?: string
+  dimensions?: string
+  facing?: string
+  roadWidth?: string
+  boundaryWall?: string
+  soilType?: string
+  waterSource?: string
+  electricity?: string
+  approvals?: string
+  surveyNumber?: string
+  description?: string
+  image?: string
+  features?: string[]
+  highlights?: string[]
+  nearbyPlaces?: string[]
+}
+
+export type ListingKind = 'property' | 'farmhouse' | 'land'
+
 export type PropertyDTO = {
   id: string
-  kind: 'property' | 'farmhouse'
+  kind: ListingKind
   name: string
   developer: string
   location: string
@@ -35,6 +58,7 @@ export type PropertyDTO = {
     highlights?: string[]
     nearbyPlaces?: string[]
   } | null
+  landDetails?: LandDetailsDTO | null
 }
 
 const toDTO = (doc: any): PropertyDTO => ({
@@ -55,11 +79,12 @@ const toDTO = (doc: any): PropertyDTO => ({
   units: Array.isArray(doc.units) ? doc.units : [],
   images: Array.isArray(doc.images) ? doc.images : [],
   farmhouseDetails: doc.farmhouseDetails || null,
+  landDetails: doc.landDetails || null,
 })
 
 const dedupeById = (items: PropertyDTO[]) => Array.from(new Map(items.map((item) => [item.id, item])).values())
 
-export async function getAllProperties(kind?: 'property' | 'farmhouse') {
+export async function getAllProperties(kind?: ListingKind) {
   await connectToDatabase()
   const filter = kind ? { kind } : {}
   const docs = await PropertyModel.find(filter).sort({ createdAt: -1 }).lean()
@@ -99,6 +124,7 @@ export async function upsertProperty(payload: Partial<PropertyDTO> & { id: strin
     units: payload.units || [],
     images: payload.images || [],
     farmhouseDetails: payload.farmhouseDetails || null,
+    landDetails: payload.landDetails || null,
   }
 
   const doc = await PropertyModel.findOneAndUpdate({ slug: payload.id }, update, {
@@ -113,9 +139,10 @@ export async function upsertProperty(payload: Partial<PropertyDTO> & { id: strin
 export async function getDashboardAnalytics() {
   await connectToDatabase()
 
-  const [totalListings, totalFarmhouses, byCity, byType] = await Promise.all([
+  const [totalListings, totalFarmhouses, totalLand, byCity, byType] = await Promise.all([
     PropertyModel.countDocuments(),
     PropertyModel.countDocuments({ kind: 'farmhouse' }),
+    PropertyModel.countDocuments({ kind: 'land' }),
     PropertyModel.aggregate([
       { $group: { _id: '$city', count: { $sum: 1 } } },
       { $sort: { count: -1 } },
@@ -142,7 +169,8 @@ export async function getDashboardAnalytics() {
   return {
     totalListings,
     totalFarmhouses,
-    totalResidential: totalListings - totalFarmhouses,
+    totalLand,
+    totalResidential: totalListings - totalFarmhouses - totalLand,
     topCities: byCity.map((item) => ({ city: item._id || 'Unknown', count: item.count })),
     listingTypes: byType.map((item) => ({ type: item._id || 'Unknown', count: item.count })),
   }

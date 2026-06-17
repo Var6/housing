@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { ADMIN_COOKIE, verifyAdminToken } from '@/lib/admin-auth'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   const isAdminPage = pathname.startsWith('/Admin/dashboard')

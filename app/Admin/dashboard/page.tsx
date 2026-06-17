@@ -2,6 +2,7 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Building2,
+  Landmark,
   Plus,
   ShieldCheck,
   TreePine,
@@ -13,15 +14,17 @@ import { getAllProperties, getDashboardAnalytics } from '@/lib/property-service'
 export const dynamic = 'force-dynamic'
 
 export default async function AdminDashboardPage() {
-  const [analytics, allResidential, allFarmland] = await Promise.all([
+  const [analytics, allResidential, allFarmland, allLand] = await Promise.all([
     getDashboardAnalytics(),
     getAllProperties('property'),
     getAllProperties('farmhouse'),
+    getAllProperties('land'),
   ])
 
   const totalListings = analytics.totalListings
   const residentialCount = analytics.totalResidential
   const farmlandCount = analytics.totalFarmhouses
+  const landCount = analytics.totalLand
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-100 via-slate-50 to-white">
@@ -62,7 +65,7 @@ export default async function AdminDashboardPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <article className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Listings</p>
                 <div className="mt-1 flex items-center gap-2">
@@ -77,10 +80,17 @@ export default async function AdminDashboardPage() {
                 </div>
               </article>
               <article className="rounded-2xl border border-emerald-200/70 bg-emerald-50/70 px-4 py-3.5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Farmland</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Farmhouse</p>
                 <div className="mt-1 flex items-center gap-2 text-emerald-900">
                   <TreePine className="h-4 w-4" />
                   <span className="text-2xl font-extrabold">{farmlandCount}</span>
+                </div>
+              </article>
+              <article className="rounded-2xl border border-amber-200/70 bg-amber-50/70 px-4 py-3.5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">Land / Farmland</p>
+                <div className="mt-1 flex items-center gap-2 text-amber-900">
+                  <Landmark className="h-4 w-4" />
+                  <span className="text-2xl font-extrabold">{landCount}</span>
                 </div>
               </article>
             </div>
@@ -102,6 +112,14 @@ export default async function AdminDashboardPage() {
               type: p.type,
             }))}
             farmland={allFarmland.map((p) => ({
+              id: p.id,
+              name: p.name,
+              city: p.city,
+              developer: p.developer,
+              location: p.location,
+              type: p.type,
+            }))}
+            land={allLand.map((p) => ({
               id: p.id,
               name: p.name,
               city: p.city,

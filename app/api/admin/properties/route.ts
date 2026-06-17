@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server'
-import { getAllProperties, getPropertyBySlug, upsertProperty } from '@/lib/property-service'
+import { getAllProperties, getPropertyBySlug, upsertProperty, type ListingKind } from '@/lib/property-service'
+
+const VALID_KINDS: ListingKind[] = ['property', 'farmhouse', 'land']
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const kind = searchParams.get('kind') as 'property' | 'farmhouse' | null
+  const kind = searchParams.get('kind') as ListingKind | null
 
-  const items = await getAllProperties(kind === 'property' || kind === 'farmhouse' ? kind : undefined)
+  const items = await getAllProperties(kind && VALID_KINDS.includes(kind) ? kind : undefined)
   return NextResponse.json({ items })
 }
 
@@ -52,6 +54,7 @@ export async function POST(request: Request) {
     units: Array.isArray(body.units) ? body.units : [],
     images: Array.isArray(body.images) ? body.images : [],
     farmhouseDetails: body.farmhouseDetails || null,
+    landDetails: body.landDetails || null,
   })
 
   return NextResponse.json(created, { status: 201 })

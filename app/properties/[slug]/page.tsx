@@ -10,7 +10,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
   const { slug } = await params
   const project = await getPropertyBySlug(slug)
 
-  if (!project || project.kind === 'farmhouse') {
+  if (!project || project.kind === 'farmhouse' || project.kind === 'land') {
     notFound()
   }
 
