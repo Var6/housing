@@ -271,7 +271,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
                   Call Now
                 </a>
                 <a 
-                  href="mailto:citizen.housing@citizencooperative.in" 
+                  href="mailto:sales@citizenhousing.in" 
                   className="flex items-center gap-2 bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition"
                 >
                   <Mail className="w-5 h-5" />
@@ -375,7 +375,7 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
               <Phone className="w-5 h-5" />
               +91 9031007097
             </a>
-            <a href="mailto:citizen.housing@citizencooperative.in" className="flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition">
+            <a href="mailto:sales@citizenhousing.in" className="flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition">
               <Mail className="w-5 h-5" />
               Email Us
             </a>

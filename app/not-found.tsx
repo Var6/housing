@@ -90,10 +90,10 @@ export default function NotFound() {
           <p className="mt-7 text-sm text-emerald-100">
             Need help?{' '}
             <a
-              href="mailto:citizen.housing@citizencooperative.in"
+              href="mailto:sales@citizenhousing.in"
               className="font-semibold text-white underline underline-offset-4"
             >
-              citizen.housing@citizencooperative.in
+              sales@citizenhousing.in
             </a>
           </p>
         </div>

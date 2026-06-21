@@ -379,7 +379,7 @@ const PrivacyPolicyPage = () => {
 
               <div className="bg-emerald-50 p-4 rounded-lg mt-4">
                 <p className="text-emerald-800 text-sm">
-                  <strong>To exercise your rights:</strong> Contact us at citizen.housing@citizencooperative.in or use the settings in your account dashboard.
+                  <strong>To exercise your rights:</strong> Contact us at sales@citizenhousing.in or use the settings in your account dashboard.
                 </p>
               </div>
             </PolicySection>
@@ -419,7 +419,7 @@ const PrivacyPolicyPage = () => {
                     <Mail className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-sm">citizen.housing@citizencooperative.in</p>
+                      <p className="text-sm">sales@citizenhousing.in</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -435,7 +435,7 @@ const PrivacyPolicyPage = () => {
                   <p className="text-sm text-gray-600 mb-2">
                     For data protection inquiries and exercising your rights:
                   </p>
-                  <p className="text-sm font-medium">citizen.housing@citizencooperative.in</p>
+                  <p className="text-sm font-medium">sales@citizenhousing.in</p>
                 </div>
               </div>
             </PolicySection>

@@ -302,7 +302,7 @@ const FAQPage = () => {
       {
         id: 'sp1',
         question: 'How can I contact CitizenHousing support?',
-        answer: 'Reach us via live chat (9 AM - 9 PM), email (citizen.housing@citizencooperative.in), phone (+91-9031007097), or submit a support ticket through your dashboard. We aim to respond quickly during business hours.',
+        answer: 'Reach us via live chat (9 AM - 9 PM), email (sales@citizenhousing.in), phone (+91-9031007097), or submit a support ticket through your dashboard. We aim to respond quickly during business hours.',
         tags: ['contact', 'support']
       },
       {
@@ -676,7 +676,7 @@ const FAQPage = () => {
               <div className="grid md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center justify-center space-x-2">
                   <Mail className="w-4 h-4 text-emerald-600" />
-                  <span>citizen.housing@citizencooperative.in</span>
+                  <span>sales@citizenhousing.in</span>
                 </div>
                 <div className="flex items-center justify-center space-x-2">
                   <Phone className="w-4 h-4 text-emerald-600" />

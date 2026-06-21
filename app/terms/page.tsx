@@ -338,7 +338,7 @@ const TermsOfServicePage = () => {
               </p>
               <div className="bg-emerald-50 p-4 rounded-lg">
                 <p className="text-emerald-800 text-sm">
-                  <strong>DMCA Notice:</strong> If you believe your copyright has been infringed, please contact us at citizen.housing@citizencooperative.in with detailed information.
+                  <strong>DMCA Notice:</strong> If you believe your copyright has been infringed, please contact us at sales@citizenhousing.in with detailed information.
                 </p>
               </div>
             </TermsSection>
@@ -462,7 +462,7 @@ const TermsOfServicePage = () => {
                     <Mail className="w-5 h-5 text-emerald-600" />
                     <div>
                       <p className="font-medium">General Inquiries</p>
-                      <p className="text-sm">citizen.housing@citizencooperative.in</p>
+                      <p className="text-sm">sales@citizenhousing.in</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -489,7 +489,7 @@ const TermsOfServicePage = () => {
                   <p className="text-sm text-gray-600 mb-2">
                     For formal legal notices and compliance matters:
                   </p>
-                  <p className="text-sm font-medium">citizen.housing@citizencooperative.in</p>
+                  <p className="text-sm font-medium">sales@citizenhousing.in</p>
                   <p className="text-sm text-gray-500 mt-2">
                     Response time: 5-7 business days
                   </p>

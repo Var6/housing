@@ -172,7 +172,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             <h3 className="font-bold text-lg mb-2">Contact Advisor</h3>
             <p className="text-sm text-emerald-100 mb-4">Get floor plans, latest pricing, and site visit support.</p>
             <a href="tel:+919031007097" className="block text-white font-semibold">+91 9031007097</a>
-            <a href="mailto:citizen.housing@citizencooperative.in" className="block text-emerald-200 font-medium mt-1 break-all">citizen.housing@citizencooperative.in</a>
+            <a href="mailto:sales@citizenhousing.in" className="block text-emerald-200 font-medium mt-1 break-all">sales@citizenhousing.in</a>
           </div>
         </aside>
       </section>

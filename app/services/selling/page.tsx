@@ -412,7 +412,7 @@ export default function PropertySelling() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2" />
-                <span>citizen.housing@citizencooperative.in</span>
+                <span>sales@citizenhousing.in</span>
               </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 mr-2" />

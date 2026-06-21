@@ -159,7 +159,7 @@ export default function AboutUsPage() {
               </div>
               <div className="inline-flex items-center gap-2 text-emerald-100">
                 <Mail className="h-5 w-5" />
-                <span className="font-semibold text-white">info@citizencooperative.in</span>
+                <span className="font-semibold text-white">sales@citizenhousing.in</span>
               </div>
             </div>
           </div>
