@@ -33,11 +33,14 @@ export const farmhouseProperties: FarmhouseProperty[] = [
     bathrooms: 'Modern Fittings',
     description:
       'Centurion Farm House offers premium farmhouse living with peaceful surroundings and strong connectivity to the Yamuna Expressway and Jewar Airport zone.',
-    image: '/centurianfarmhousejewar/4.jpg',
+    image: '/centurianfarmhousejewar/1.png',
     images: [
-      '/centurianfarmhousejewar/4.jpg',
+      '/centurianfarmhousejewar/1.png',
+      '/centurianfarmhousejewar/33.webp',
+      '/centurianfarmhousejewar/34.webp',
       '/centurianfarmhousejewar/5.jpg',
       '/centurianfarmhousejewar/6.jpg',
+      '/centurianfarmhousejewar/about-1.jpg',
     ],
     features: [
       'Spacious independent farmhouse layout',

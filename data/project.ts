@@ -65,9 +65,12 @@ const rawProjects: Project[] = [
   type: "Farmhouse",
   reraId: undefined,
   images: [
-    'centurianfarmhousejewar/4.jpg',
+    'centurianfarmhousejewar/1.png',
+    'centurianfarmhousejewar/33.webp',
+    'centurianfarmhousejewar/34.webp',
     'centurianfarmhousejewar/5.jpg',
     'centurianfarmhousejewar/6.jpg',
+    'centurianfarmhousejewar/about-1.jpg',
   ]
 },
 {
