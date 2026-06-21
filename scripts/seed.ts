@@ -1,10 +1,53 @@
 import { loadEnvConfig } from '@next/env'
+import { existsSync, readdirSync, statSync } from 'fs'
+import { join } from 'path'
 import { projects } from '@/data/project'
 import { farmhouseProperties } from '@/data/farmhouse'
 import { connectToDatabase } from '@/lib/mongodb'
 import { PropertyModel } from '@/models/Property'
 
 loadEnvConfig(process.cwd())
+
+const PUBLIC_DIR = join(process.cwd(), 'public')
+const IMAGE_RE = /\.(jpe?g|png|webp|jfif|avif|gif)$/i
+const norm = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+// Slugs whose images live in a folder that can't be matched by normalized name.
+const FOLDER_ALIASES: Record<string, string> = {
+  'piramal-aranya-rani-baug': 'primalaranya-rani bug',
+}
+
+// Index every public/ subfolder with the image files it actually contains.
+const PUBLIC_INDEX = readdirSync(PUBLIC_DIR)
+  .filter((entry) => {
+    try {
+      return statSync(join(PUBLIC_DIR, entry)).isDirectory()
+    } catch {
+      return false
+    }
+  })
+  .map((dir) => ({
+    dir,
+    n: norm(dir),
+    files: readdirSync(join(PUBLIC_DIR, dir))
+      .filter((file) => IMAGE_RE.test(file))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true })),
+  }))
+  .filter((entry) => entry.files.length > 0)
+
+function matchFolder(slug: string) {
+  const alias = FOLDER_ALIASES[slug]
+  if (alias) {
+    const hit = PUBLIC_INDEX.find((entry) => entry.dir === alias)
+    if (hit) return hit
+  }
+  const ns = norm(slug)
+  const exact = PUBLIC_INDEX.find((entry) => entry.n === ns)
+  if (exact) return exact
+  const candidates = PUBLIC_INDEX.filter((entry) => entry.n.includes(ns) || ns.includes(entry.n))
+  candidates.sort((a, b) => Math.min(b.n.length, ns.length) - Math.min(a.n.length, ns.length))
+  return candidates[0]
+}
 
 function normalizeImages(images: string[] = []) {
   return images
@@ -17,6 +60,19 @@ function normalizeImages(images: string[] = []) {
       }
       return `/${item}`
     })
+}
+
+const isBadLocal = (img: string) =>
+  !/^https?:\/\//.test(img) && !existsSync(join(PUBLIC_DIR, img.replace(/^\//, '')))
+
+// Keep curated images when they all resolve; otherwise rebuild from the
+// real files in the listing's public/ folder so galleries never 404.
+function resolveImages(slug: string, images: string[] = []) {
+  const normalized = normalizeImages(images)
+  if (normalized.length > 0 && !normalized.some(isBadLocal)) return normalized
+  const folder = matchFolder(slug)
+  if (!folder) return normalized
+  return folder.files.map((file) => `/${folder.dir}/${file}`)
 }
 
 async function seed() {
@@ -47,7 +103,7 @@ async function seed() {
       reraId: item.reraId || '',
       priceVisible: item.price !== false,
       units: item.units || [],
-      images: normalizeImages(item.images || []),
+      images: resolveImages(item.id, item.images || []),
       farmhouseDetails: farmhouse
         ? {
             priceRange: farmhouse.priceRange,
