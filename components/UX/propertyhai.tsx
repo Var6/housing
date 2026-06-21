@@ -98,10 +98,12 @@ export default function Propertyhai({ projects }: { projects: Project[] }) {
         <div className="relative h-48 overflow-hidden rounded-xl">
   {/* Background Image */}
   <div
-    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
-    style={{
-      backgroundImage: `url(${project.images?.[0]})`,
-    }}
+    className="absolute inset-0 bg-cover bg-center bg-slate-200 transition-transform duration-500 hover:scale-105"
+    style={
+      project.images?.[0]
+        ? { backgroundImage: `url("${encodeURI(project.images[0])}")` }
+        : undefined
+    }
   />
 
   {/* Premium Gradient Overlay */}
