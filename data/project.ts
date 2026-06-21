@@ -804,7 +804,7 @@ const rawProjects: Project[] = [
   },
    {
     id: 'piramal-aranya-rani-baug',
-    name: ': PIRAMAL REALTY',
+    name: 'PIRAMAL REALTY',
     developer: ' PIRAMAL REALTY',
     location: ' BYCULLA, MUMBAI',
     city: 'Thane',
@@ -853,7 +853,7 @@ const rawProjects: Project[] = [
   },
    {
     id: 'codename-triumph-kanjurmarg',
-    name: ': CODENAME TRIUMPH-KANJURMARG',
+    name: 'CODENAME TRIUMPH-KANJURMARG',
     developer: ' ADANI REALTY',
     location: '  KANJURMARG,Mumbai',
     city: 'Thane',
@@ -879,7 +879,7 @@ const rawProjects: Project[] = [
   },
  {
     id: '9 PBR – PALM BEACH ROAD',
-    name: ':9 PBR – PALM BEACH ROAD',
+    name: '9 PBR – PALM BEACH ROAD',
     developer: ' ADANI REALTY',
     location: ' Palm Beach Road, Mumbai',
     city: 'Thane',
@@ -955,8 +955,8 @@ const rawProjects: Project[] = [
   {
     id: 'godrej-nurture-bhandup',
     name: 'GODREJ NURTURE-BHANDUP',
-    developer: ':  GODREJ PROPERTIES.',
-    location: ' : LBS Marg, Bhandup',
+    developer: 'GODREJ PROPERTIES.',
+    location: 'LBS Marg, Bhandup',
     city: 'Thane',
      association:"Prudent Properties",
     state: 'Maharashtra',
