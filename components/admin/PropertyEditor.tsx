@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { X, GripVertical, Plus, ImageIcon, Rows3 } from 'lucide-react'
+import { X, GripVertical, Plus, ImageIcon, Rows3, MapPin } from 'lucide-react'
 import { set } from 'mongoose'
 
 type Unit = {
@@ -165,6 +165,8 @@ export default function PropertyEditor({
 
     const cleanedForm: PropertyPayload = {
       ...form,
+      // Land/plots are sold as a whole parcel — no per-unit (BHK/SQFT) configurations.
+      units: form.kind === 'land' ? [] : form.units,
       name: form.name.trim(),
       developer: form.developer.trim(),
       location: form.location.trim(),
@@ -422,7 +424,8 @@ export default function PropertyEditor({
         </label>
       </div>
 
-      {/* Units Section */}
+      {/* Units Section — not applicable to land/plots */}
+      {form.kind !== 'land' && (
       <div className="rounded-2xl border border-emerald-100 bg-white p-5 md:p-6 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5 pb-3 border-b border-emerald-100">
           <div className="flex items-center gap-3">
@@ -469,6 +472,7 @@ export default function PropertyEditor({
           Tip: Use the exact `|` separator between BHK, SQFT and PRICE.
         </p>
       </div>
+      )}
 
       {/* Media Section */}
       <div className="rounded-2xl border border-emerald-100 bg-white p-5 md:p-6 shadow-sm">
@@ -830,9 +834,49 @@ export default function PropertyEditor({
             </div>
           </div>
 
-          <div className="flex flex-col gap-1.5">
-            <span className={labelClass}>Nearby Places (one per line)</span>
-            <textarea className={`${textareaClass} min-h-28`} placeholder="15 min to NH-48&#10;5 km to town" value={(form.landDetails?.nearbyPlaces || []).join('\n')} onChange={(e) => updateLandField('nearbyPlaces', parseList(e.target.value))} />
+          <div className="w-full rounded-xl border border-amber-200 bg-white p-4 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="p-2 rounded-lg bg-amber-100 text-amber-700">
+                <MapPin className="w-4 h-4" />
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-slate-800">Nearby Locations &amp; Landmarks (for reference)</p>
+                <p className="text-xs text-slate-500">Add distance to highways, town, airport, railway, schools, hospitals — one per line.</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: '+ Highway', text: '5 min to NH-XX Highway' },
+                { label: '+ Town / City', text: '10 km to town center' },
+                { label: '+ Airport', text: '45 min to nearest airport' },
+                { label: '+ Railway', text: '15 km to railway station' },
+                { label: '+ School', text: '3 km to school' },
+                { label: '+ Hospital', text: '4 km to hospital' },
+                { label: '+ Market', text: '2 km to local market' },
+              ].map((item) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  onClick={() =>
+                    updateLandField('nearbyPlaces', [...(form.landDetails?.nearbyPlaces || []), item.text])
+                  }
+                  className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700 hover:bg-amber-100"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            <textarea
+              className={`${textareaClass} min-h-32 border-amber-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-100`}
+              placeholder={'5 min to NH-48 Highway\n10 km to town center\n45 min to nearest airport'}
+              value={(form.landDetails?.nearbyPlaces || []).join('\n')}
+              onChange={(e) => updateLandField('nearbyPlaces', parseList(e.target.value))}
+            />
+            <p className="text-xs text-slate-500">
+              {(form.landDetails?.nearbyPlaces || []).length} nearby reference{(form.landDetails?.nearbyPlaces || []).length !== 1 ? 's' : ''} added
+            </p>
           </div>
         </div>
       )}

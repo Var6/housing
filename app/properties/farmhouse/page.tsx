@@ -19,7 +19,13 @@ export default async function FarmhouseListingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {farmhouses.map((property) => (
             <article key={property.id} className="bg-white rounded-2xl overflow-hidden shadow-md border border-green-100">
-              <img src={property.images[0]} alt={property.name} className="w-full h-64 object-cover" />
+              {property.images[0] ? (
+                <img src={property.images[0]} alt={property.name} className="w-full h-64 object-cover" />
+              ) : (
+                <div className="flex h-64 w-full items-center justify-center bg-gradient-to-br from-green-100 to-emerald-200 px-4 text-center font-semibold text-green-800">
+                  {property.name}
+                </div>
+              )}
               <div className="p-6">
                 <p className="text-green-700 text-sm font-semibold mb-2">{property.type || 'Farmhouse'}</p>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">{property.name}</h2>

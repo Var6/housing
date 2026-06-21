@@ -33,7 +33,7 @@ export const farmhouseProperties: FarmhouseProperty[] = [
     bathrooms: 'Modern Fittings',
     description:
       'Centurion Farm House offers premium farmhouse living with peaceful surroundings and strong connectivity to the Yamuna Expressway and Jewar Airport zone.',
-    image: '/centurianfarmhousejewar/4.',
+    image: '/centurianfarmhousejewar/4.jpg',
     images: [
       '/centurianfarmhousejewar/4.jpg',
       '/centurianfarmhousejewar/5.jpg',
@@ -71,7 +71,7 @@ export const farmhouseProperties: FarmhouseProperty[] = [
     bathrooms: 'Premium Fittings',
     description:
       'Lotus Farms House blends natural open spaces with modern luxury planning in the Techzone belt, suitable for both lifestyle and investment buyers.',
-    image: '/lotus-farms-techzone/5.JPG',
+    image: '/lotus-farms-techzone/5.jfif',
     images: [
       '/lotus-farms-techzone/5.jfif',
       '/lotus-farms-techzone/6.jpeg',

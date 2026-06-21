@@ -65,9 +65,9 @@ const rawProjects: Project[] = [
   type: "Farmhouse",
   reraId: undefined,
   images: [
-    'centurionfarmhousejewar/4.JPG',
-    'centurionfarmhousejewar/5.JPG',
-    'centurionfarmhousejewar/6.JPG',
+    'centurianfarmhousejewar/4.jpg',
+    'centurianfarmhousejewar/5.jpg',
+    'centurianfarmhousejewar/6.jpg',
   ]
 },
 {
@@ -87,9 +87,10 @@ const rawProjects: Project[] = [
   structure: "Luxury Gated Farmhouse Community",
   reraId: undefined,
   images: [
-    'lotus-farms-techzone/5.JPG',
-    'lotus-farms-techzone/6.JPG',
-    'lotus-farms-techzone/7.JPG',
+    'lotus-farms-techzone/5.jfif',
+    'lotus-farms-techzone/6.jpeg',
+    'lotus-farms-techzone/7.jpg',
+    'lotus-farms-techzone/8.jpg',
   ]
 },
   {
